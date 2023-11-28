@@ -1,0 +1,133 @@
+<html>
+<head>
+ <link rel="icon" href="top image.ico">
+ <link rel="stylesheet" type="text/css" href="style dora5.1.css">
+</head>
+<body>
+<button id="myBtn">≡</button>
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">×</span>
+    <p>コンテンツ</p>
+　　<div id="btn" class="btn">
+      <button id="outlook">outlook</button>
+      <button id="onedlive">onedlive</button>
+      <button id="zkai">z-kai</button>
+      <button id="Tver">Tver</button>
+    </dive>
+  </div>
+</div>
+
+
+<div class="container">
+  <button id="button"><img src="google.png" id="button2"></button>
+  <button id="photo"><img src="photo.png"></button>
+  <button id="translate"><img src="deepl.png"></button>
+  <input type="text" id="input" class="input-box" placeholder="ここに入力してください"></input>
+  <button id="clear"><img src="clear.png"></button>
+  <button id="ai"><img src="ai.png"></button>
+</div>
+<p id="output"></p>
+<script>
+// HTML要素を取得する
+var input = document.getElementById("input"); // 入力ボックス
+var button = document.getElementById("button"); // ボタン
+
+// エンターキーが押されたときのイベントリスナーを設定する
+input.addEventListener("keydown", function(event) {
+  // エンターキーのキーコードは13
+  if (event.keyCode === 13) {
+    // ボタンをクリックする関数を呼び出す
+    button.click();
+  }
+});
+
+// ボタンがクリックされたときのイベントリスナーを設定する
+button.addEventListener("click", function() {
+  // 入力ボックスの値を取得する
+  var query = input.value;
+  var output = document.getElementById("output");
+  output.textContent = query;
+  input.value = "";
+  // グーグルのサイトにつながるURLを作成する
+  var url = "https://www.google.com/search?q=" + query;
+  // 新しいタブでURLを開く
+  window.open(url, "_blank");
+});
+ai.addEventListener("click",function(){
+  var query = input.value;
+  var output = document.getElementById("output");
+  output.textContent = query;
+  input.value = "";
+  var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
+  window.open(url,"_blank");
+});
+photo.addEventListener("click",function(){
+  var query = input.value;
+  var output = document.getElementById("output");
+  output.textContent = query;
+  input.value = "";
+  var url = "https://www.google.com/search?q=" + query + "&sca_esv=575726020&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiV4Oiu4YuCAxWjgVYBHfmrDZQQ_AUoAXoECAMQAw&biw=1482&bih=750&dpr=1.25";
+  window.open(url,"_blank");
+});
+translate.addEventListener("click",function(){
+  var query = input.value;
+  var output = document.getElementById("output");
+  output.textContent = query;
+  input.value = "";
+  var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
+  window.open(url,"_blank");
+});
+clear.addEventListener("click",function(){
+  input.blur();
+  input.value = "";
+});
+//ポップアップ
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+//ポップアップ
+//非表示ボタン
+outlook.addEventListener("click",function(){
+  var url = "https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=16&ct=1700705624&rver=7.0.6738.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26cobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26RpsCsrfState%3dba3569e4-5a1a-118c-619e-2181d30c5894&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c";
+  window.open(url,"_blank");
+});
+onedlive.addEventListener("click",function(){
+  var url = "https://onedrive.live.com/login/";
+  window.open(url,"_blank");
+});
+zkai.addEventListener("click",function(){
+  var url = "https://www505.zkai.co.jp/mypage/login/login";
+  window.open(url,"_blank");
+});
+Tver.addEventListener("click",function(){
+  var url = "https://tver.jp/";
+  window.open(url,"_blank");
+});
+
+</script>
+</body>
+</html>
