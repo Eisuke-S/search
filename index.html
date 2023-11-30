@@ -40,8 +40,10 @@ var button = document.getElementById("button"); // ボタン
 
 // エンターキーが押されたときのイベントリスナーを設定する
 input.addEventListener("keydown", function(event) {
+ 
   // エンターキーのキーコードは13
   if (event.keyCode === 13) {
+      button.click();
     // ボタンをクリックする関数を呼び出す
       var query = input.value;
       var output = document.getElementById("output");
