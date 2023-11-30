@@ -20,11 +20,12 @@
     height: 200px;
     border: double 5px black;
     padding: 10px;
-    font-size: 180px;
-    border-radius: 50px;
+    font-size: 120px;
+    border-radius: 90px;
    
   }
   .button {
+    display: none;
     width: 100px;
     height: 50px;
     font-size: 100px;
@@ -34,6 +35,7 @@
 
   }
   .ai {
+    display: none;
     background-image: url("ai.png");
     width: 100px;
     height: 50px;
@@ -43,6 +45,7 @@
     cursor: pointer;
   }
   .photo {
+    display: none;
     width: 100px;
     height: 50px;
     border: none;
@@ -53,6 +56,7 @@
     cursor: pointer;
   }
   .translate {
+    display: none;
     width: 100px;
     height: 50px;
     border: none;
