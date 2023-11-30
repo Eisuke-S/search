@@ -43,7 +43,15 @@ input.addEventListener("keydown", function(event) {
   // エンターキーのキーコードは13
   if (event.keyCode === 13) {
     // ボタンをクリックする関数を呼び出す
-    button.click();
+      var query = input.value;
+      var output = document.getElementById("output");
+      output.textContent = query;
+      input.value = "";
+      // グーグルのサイトにつながるURLを作成する
+      var url = "https://www.google.com/search?q=" + query;
+      // 新しいタブでURLを開く
+      window.open(url, "_blank");
+});
   }
 });
 
