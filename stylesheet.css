@@ -5,6 +5,14 @@
     background-position: center;
     position: relative;
  }
+  .con {
+    font-size: 60px;
+  
+  }
+  .close {
+    font-size: 70px;
+  }
+
     
   .container {
     display: flex;
