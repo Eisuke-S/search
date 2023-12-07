@@ -11,6 +11,7 @@
     <span class="close" id="close">×</span>
     <p id="con">コンテンツ</p>
 　　<div id="btn" class="btn">
+      <button id="mysite">other site</button>
       <button id="outlook">outlook</button>
       <button id="onedlive">onedlive</button>
       <button id="zkai">z-kai</button>
@@ -140,6 +141,11 @@ canva.addEventListener("click",function(){
 });
 minority.addEventListener("click",function(){
   var url = "https://www.minority-ev.jp/";
+  window.open(url,"_blank");
+});
+});
+mysite.addEventListener("click",function(){
+  var url = "https://my-song.my.canva.site/eisuke-s#home";
   window.open(url,"_blank");
 });
 
