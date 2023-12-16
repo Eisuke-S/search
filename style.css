@@ -1,13 +1,19 @@
-  body {
-    background-image: url("background-image.png");
-    background-repeat: no-repeat;
-    background-size:contain; 
-    background-position: center;
-    background-color: black;
-    position: relative;
- }
-  .con {
-    font-size: 60px;
+body, html {
+  height: 100%;
+  margin: 0; /* マージンをゼロに設定して余白を取り除く */
+}
+body {
+  background-image: url("background-image.png");
+  background-repeat: no-repeat;
+  background-size: cover; /* 画面に合わせて拡大表示 */
+  background-position: center;
+  background-color: black;
+  position: relative;
+}
+
+
+.con {
+  font-size: 60px;
   
   }
   .close {
