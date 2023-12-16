@@ -13,7 +13,11 @@
   .close {
     font-size: 70px;
   }
-
+  .terms {
+    font-size: 80px;
+    color: white;
+    text-decoration: none;
+  }
     
   .container {
     display: flex;
