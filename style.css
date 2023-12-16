@@ -174,7 +174,10 @@ button.+a {
   justify-content: center;
   align-items: center;
 }
-
+btn a img {
+  height: 80px;
+  width: auto;
+}
 p.con {
   color: black;
 }
