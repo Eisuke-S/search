@@ -53,9 +53,6 @@ body {
 }
 
 #button {
-  width: 100px;
-  height: 50px;
-  font-size: 100px;
   margin-left: 10px;
   border-radius: 50px;
   border: none;
@@ -67,10 +64,7 @@ body {
 
 #ai {
   background-image: url("ai.png");
-  width: 100px;
-  height: 50px;
   border: none;
-  font-size: 100px;
   margin-left: 10px;
   cursor: pointer;
   border: none;
@@ -81,10 +75,7 @@ body {
 }
 
 #photo {
-  width: 100px;
-  height: 50px;
   color: white;
-  font-size: 100px;
   margin-left: 10px;
   border: none;
   outline: none;
@@ -94,10 +85,7 @@ body {
 }
 
 #translate {
-  width: 100px;
-  height: 50px;
   color: white;
-  font-size: 100px;
   margin-left: 10px;
   cursor: pointer;
   border: none;
@@ -108,7 +96,6 @@ body {
 }
 
 #clear {
-  font-size: 100px;
   margin-left: 10px;
   border: none;
   outline: none;
