@@ -52,16 +52,20 @@ body {
   border-radius: 80px;
 }
 
-.button {
+#button {
   width: 100px;
   height: 50px;
   font-size: 100px;
   margin-left: 10px;
-  cursor: pointer;
   border-radius: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer; 
 }
 
-.ai {
+#ai {
   background-image: url("ai.png");
   width: 100px;
   height: 50px;
@@ -69,38 +73,48 @@ body {
   font-size: 100px;
   margin-left: 10px;
   cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  
 }
 
-.photo {
+#photo {
   width: 100px;
   height: 50px;
+  color: white;
+  font-size: 100px;
+  margin-left: 10px;
   border: none;
-  background-color: blue;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+#translate {
+  width: 100px;
+  height: 50px;
   color: white;
   font-size: 100px;
   margin-left: 10px;
   cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer; 
 }
 
-.translate {
-  width: 100px;
-  height: 50px;
-  border: none;
-  background-color: blue;
-  color: white;
+#clear {
   font-size: 100px;
   margin-left: 10px;
-  cursor: pointer;
-}
-
-.clear {
-  background-color: transparent;
-  width: 100px;
-  height: 50px;
   border: none;
-  color: white;
-  font-size: 100px;
-  margin-left: 10px;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer; 
 }
 
 p.output {
