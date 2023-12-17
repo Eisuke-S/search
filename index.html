@@ -76,7 +76,7 @@ button.addEventListener("click", function() {
 });
 
 // AIボタンがクリックされたときのイベントリスナーを設定する
-ai.addEventListener("click", function() {
+aiButton.addEventListener("click", function() {
   // 入力ボックスの値を取得する
   var query = input.value;
   var output = document.getElementById("output");
@@ -108,7 +108,8 @@ clear.addEventListener("click",function(){
   input.value = "";
   input.rows = 1;
 });
--.addEventListener("click", function () {
+document.getElementById("-").addEventListener("click", function () {
+
   input.blur();
   var output = document.getElementById("output");
   input.value = output.textContent; // この行も修正しました
