@@ -11,6 +11,13 @@ body {
   background-color: black;
   position: relative;
 }
+.pop-upbtn {
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer; 
+}
 
 .con {
   font-size: 60px;
