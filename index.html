@@ -34,7 +34,7 @@
   <button id="button"><img src="google.png" id="button2"></button>
   <button id="photo"><img src="photo.png"></button>
   <button id="translate"><img src="deepl.png"></button>
-  <input type="text" id="input" class="input-box" placeholder="Enter text to search"></input>
+  <textarea id="input" class="input-box" rows="1" oninput="handleInput()"></textarea>
   <button id="clear"><img src="clear.png"></button>
   <button id="ai"><img src="ai.png"></button>
 </div>
@@ -43,7 +43,11 @@
 // HTML要素を取得する
 var input = document.getElementById("input"); // 入力ボックス
 var button = document.getElementById("button"); // ボタン
-
+function handleInput() {
+  var input = document.getElementById('input');
+  if (input.scrollHeight > input.clientHeight) {
+    input.rows += 1;
+  }
 // エンターキーが押されたときのイベントリスナーを設定する
 input.addEventListener("keydown", function(event) {
   // エンターキーのキーコードは13
