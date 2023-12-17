@@ -38,7 +38,7 @@ body {
   background-color: transparent;
   color: green;
   width: 500px;
-  height: 100px;
+  height: auto;
   border: double 5px black;
   padding: 10px;
   font-size: 40px;
