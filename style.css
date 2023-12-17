@@ -104,15 +104,19 @@ body {
   cursor: pointer; 
 }
 
-p.output {
+#output {
   width: 300px;
   margin: 0px auto;
   padding: 5px;
-  font-size: 30px;
+  font-size: 60px;
   color: gray;
   border: none;
   color: black;
 }
+.- {
+  font-size: 60px;
+}
+
 
 button.+a {
   display: block;
