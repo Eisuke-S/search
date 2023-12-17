@@ -43,13 +43,13 @@ body {
 
 .input-box {
   background-color: transparent;
-  color: green;
+  color: black;
   width: 500px;
   height: auto;
-  border: double 5px black;
+  border: double 5px gray;
   padding: 10px;
-  font-size: 40px;
-  border-radius: 50px;
+  font-size: 60px;
+  border-radius: 80px;
 }
 
 .button {
