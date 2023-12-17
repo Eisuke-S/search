@@ -38,6 +38,7 @@
   <button id="ai"><img src="ai.png"></button>
 </div>
 <p id="output"></p>
+<button class="-" id="-">
 
 <script>
 // HTML要素を取得する
@@ -110,6 +111,11 @@ clear.addEventListener("click",function(){
   input.blur();
   input.value = "";
   input.rows = 1;
+});
+-.addEventListner("click",function(){
+  input.blur();
+  var output = document.getElementById("output");
+  input.value = output;
 });
 // 以下、他のボタンに対するイベントリスナーも同様に設定できます。
 
