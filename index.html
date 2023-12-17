@@ -50,6 +50,11 @@ function handleInput() {
     input.rows += 1;
   }
 }
+function handleInput() {
+  if (input.clientHeight > input.scrollHeight) {
+    input.rows -= 1;
+  }
+}
 
 // エンターキーが押されたときのイベントリスナーを設定する
 input.addEventListener("keydown", function(event) {
