@@ -51,16 +51,28 @@
         input.rows += 1;
       }
     }
-
-    
-
     function blockEnterKey(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
         submitText();
       }
-    }
+    }    
+    function submitText() {
+      var inputValue = document.getElementById("input").value;
 
+      if (containsBlockedPhrase(inputValue)) {
+        alert("不適切な内容です。");
+      } else {
+        var output = document.getElementById("output");
+        output.textContent = inputValue;
+        button.click();
+      }
+    }    
+    
+
+    
+
+    
     function submitText() {
       var inputValue = document.getElementById("input").value;
 
