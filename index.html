@@ -40,7 +40,7 @@
     <button id="ai"><img src="ai.png"></button>
   </div>
   <p id="output"></p>
-  <button class="-" id="-">↩️</button>
+  <button class="return" id="return">△</button>
 
   <script>
     var input = document.getElementById("input");
@@ -135,7 +135,7 @@
       input.rows = 1;
     });
 
-    document.getElementById("-").addEventListener("click", function () {
+    document.getElementById("return").addEventListener("click", function () {
       input.blur();
       var output = document.getElementById("output");
       input.value = output.textContent;
