@@ -49,7 +49,7 @@ body {
   border: double 5px gray;
   padding: 10px;
   font-size: 60px;
-  border-radius: 80px;
+  border-radius: 0px;
 }
 .biginput {
   position: relative;
