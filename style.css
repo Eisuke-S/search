@@ -60,7 +60,7 @@ body {
   bottom: 0;
   right: 0;
   margin-right: 10px; /* 右端からの余白 */
-  margin-bottom: 10px; /* 下端からの余白 */
+  margin-bottom: 0px; /* 下端からの余白 */
   border: none;
   outline: none;
   background: transparent;
