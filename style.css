@@ -51,6 +51,23 @@ body {
   font-size: 60px;
   border-radius: 80px;
 }
+.biginput {
+  position: relative;
+}
+
+#clear {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px; /* 右端からの余白 */
+  margin-bottom: 10px; /* 下端からの余白 */
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
 
 #button {
   margin-left: 10px;
@@ -95,14 +112,7 @@ body {
   cursor: pointer; 
 }
 
-#clear {
-  margin-left: 10px;
-  border: none;
-  outline: none;
-  background: transparent;
-  text-decoration: none;
-  cursor: pointer; 
-}
+
 
 #output {
   width: 300px;
