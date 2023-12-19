@@ -66,6 +66,7 @@ body {
   background: transparent;
   text-decoration: none;
   cursor: pointer; 
+  font-size: 100px;
 }
 
 
@@ -115,16 +116,20 @@ body {
 
 
 #output {
-  width: 300px;
+  width: auto;
   margin: 0px auto;
   padding: 5px;
-  font-size: 60px;
+  font-size: 30px;
   color: gray;
   border: none;
   color: black;
 }
-.- {
+#- {
   font-size: 60px;
+  border: none;
+  outline: none;
+  background: transparent;
+  text-decoration: none; 
 }
 
 
