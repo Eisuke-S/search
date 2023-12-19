@@ -75,17 +75,7 @@
     
 
     
-    function submitText() {
-      var inputValue = document.getElementById("input").value;
-
-      if (containsBlockedPhrase(inputValue)) {
-        alert("不適切な内容です。");
-      } else {
-        var output = document.getElementById("output");
-        output.textContent = inputValue;
-        button.click();
-      }
-    }
+    
 
     function containsBlockedPhrase(input) {
       return blockedPhrases.some(function(phrase) {
