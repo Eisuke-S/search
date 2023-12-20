@@ -148,12 +148,17 @@ body {
   color: black;
 }
 #return {
-  font-size: 60px;
-  border: none;
-  outline: none;
-  background: transparent;
-  text-decoration: none; 
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 43.3px solid red;
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: transparent;
 }
+
 
 
 button.+a {
