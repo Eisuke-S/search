@@ -12,6 +12,7 @@ body {
   position: relative;
 }
 .pop-upbtn {
+  font-size: 100px;
   border: none;
   outline: none;
   background: transparent;
