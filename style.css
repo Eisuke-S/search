@@ -147,6 +147,10 @@ body {
   border: none;
   color: black;
 }
+.bigreturn {
+    width: 50%; /* または必要な幅に調整 */
+    margin: 0 auto; /* 左右のマージンを自動で均等に設定して中央寄せ */
+}
 #return {
     width: 0;
     height: 0;
