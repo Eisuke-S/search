@@ -54,20 +54,40 @@ body {
 .biginput {
   position: relative;
 }
-
-#clear {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 10px; /* 右端からの余白 */
-  margin-bottom: 0px; /* 下端からの余白 */
-  border: none;
-  outline: none;
-  background: transparent;
-  text-decoration: none;
-  cursor: pointer; 
-  font-size: 100px;
+.clear {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 0px; /* 右端からの余白 */
+    margin-bottom: 0px; /* 下端からの余白 */
+    cursor: pointer; 
+    border: none;
+    outline: none;
+    text-decoration: none;
 }
+
+.clear::before,
+.clear::after {
+    content: '';
+    position: absolute;
+    height: 2px; /* 棒の太さ */
+    width: 50px; /* 棒の長さ */
+    background-color: red; /* ばつ印の色を設定 */
+    top: 24px; /* 棒の位置を中央に調整 */
+    left: 0;
+}
+
+.clear::before {
+    transform: rotate(45deg);
+}
+
+.clear::after {
+    transform: rotate(-45deg);
+}
+
+
 
 
 #button {
