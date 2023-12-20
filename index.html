@@ -46,14 +46,14 @@
     var input = document.getElementById("input");
     var button = document.getElementById("button");
     var aiButton = document.getElementById("ai");
-    
+    var clear = document.getElementById("output");
 
     function handleInput() {
       if (input.scrollHeight > input.clientHeight) {
         input.rows += 1;
       }
     }
-    document.getElementById('input-box').addEventListener('keydown', function(event) {
+    document.getElementById('input').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
             button.click();
