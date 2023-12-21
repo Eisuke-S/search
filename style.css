@@ -186,24 +186,24 @@ body {
 .return {
   width: 0;
   height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 50px solid #333; /* 三角形の色を適宜変更 */
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 87px solid #3498db; /* 適切な色を使用してください */
   position: relative;
 }
 
 .return::before {
-  content: '';
+  content: "";
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 40px solid #fff; /* 背景色を設定して三角形の色と同化させる */
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 43.5px solid white; /* 背景色と同じにすることで三角形が見えるようになります */
   position: absolute;
-  top: -48px; /* 調整して三角形を正確に配置 */
-  left: 2px; /* 調整して三角形を正確に配置 */
-  background-color: white;
+  top: -43.5px; /* 上三角形の高さの半分をマイナスすることで合わせます */
+  left: 0;
 }
+
 
 
 
