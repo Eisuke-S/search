@@ -184,14 +184,15 @@ body {
     background: transparent;
 }*/
 .return {
-  display: none;
   width: 0;
   height: 0;
-  border-left: 25px solid transparent;  /* 右側の斜辺 */
-  border-right: 25px solid transparent; /* 左側の斜辺 */
-  border-bottom: 50px solid #000;       /* 底辺（中が塗りつぶされる） */
-  background-color: #000;               /* 背景色を指定 */
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #000;
+  background-color: transparent;  /* 背景色を透明に設定 */
+  cursor: pointer;
 }
+
 
 
 
