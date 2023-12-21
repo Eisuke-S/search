@@ -171,7 +171,7 @@ body {
     width: 50%; /* または必要な幅に調整 */
     margin: 0 auto; /* 左右のマージンを自動で均等に設定して中央寄せ */
 }
-#return {
+/*#return {
     width: 0;
     height: 0;
     border-left: 100px solid transparent;
@@ -181,7 +181,28 @@ body {
     border: none;
     outline: none;
     background: transparent;
+}*/
+.return {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #333; /* 三角形の色を適宜変更 */
+  position: relative;
 }
+
+.return::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #fff; /* 背景色を設定して三角形の色と同化させる */
+  position: absolute;
+  top: -48px; /* 調整して三角形を正確に配置 */
+  left: 2px; /* 調整して三角形を正確に配置 */
+}
+
 
 
 
