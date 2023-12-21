@@ -188,7 +188,7 @@ body {
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 87px solid #3498db; /* 適切な色を使用してください */
+  border-bottom: 87px solid #fff; /* 適切な色を使用してください */
   position: relative;
 }
 
