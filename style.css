@@ -25,7 +25,7 @@ body {
 }
 
 .line {
-  width: 100px; /* 横線の幅 */
+  width: 100%; /* 横線の幅 */
   height: 5px;
   background-color: black;
   margin-right: 33.3px; /* 横線の間隔 */
