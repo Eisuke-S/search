@@ -187,23 +187,12 @@ body {
   display: none;
   width: 0;
   height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 87px solid #fff; /* 適切な色を使用してください */
-  position: relative;
+  border-left: 25px solid transparent;  /* 右側の斜辺 */
+  border-right: 25px solid transparent; /* 左側の斜辺 */
+  border-bottom: 50px solid #000;       /* 底辺（中が塗りつぶされる） */
+  background-color: #000;               /* 背景色を指定 */
 }
 
-.return::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 43.5px solid white; /* 背景色と同じにすることで三角形が見えるようになります */
-  position: absolute;
-  top: -43.5px; /* 上三角形の高さの半分をマイナスすることで合わせます */
-  left: 0;
-}
 
 
 
