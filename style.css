@@ -188,7 +188,7 @@ body {
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 87px solid #fff; /* 適切な色を使用してください */
+  border-top: 87px solid #fff; /* 適切な色を使用してください */
   position: relative;
 }
 
@@ -198,7 +198,7 @@ body {
   height: 0;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
-  border-bottom: 43.5px solid white; /* 背景色と同じにすることで三角形が見えるようになります */
+  border-top: 43.5px solid white; /* 背景色と同じにすることで三角形が見えるようになります */
   position: absolute;
   top: -43.5px; /* 上三角形の高さの半分をマイナスすることで合わせます */
   left: 0;
