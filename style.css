@@ -19,6 +19,10 @@ body {
   cursor: pointer;
   display: flex;
 }
+.pop-upcon {
+  width: 48px;
+  height: auto;
+}
 .btn {
   width: 100%;
   height: 100%;
