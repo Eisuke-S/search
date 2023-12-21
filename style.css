@@ -32,11 +32,11 @@ body {
 }
 
 .pop-upbtn::before {
-  top: -8px;
+  top: -33.3px;
 }
 
 .pop-upbtn::after {
-  bottom: -8px;
+  bottom: -33.3px;
 }
 
 
