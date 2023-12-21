@@ -201,6 +201,7 @@ body {
   position: absolute;
   top: -48px; /* 調整して三角形を正確に配置 */
   left: 2px; /* 調整して三角形を正確に配置 */
+  background-color: white;
 }
 
 
