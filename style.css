@@ -19,6 +19,10 @@ body {
   cursor: pointer;
   display: flex;
 }
+.btn {
+  width: 100%;
+  height: 100%;
+}
 
 .line {
   width: 100px; /* 横線の幅 */
