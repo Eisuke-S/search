@@ -28,13 +28,30 @@ body {
   height: 100%;
 }
 
-.line {
+.line1 {
+  position: relative;
+  top: auto;
   width: 100%; /* 横線の幅 */
   height: 5px;
   background-color: black;
-  margin-right: 33.3px; /* 横線の間隔 */
+  
 }
-
+.line2 {
+  position: relative;
+  top: -33.3px;
+  width: 100%; /* 横線の幅 */
+  height: 5px;
+  background-color: black;
+  
+}
+.line3 {
+  position: relative;
+  top: -66.6px;
+  width: 100%; /* 横線の幅 */
+  height: 5px;
+  background-color: black;
+  
+}
 .con {
   font-size: 60px;
 }
@@ -184,18 +201,7 @@ body {
 
 
 
-button.+a {
-  display: block;
-  width: 30px;
-  height: 30px;
-  font-size: 120%;
-  position: absolute;
-  top: 100;
-  left: 0;
-  margin: 1em 0;
-  border: none;
-  background-color: transparent;
-}
+
 
 /* The Modal (background) */
 .modal {
