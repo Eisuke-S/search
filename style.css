@@ -30,7 +30,7 @@ body {
 }
 
 .line1 {
-  position: relative;
+  position: absolute;
   top: -10px;
   width: 100%; /* 横線の幅 */
   height: 5px;
@@ -38,7 +38,7 @@ body {
   
 }
 .line2 {
-  position: relative;
+  position: absolute;
   top: -50%;
   width: 100%; /* 横線の幅 */
   height: 5px;
@@ -46,8 +46,8 @@ body {
   
 }
 .line3 {
-  position: relative;
-  bottom: -10px;
+  position: absolute;
+  bottom: 10px;
   width: 100%; /* 横線の幅 */
   height: 5px;
   background-color: black;
