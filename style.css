@@ -125,7 +125,7 @@ body {
 }
 
 #button {
-  margin-left: 10px;
+  margin-left: 0px;
   border-radius: 50px;
   border: none;
   outline: none;
@@ -138,7 +138,7 @@ body {
 #ai {
   background-image: url("ai.png");
   border: none;
-  margin-left: 10px;
+  margin-left: 0px;
   cursor: pointer;
   border: none;
   outline: none;
