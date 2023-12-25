@@ -70,7 +70,7 @@ body {
 .input-box {
   background-color: transparent;
   color: black;
-  width: 500px;
+  width: 100%;
   height: auto;
   border: double 5px gray;
   padding: 10px;
@@ -79,6 +79,7 @@ body {
 }
 .biginput {
   position: relative;
+  width: 52%;
 }
 .clear {
     width: 50px;
