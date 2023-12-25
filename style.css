@@ -53,7 +53,7 @@ body {
 
 .terms {
   font-size: 80px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kaisei HarunoUmi', serif;
   color: black;
   text-decoration: none;
 }
@@ -75,6 +75,7 @@ body {
   border: double 5px gray;
   padding: 10px;
   font-size: 60px;
+  font-family: 'Kaisei HarunoUmi', serif;
   border-radius: 60px;
 }
 .biginput {
@@ -175,6 +176,7 @@ body {
   margin: 0px auto;
   padding: 5px;
   font-size: 30px;
+  font-family: 'Kaisei HarunoUmi', serif;
   color: gray;
   border: none;
   color: black;
