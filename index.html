@@ -65,17 +65,7 @@
     document.getElementById('input').addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
-            var query = input.value;
-            var output = document.getElementById("output");
-            output.textContent = query;
-            input.value = "";
-            var element = document.getElementById('return');
-            if (element) {
-              element.style.display = 'block';
-            }
-            var url = "https://www.bing.com/search?q="+ query;
-            window.open(url, "_blank");
-          });
+            button.click();
         }
     });
 
