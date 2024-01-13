@@ -57,7 +57,6 @@ body {
   color: black;
   text-decoration: none;
 }
-/* 共通のスタイル */
 
 .container {
   display: flex;
@@ -65,32 +64,55 @@ body {
   align-items: center;
   height: 50%;
   width: 100%;
-  object-fit: contain; /* "size: contain" を "object-fit: contain" に修正 */
+  size: contain;
 }
 
-/* モバイル端末や縦長の持ち方のスタイル */
 
-@media only screen and (max-width: 767px) {
+
+/* 幅が 600px 以下の場合のスタイル */
+
+@media only screen and (max-width: 430px) {
   .container {
-    /* 追加または変更するスタイル */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
     width: 100%;
-    
+    size: contain;
   }
-
-  
-  
 }
 
-/* 横に持ったときのスタイル */
+/* 幅が 1200px 以下の場合のスタイル */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) and (max-width: 765px) {
   .container {
-    /* 追加または変更するスタイル */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
     width: 60%;
-  }
-  .input-box{
-    width: 120%;
-  }
+    size: contain;
+  }  
+}
+@media only screen and (min-width: 1000px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 60%;
+    size: contain;
+  }  
+}
+@media only screen and (min-width: 765px) and (max-width: 1000px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    size: contain;
+  }  
 }
 .input-box {
   background-color: transparent;
