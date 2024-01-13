@@ -1,8 +1,14 @@
-const fiveLetterWords = ["春風は", "夢見てた", "静寂な", "秋夜に", "朝陽みる","美しい"];
+const fiveLetterWords = ["春風は", "夢見てた", "静寂な", "秋夜に", "朝陽みる", "美しい"];
 const sevenLetterWords = ["月光舞", "星降る夜", "澄んだ空", "雲の影", "川の流れ"];
 
 function getRandomWord(wordList, syllables) {
     const filteredWords = wordList.filter(word => word.length === syllables);
+
+    if (filteredWords.length === 0) {
+        // エラーハンドリング: 適切な処理を追加するか、デフォルトの値を返すなど
+        return "No suitable word found";
+    }
+
     const randomIndex = Math.floor(Math.random() * filteredWords.length);
     return filteredWords[randomIndex];
 }
