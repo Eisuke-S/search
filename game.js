@@ -30,14 +30,11 @@ function moveBlock(block) {
       requestAnimationFrame(fall);
     } else {
       if (position >= 360) {
-        checkCollision(block);
+        checkGameOver(block);
         setTimeout(() => {
           block.remove();
           createBlock(); // Generate a new block after the current one reaches the bottom
         }, 0);
-      } else if (position <= 0) {
-        gameOver = true;
-        console.log('Game Over!');
       }
     }
   }
@@ -55,21 +52,10 @@ function updateScore() {
   scoreDisplay.textContent = `Score: ${score}`;
 }
 
-function checkCollision(block) {
-  const blocks = document.getElementsByClassName('block');
-  const currentBlockBottom = block.offsetTop + block.offsetHeight;
-
-  for (let i = 0; i < blocks.length - 1; i++) {
-    const otherBlock = blocks[i];
-    const otherBlockTop = otherBlock.offsetTop;
-
-    if (currentBlockBottom >= otherBlockTop) {
-      return; // Do not remove the block if it touches another block
-    }
-  }
-
+function checkGameOver(block) {
   const topLine = 50; // Adjust the top line position as needed
-  if (currentBlockBottom >= topLine) {
+  const blockBottom = block.offsetTop + block.offsetHeight;
+  if (blockBottom >= topLine) {
     gameOver = true;
     console.log('Game Over!');
   }
