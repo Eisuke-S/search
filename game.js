@@ -3,6 +3,7 @@ const gameBoard = document.getElementById('game-board');
 const scoreDisplay = document.getElementById('score');
 let score = 0;
 let gameOver = false;
+let fallSpeed = 2000; // Initial fall speed in milliseconds
 
 function createBlock() {
   if (!gameOver) {
@@ -50,6 +51,7 @@ function moveBlock(block) {
 
 function updateScore() {
   scoreDisplay.textContent = `Score: ${score.toFixed(2)}`;
+  increaseFallSpeed(); // Increase fall speed after each successful click
 }
 
 function checkGameOver(block) {
@@ -81,4 +83,10 @@ function calculateScore() {
   }
 }
 
-setInterval(createBlock, 1000);
+function increaseFallSpeed() {
+  if (fallSpeed > 500) {
+    fallSpeed -= 5; // Decrease fall speed by 5 milliseconds after each successful click
+  }
+}
+
+setInterval(createBlock, fallSpeed);
