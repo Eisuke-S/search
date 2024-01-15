@@ -70,4 +70,5 @@ function getRandomColor() {
   return color;
 }
 
+createBlock(); // Initial block creation
 setInterval(createBlock, 1000);
