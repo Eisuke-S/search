@@ -51,7 +51,7 @@ function moveBlock(block) {
       block.remove();
       createBlock(); // Generate a new block after the current one is removed
     }, 100); // Delay the removal to allow time for the transition to take effect
-    score += calculateScore();
+    score += getRandomScore(); // Add a random score between 10 and 15
     updateScore();
   });
 
@@ -81,15 +81,8 @@ function getRandomColor() {
   return color;
 }
 
-function calculateScore() {
-  const baseScore = 10;
-  const multiplier = 1.1;
-
-  if (score === 0) {
-    return baseScore;
-  } else {
-    return baseScore * Math.pow(multiplier, Math.floor(score / baseScore));
-  }
+function getRandomScore() {
+  return Math.floor(Math.random() * 6) + 10; // Random score between 10 and 15
 }
 
 function increaseFallSpeed() {
