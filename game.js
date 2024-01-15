@@ -32,10 +32,10 @@ function moveBlock(block) {
     } else {
       if (position >= 360) {
         checkGameOver(block);
-        setTimeout(() => {
+        requestAnimationFrame(() => {
           block.remove();
           createBlock(); // Generate a new block after the current one reaches the bottom
-        }, 0);
+        });
       }
     }
   }
@@ -87,6 +87,7 @@ function increaseFallSpeed() {
   if (fallSpeed > 500) {
     fallSpeed -= 5; // Decrease fall speed by 5 milliseconds after each successful click
   }
+  setTimeout(() => requestAnimationFrame(createBlock), fallSpeed); // Trigger next block creation
 }
 
-setInterval(createBlock, fallSpeed);
+createBlock(); // Start the game with the first block
