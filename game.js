@@ -1,6 +1,6 @@
 // script.js
 const gameBoard = document.getElementById('game-board');
-const scoreDisplay = document.getElementById('score-display');
+const scoreDisplay = document.getElementById('score');
 let score = 0;
 let gameOver = false;
 
@@ -41,7 +41,7 @@ function moveBlock(block) {
 
   block.addEventListener('click', () => {
     block.remove();
-    score++;
+    score += calculateScore();
     updateScore();
   });
 
@@ -49,7 +49,7 @@ function moveBlock(block) {
 }
 
 function updateScore() {
-  scoreDisplay.textContent = `Score: ${score}`;
+  scoreDisplay.textContent = `Score: ${score.toFixed(2)}`;
 }
 
 function checkGameOver(block) {
@@ -70,5 +70,15 @@ function getRandomColor() {
   return color;
 }
 
-createBlock(); // Initial block creation
+function calculateScore() {
+  const baseScore = 10;
+  const multiplier = 1.1;
+
+  if (score === 0) {
+    return baseScore;
+  } else {
+    return baseScore * Math.pow(multiplier, Math.floor(score / baseScore));
+  }
+}
+
 setInterval(createBlock, 1000);
