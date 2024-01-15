@@ -8,10 +8,6 @@ body {
   margin: 0;
 }
 
-#score-display {
-  margin-bottom: 10px;
-}
-
 #game-board {
   width: 200px;
   height: 400px;
@@ -22,4 +18,8 @@ body {
 .block {
   position: absolute;
   cursor: pointer;
+}
+
+#score {
+  margin-top: 10px;
 }
