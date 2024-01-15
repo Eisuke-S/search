@@ -1,5 +1,6 @@
 // script.js
 const gameBoard = document.getElementById('game-board');
+const scoreDisplay = document.getElementById('score-display');
 let score = 0;
 let gameOver = false;
 
@@ -29,11 +30,14 @@ function moveBlock(block) {
       requestAnimationFrame(fall);
     } else {
       if (position >= 360) {
-        checkGameOver(block);
+        checkCollision(block);
         setTimeout(() => {
           block.remove();
           createBlock(); // Generate a new block after the current one reaches the bottom
         }, 0);
+      } else if (position <= 0) {
+        gameOver = true;
+        console.log('Game Over!');
       }
     }
   }
@@ -48,13 +52,24 @@ function moveBlock(block) {
 }
 
 function updateScore() {
-  console.log(`Score: ${score}`);
+  scoreDisplay.textContent = `Score: ${score}`;
 }
 
-function checkGameOver(block) {
+function checkCollision(block) {
+  const blocks = document.getElementsByClassName('block');
+  const currentBlockBottom = block.offsetTop + block.offsetHeight;
+
+  for (let i = 0; i < blocks.length - 1; i++) {
+    const otherBlock = blocks[i];
+    const otherBlockTop = otherBlock.offsetTop;
+
+    if (currentBlockBottom >= otherBlockTop) {
+      return; // Do not remove the block if it touches another block
+    }
+  }
+
   const topLine = 50; // Adjust the top line position as needed
-  const blockBottom = block.offsetTop + block.offsetHeight;
-  if (blockBottom >= topLine) {
+  if (currentBlockBottom >= topLine) {
     gameOver = true;
     console.log('Game Over!');
   }
