@@ -4,6 +4,7 @@ const scoreDisplay = document.getElementById('score');
 let score = 0;
 let gameOver = false;
 let fallSpeed = 2000; // Initial fall speed in milliseconds
+let currentBlock = null;
 
 function createBlock() {
   if (!gameOver) {
@@ -15,6 +16,7 @@ function createBlock() {
     block.style.backgroundColor = getRandomColor();
     gameBoard.appendChild(block);
 
+    currentBlock = block;
     moveBlock(block);
   }
 }
@@ -22,26 +24,33 @@ function createBlock() {
 function moveBlock(block) {
   let position = 0;
   const speed = 5;
+  let isClicked = false;
 
   function fall() {
     position += speed;
     block.style.top = `${position}px`;
 
-    if (position < 400 && !gameOver) {
+    if (position < 400 && !gameOver && !isClicked) {
       requestAnimationFrame(fall);
     } else {
       if (position >= 360) {
         checkGameOver(block);
-        requestAnimationFrame(() => {
+        setTimeout(() => {
           block.remove();
           createBlock(); // Generate a new block after the current one reaches the bottom
-        });
+        }, 0);
       }
     }
   }
 
   block.addEventListener('click', () => {
-    block.remove();
+    isClicked = true;
+    block.style.transition = 'none'; // Stop the falling animation immediately on click
+    block.style.top = `${position}px`; // Set the final position to stop the block
+    setTimeout(() => {
+      block.remove();
+      createBlock(); // Generate a new block after the current one is removed
+    }, 100); // Delay the removal to allow time for the transition to take effect
     score += calculateScore();
     updateScore();
   });
@@ -87,7 +96,6 @@ function increaseFallSpeed() {
   if (fallSpeed > 500) {
     fallSpeed -= 5; // Decrease fall speed by 5 milliseconds after each successful click
   }
-  setTimeout(() => requestAnimationFrame(createBlock), fallSpeed); // Trigger next block creation
 }
 
 createBlock(); // Start the game with the first block
