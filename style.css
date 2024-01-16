@@ -93,6 +93,10 @@ body {
     width: 60%;
     size: contain;
   }  
+  .biginput {
+  position: relative;
+  width: 460px;
+  }
 }
 @media only screen and (min-width: 1000px) {
   .container {
@@ -102,6 +106,10 @@ body {
     height: 50%;
     width: 60%;
     size: contain;
+  }  
+  .biginput {
+  position: relative;
+  width: 460px;
   }  
 }
 @media only screen and (min-width: 765px) and (max-width: 1000px) {
