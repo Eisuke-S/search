@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+    #chessboard {
+      display: grid;
+      grid-template-columns: repeat(8, 50px);
+      grid-template-rows: repeat(8, 50px);
+    }
+    .square {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #eee;
+      border: 1px solid #aaa;
+      cursor: pointer;
+    }
+    .white {
+      background-color: #fff;
+    }
+  </style>
+  <script src="stockfish.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const board = document.getElementById('chessboard');
+      const stockfish = new Worker('stockfish.js'); // StockfishをWeb Workerとして読み込む
+
+      let game = new Chess();
+      let boardInstance = Chessboard('chessboard', {
+        draggable: true,
+        position: 'start',
+        onDragStart: onDragStart,
+        onDrop: onDrop,
+        onMouseoverSquare: onMouseoverSquare,
+        onMouseoutSquare: onMouseoutSquare
+      });
+
+      function onDragStart (source, piece, position, orientation) {
+        // ユーザーが駒を動かすときの処理
+        if (game.in_checkmate() === true || game.in_draw() === true ||
+            piece.search(/^b/) !== -1) {
+          return false;
+        }
+      }
+
+      function makeBestMove () {
+        // Stockfishに最善手を尋ねる
+        let position = game.fen();
+        stockfish.postMessage('position fen ' + position);
+        stockfish.postMessage('go depth 5');
+      }
+
+      stockfish.onmessage = function (event) {
+        if (event && event.data && typeof event.data === 'string') {
+          let data = event.data.trim();
+          if (data.startsWith('bestmove')) {
+            let bestMove = data.split(' ')[1];
+            game.ugly_move(bestMove);
+            boardInstance.position(game.fen());
+            if (game.in_checkmate() === true || game.in_draw() === true ||
+                game.game_over() === true) {
+              alert('Game Over');
+            }
+          }
+        }
+      };
+
+      function onDrop (source, target) {
+        // ユーザーが駒をドロップしたときの処理
+        let move = game.ugly_move({ from: source, to: target, promotion: 'q' });
+        removeGreySquares();
+        if (game.in_checkmate() === true || game.in_draw() === true ||
+            game.game_over() === true) {
+          alert('Game Over');
+        }
+        window.setTimeout(makeBestMove, 250);
+      }
+
+      function onMouseoverSquare(square, piece) {
+        let moves = game.legal_moves({ square: square, verbose: true });
+        if (moves.length === 0) return;
+
+        greySquare(square);
+        for (let i = 0; i < moves.length; i++) {
+          greySquare(moves[i].to);
+        }
+      }
+
+      function onMouseoutSquare(square, piece) {
+        removeGreySquares();
+      }
+
+      function removeGreySquares() {
+        board.querySelectorAll('.square-55d63').forEach((el) => {
+          el.style.backgroundColor = '';
+        });
+      }
+
+      function greySquare(square) {
+        let squareEl = board.querySelector('.square-' + square);
+        if (squareEl === null) return;
+
+        let background = '#a9a9a9';
+        if (squareEl.classList.contains('black-3c85d') === true) {
+          background = '#696969';
+        }
+
+        squareEl.style.backgroundColor = background;
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="chessboard"></div>
+</body>
+</html>
