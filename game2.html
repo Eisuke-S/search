@@ -6,114 +6,106 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-    }
-    #chessboard {
-      display: grid;
-      grid-template-columns: repeat(8, 50px);
-      grid-template-rows: repeat(8, 50px);
-    }
-    .square {
-      width: 50px;
-      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #eee;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #chessboard {
+      width: 400px;
+      height: 400px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 1px;
+    }
+
+    .square {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
       border: 1px solid #aaa;
+      box-sizing: border-box;
       cursor: pointer;
     }
+
     .white {
       background-color: #fff;
     }
+
+    .black {
+      background-color: #333;
+      color: #fff;
+    }
   </style>
-  <script src="stockfish.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const board = document.getElementById('chessboard');
-      const stockfish = new Worker('stockfish.js'); // StockfishをWeb Workerとして読み込む
+      const pieces = [
+        '♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜',
+        '♟', '♟', '♟', '♟', '♟', '♟', '♟', '♟',
+        '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '',
+        '♙', '♙', '♙', '♙', '♙', '♙', '♙', '♙',
+        '♖', '♘', '♗', '♕', '♔', '♗', '♘', '♖'
+      ];
 
-      let game = new Chess();
-      let boardInstance = Chessboard('chessboard', {
-        draggable: true,
-        position: 'start',
-        onDragStart: onDragStart,
-        onDrop: onDrop,
-        onMouseoverSquare: onMouseoverSquare,
-        onMouseoutSquare: onMouseoutSquare
-      });
-
-      function onDragStart (source, piece, position, orientation) {
-        // ユーザーが駒を動かすときの処理
-        if (game.in_checkmate() === true || game.in_draw() === true ||
-            piece.search(/^b/) !== -1) {
-          return false;
+      function createBoard() {
+        for (let i = 0; i < pieces.length; i++) {
+          const square = document.createElement('div');
+          square.className = 'square ' + (i % 16 < 8 ? 'white' : 'black');
+          square.textContent = pieces[i];
+          square.addEventListener('click', () => handleSquareClick(i));
+          board.appendChild(square);
         }
       }
 
-      function makeBestMove () {
-        // Stockfishに最善手を尋ねる
-        let position = game.fen();
-        stockfish.postMessage('position fen ' + position);
-        stockfish.postMessage('go depth 5');
+      function handleSquareClick(index) {
+        // プレーヤーの手番の処理
+        console.log('Player moved:', index);
+        updateBoard();
+        makeComputerMove();
       }
 
-      stockfish.onmessage = function (event) {
-        if (event && event.data && typeof event.data === 'string') {
-          let data = event.data.trim();
-          if (data.startsWith('bestmove')) {
-            let bestMove = data.split(' ')[1];
-            game.ugly_move(bestMove);
-            boardInstance.position(game.fen());
-            if (game.in_checkmate() === true || game.in_draw() === true ||
-                game.game_over() === true) {
-              alert('Game Over');
-            }
+      function makeComputerMove() {
+        // コンピューターのランダムな手を選択
+        const legalMoves = getLegalMoves();
+        const randomMove = legalMoves[Math.floor(Math.random() * legalMoves.length)];
+        applyComputerMove(randomMove);
+      }
+
+      function getLegalMoves() {
+        // すべての合法手を取得する仮の実装
+        const legalMoves = [];
+        for (let i = 0; i < pieces.length; i++) {
+          if (pieces[i] !== '') {
+            legalMoves.push(i);
           }
         }
-      };
-
-      function onDrop (source, target) {
-        // ユーザーが駒をドロップしたときの処理
-        let move = game.ugly_move({ from: source, to: target, promotion: 'q' });
-        removeGreySquares();
-        if (game.in_checkmate() === true || game.in_draw() === true ||
-            game.game_over() === true) {
-          alert('Game Over');
-        }
-        window.setTimeout(makeBestMove, 250);
+        return legalMoves;
       }
 
-      function onMouseoverSquare(square, piece) {
-        let moves = game.legal_moves({ square: square, verbose: true });
-        if (moves.length === 0) return;
-
-        greySquare(square);
-        for (let i = 0; i < moves.length; i++) {
-          greySquare(moves[i].to);
-        }
+      function applyComputerMove(move) {
+        // コンピューターの手番の処理
+        console.log('Computer moved:', move);
+        pieces[move] = pieces[move - 16]; // 仮の実装。ランダムな移動
+        pieces[move - 16] = '';
+        updateBoard();
       }
 
-      function onMouseoutSquare(square, piece) {
-        removeGreySquares();
+      function updateBoard() {
+        // ボードの状態を更新
+        board.innerHTML = '';
+        createBoard();
       }
 
-      function removeGreySquares() {
-        board.querySelectorAll('.square-55d63').forEach((el) => {
-          el.style.backgroundColor = '';
-        });
-      }
-
-      function greySquare(square) {
-        let squareEl = board.querySelector('.square-' + square);
-        if (squareEl === null) return;
-
-        let background = '#a9a9a9';
-        if (squareEl.classList.contains('black-3c85d') === true) {
-          background = '#696969';
-        }
-
-        squareEl.style.backgroundColor = background;
-      }
+      createBoard();
     });
   </script>
 </head>
