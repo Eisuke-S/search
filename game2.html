@@ -1,115 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    #chessboard {
-      width: 400px;
-      height: 400px;
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 1px;
-    }
-
-    .square {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5em;
-      border: 1px solid #aaa;
-      box-sizing: border-box;
-      cursor: pointer;
-    }
-
-    .white {
-      background-color: #fff;
-    }
-
-    .black {
-      background-color: #333;
-      color: #fff;
-    }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const board = document.getElementById('chessboard');
-      const pieces = [
-        '♜', '♞', '♝', '♛', '♚', '♝', '♞', '♜',
-        '♟', '♟', '♟', '♟', '♟', '♟', '♟', '♟',
-        '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '',
-        '♙', '♙', '♙', '♙', '♙', '♙', '♙', '♙',
-        '♖', '♘', '♗', '♕', '♔', '♗', '♘', '♖'
-      ];
-
-      function createBoard() {
-        for (let i = 0; i < pieces.length; i++) {
-          const square = document.createElement('div');
-          square.className = 'square ' + (i % 16 < 8 ? 'white' : 'black');
-          square.textContent = pieces[i];
-          square.addEventListener('click', () => handleSquareClick(i));
-          board.appendChild(square);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オセロゲーム</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #00B140;
         }
-      }
 
-      function handleSquareClick(index) {
-        // プレーヤーの手番の処理
-        console.log('Player moved:', index);
-        updateBoard();
-        makeComputerMove();
-      }
-
-      function makeComputerMove() {
-        // コンピューターのランダムな手を選択
-        const legalMoves = getLegalMoves();
-        const randomMove = legalMoves[Math.floor(Math.random() * legalMoves.length)];
-        applyComputerMove(randomMove);
-      }
-
-      function getLegalMoves() {
-        // すべての合法手を取得する仮の実装
-        const legalMoves = [];
-        for (let i = 0; i < pieces.length; i++) {
-          if (pieces[i] !== '') {
-            legalMoves.push(i);
-          }
+        #board {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            gap: 2px;
+            border: 2px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        return legalMoves;
-      }
 
-      function applyComputerMove(move) {
-        // コンピューターの手番の処理
-        console.log('Computer moved:', move);
-        pieces[move] = pieces[move - 16]; // 仮の実装。ランダムな移動
-        pieces[move - 16] = '';
-        updateBoard();
-      }
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #8DB600;
+            position: relative;
+        }
 
-      function updateBoard() {
-        // ボードの状態を更新
-        board.innerHTML = '';
-        createBoard();
-      }
+        .black::before {
+            content: '●';
+            color: #000;
+        }
 
-      createBoard();
-    });
-  </script>
+        .white::before {
+            content: '●';
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-  <div id="chessboard"></div>
+    <div id="board"></div>
+
+    <script>
+        const boardElement = document.getElementById('board');
+        const board = [];
+        const size = 8;
+        const player = 'black';
+        const computer = 'white';
+
+        for (let i = 0; i < size; i++) {
+            board[i] = [];
+            for (let j = 0; j < size; j++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.dataset.row = i;
+                cell.dataset.col = j;
+                cell.addEventListener('click', () => handleClick(i, j));
+                boardElement.appendChild(cell);
+                board[i][j] = cell;
+            }
+        }
+
+        function handleClick(row, col) {
+            const currentCell = board[row][col];
+
+            if (currentCell.classList.contains(player) || currentCell.classList.contains(computer)) {
+                return;
+            }
+
+            if (isValidMove(row, col, player)) {
+                makeMove(row, col, player);
+
+                // コンピューターの手を計算
+                const computerMove = getBestMove();
+                makeMove(computerMove.row, computerMove.col, computer);
+            }
+        }
+
+        function isValidMove(row, col, currentPlayer) {
+            // 有効な手かどうかを判定するロジックを追加
+            return true;
+        }
+
+        function makeMove(row, col, currentPlayer) {
+            const currentCell = board[row][col];
+            currentCell.classList.add(currentPlayer);
+        }
+
+        function getBestMove() {
+            // ミニマックス法などを使用して、コンピューターの最善手を計算
+            // ここに適切なアルゴリズムを実装
+            return { row: 0, col: 0 };
+        }
+    </script>
 </body>
 </html>
