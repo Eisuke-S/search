@@ -60,11 +60,13 @@ body {
 
 .container {
   display: flex;
+  disply: inline-block;
   justify-content: center;
   align-items: center;
   height: 50%;
   width: 100%;
   size: contain;
+  text-align: center;
 }
 
 
