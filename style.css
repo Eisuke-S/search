@@ -60,13 +60,11 @@ body {
 
 .container {
   display: flex;
-  disply: inline-block;
   justify-content: center;
   align-items: center;
   height: 50%;
   width: 100%;
   size: contain;
-  text-align: center;
 }
 
 
@@ -86,23 +84,42 @@ body {
 
 /* 幅が 1200px 以下の場合のスタイル */
 
-@media only screen and (min-width: 600px) and (max-width: 765px) {
-  .container {
-    width: 40%;
-  }  
+@media only screen and (min-width: 600px) and (max-width: 765px) { 
   .biginput {
   position: relative;
-  width: 460px;
+    width: 80%;
+  }
+  #button {
+    width: 5%
+  }
+  #ai {
+    width: 5%;
+  }
+  #photo {
+    width: 5%;
+  }
+  #translate {
+    width: 5%;
   }
 }
 @media only screen and (min-width: 1000px) {
-  .container {
-    width: 40%;
-  }  
   .biginput {
   position: relative;
-  width: 460px;
-  }  
+    width: 80%;
+  }
+  #button {
+    width: 5%
+  }
+  #ai {
+    width: 5%;
+  }
+  #photo {
+    width: 5%;
+  }
+  #translate {
+    width: 5%;
+  }
+    
 }
 @media only screen and (min-width: 765px) and (max-width: 1000px) {
   .container {
@@ -214,6 +231,7 @@ body {
   background: transparent;
   text-decoration: none;
   cursor: pointer; 
+  padding-left: 10px;
 }
 
 
