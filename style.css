@@ -86,12 +86,7 @@ body {
 
 @media only screen and (min-width: 600px) and (max-width: 765px) {
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    width: 60%;
-    size: contain;
+    width: 40%;
   }  
   .biginput {
   position: relative;
@@ -100,12 +95,7 @@ body {
 }
 @media only screen and (min-width: 1000px) {
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    width: 60%;
-    size: contain;
+    width: 40%;
   }  
   .biginput {
   position: relative;
