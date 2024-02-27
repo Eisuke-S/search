@@ -145,6 +145,7 @@ body {
 .biginput {
   position: relative;
   width: 52%;
+  padding-right: 10px;
 }
 .clear {
     width: 50px;
