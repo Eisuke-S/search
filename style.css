@@ -344,6 +344,9 @@ p.con {
    height: 300px;
 }
 .space {
+    display: block;
+    background-color: #fff;
     width: 100%;
     height: 600px; 
+  
 }
