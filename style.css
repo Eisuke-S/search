@@ -335,6 +335,9 @@ p.con {
 }
 .form {
    width: 100%;
-　 position: fixed;/*←絶対位置*/
-   bottom: 0; /*下に固定*/
+   height: 300px;
+}
+.space {
+    width: 100%;
+    height: 600px; 
 }
