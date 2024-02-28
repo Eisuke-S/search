@@ -89,6 +89,9 @@ body {
   position: relative;
     width: 80%;
   }
+  .input {
+    font-size: 40px;
+  }
   #button {
     width: 5%
   }
@@ -104,8 +107,11 @@ body {
 }
 @media only screen and (min-width: 1000px) {
   .biginput {
-  position: relative;
+    position: relative;
     width: 80%;
+  }
+  .input {
+    font-size: 40px;
   }
   #button {
     width: 5%
@@ -204,7 +210,7 @@ body {
 #ai {
   background-image: url("ai.png");
   border: none;
-  margin-left: 0px;
+  padding: 10px;
   cursor: pointer;
   border: none;
   outline: none;
