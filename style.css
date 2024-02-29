@@ -11,7 +11,9 @@ body {
   background-color: white;
   position: relative;
 }
-
+.menu {
+  display: flex;
+}
 /* スタイルの追加 */
 .pop-upbtn {
   justify-content: space-between;
