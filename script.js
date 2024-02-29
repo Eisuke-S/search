@@ -13,11 +13,12 @@ function handleInput() {
     if (rowCount < prevRowCount) {
         input.rows = rowCount > 1 ? rowCount : 1;
     } else {
-        input.rows += 1;
+        input.rows = rowCount + 1;
     }
 
     prevRowCount = rowCount;
 }
+
 
 document.getElementById('input').addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
