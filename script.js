@@ -11,10 +11,10 @@ function handleInput() {
 
     if (rowCount < prevRowCount) {
         input.rows = rowCount > 1 ? rowCount : 1;
-    } else if (rowCount > prevRowCount && rowCount <= 3) {
-        input.rows = rowCount + 1;
+    } else if (rowCount > 3) {
+        input.rows = 3;
     } else {
-        // 行数が変化しないか、3行以上の場合は何もしない
+        input.rows = rowCount;
     }
 
     prevRowCount = rowCount;
@@ -23,6 +23,7 @@ function handleInput() {
     input.style.height = "auto";
     input.style.height = (input.scrollHeight) + "px";
 }
+
 
 
 
