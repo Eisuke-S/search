@@ -19,15 +19,16 @@ function handleInput() {
 
     prevRowCount = rowCount;
 
-    // 三行以上の場合は枠の高さを固定する
-    if (rowCount >= 3) {
-        input.style.overflowY = "scroll";
-        input.style.height = "calc(3em + 2px)"; // 3行目までの高さに固定する
-    } else {
+    // 行数が3行以下の場合は枠の高さを調整
+    if (rowCount <= 3) {
         input.style.overflowY = "hidden";
         input.style.height = "auto";
+    } else {
+        input.style.overflowY = "scroll";
+        input.style.height = "calc(3em + 2px)"; // 3行目までの高さに固定する
     }
 }
+
 
 
 document.getElementById('input').addEventListener('keydown', function(event) {
