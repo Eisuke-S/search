@@ -3,10 +3,20 @@ var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
 
+
+var prevRowCount = 1;
+
 function handleInput() {
-  if (input.scrollHeight > input.clientHeight) {
-    input.rows += 1;
-  }
+    var input = document.getElementById("input");
+    var rowCount = input.value.split("\n").length;
+
+    if (rowCount < prevRowCount) {
+        input.rows = rowCount > 1 ? rowCount : 1;
+    } else {
+        input.rows += 1;
+    }
+
+    prevRowCount = rowCount;
 }
 
 document.getElementById('input').addEventListener('keydown', function(event) {
