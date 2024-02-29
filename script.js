@@ -2,9 +2,6 @@ var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
-
-var prevRowCount = 1;
-
 function handleInput() {
     var input = document.getElementById("input");
     var rowCount = input.value.split("\n").length;
@@ -26,14 +23,11 @@ function handleInput() {
     // 最大で3行の高さに制限
     if (input.rows >= 3) {
         input.style.overflowY = "scroll";
-        input.style.height <= "calc(3em + 2px)"; 
+        input.style.height = "calc(3em + 2px)";
     } else {
         input.style.overflowY = "hidden";
     }
 }
-
-
-
 
 
 document.getElementById('input').addEventListener('keydown', function(event) {
