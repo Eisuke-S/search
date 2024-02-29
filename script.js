@@ -3,7 +3,6 @@ var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
 
-
 var prevRowCount = 1;
 
 function handleInput() {
@@ -27,12 +26,8 @@ function handleInput() {
     } else {
         input.style.overflowY = "hidden";
         input.style.height = "auto";
-        input.style.height = (input.scrollHeight) + "px";
     }
 }
-
-
-
 
 
 document.getElementById('input').addEventListener('keydown', function(event) {
