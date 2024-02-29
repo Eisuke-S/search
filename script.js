@@ -12,12 +12,15 @@ function handleInput() {
 
     if (rowCount < prevRowCount) {
         input.rows = rowCount > 1 ? rowCount : 1;
-    } else {
+    } else if (rowCount > prevRowCount) {
         input.rows = rowCount + 1;
+    } else {
+        // 行数が変化しない場合は何もしない
     }
 
     prevRowCount = rowCount;
 }
+
 
 
 document.getElementById('input').addEventListener('keydown', function(event) {
