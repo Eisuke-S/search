@@ -246,37 +246,6 @@ body {
 
 
 
-#output {
-  width: auto;
-  margin: 0px auto;
-  padding: 5px;
-  font-size: 30px;
-  font-family: 'Kaisei HarunoUmi', serif;
-  color: gray;
-  border: none;
-  color: black;
-}
-.bigreturn {
-    width: 50%; /* または必要な幅に調整 */
-    margin: 0 auto; /* 左右のマージンを自動で均等に設定して中央寄せ */
-}
-
-.return {
-  display: none;
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 50px solid #000;
-  background-color: transparent;  /* 背景色を透明に設定 */
-  cursor: pointer;
-}
-
-
-
-
-
-
 
 
 
