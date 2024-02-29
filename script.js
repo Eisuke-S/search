@@ -24,9 +24,9 @@ function handleInput() {
     input.style.height = (input.scrollHeight) + "px";
 
     // 最大で3行の高さに制限
-    if (input.rows > 3) {
+    if (input.rows >= 3) {
         input.style.overflowY = "scroll";
-        input.style.height = "calc(3em + 2px)"; // 3行目までの高さに固定する
+        input.style.height <= "calc(3em + 2px)"; 
     } else {
         input.style.overflowY = "hidden";
     }
