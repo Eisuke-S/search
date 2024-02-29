@@ -19,7 +19,12 @@ function handleInput() {
     }
 
     prevRowCount = rowCount;
+
+    // 枠の高さも調整
+    input.style.height = "auto";
+    input.style.height = (input.scrollHeight) + "px";
 }
+
 
 
 
