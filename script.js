@@ -22,6 +22,14 @@ function handleInput() {
     // 枠の高さも調整
     input.style.height = "auto";
     input.style.height = (input.scrollHeight) + "px";
+
+    // 最大で3行の高さに制限
+    if (input.rows > 3) {
+        input.style.overflowY = "scroll";
+        input.style.height = "calc(3em + 2px)"; // 3行目までの高さに固定する
+    } else {
+        input.style.overflowY = "hidden";
+    }
 }
 
 
