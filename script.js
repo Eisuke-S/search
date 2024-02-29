@@ -85,9 +85,3 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
-
-var mysiteButton = document.getElementById("mysiteBtn");
-mysiteButton.addEventListener("click", function() {
-  var url = "https://my-song.my.canva.site/app";
-  window.open(url, "_blank");
-});
