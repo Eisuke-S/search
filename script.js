@@ -20,10 +20,17 @@ function handleInput() {
 
     prevRowCount = rowCount;
 
-    // 枠の高さも調整
-    input.style.height = "auto";
-    input.style.height = (input.scrollHeight) + "px";
+    // 三行以上の場合は枠の高さを固定する
+    if (rowCount >= 3) {
+        input.style.overflowY = "scroll";
+        input.style.height = "calc(3em + 2px)"; // 3行目までの高さに固定する
+    } else {
+        input.style.overflowY = "hidden";
+        input.style.height = "auto";
+        input.style.height = (input.scrollHeight) + "px";
+    }
 }
+
 
 
 
