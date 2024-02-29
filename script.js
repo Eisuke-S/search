@@ -14,12 +14,20 @@ function handleInput() {
     } else if (rowCount > prevRowCount) {
         input.rows = rowCount + 1;
     } else {
-        // 行数が変化しない場合は何もしない
+        // 行数が変化しない場合は一行分の文字が削除されたかどうかを確認
+        var prevHeight = input.style.height;
+        input.style.height = "auto";
+        var newHeight = input.scrollHeight;
+        input.style.height = prevHeight;
+
+        if (newHeight < prevHeight) {
+            input.rows -= 1;
+        }
     }
 
     prevRowCount = rowCount;
 
-    // 行数が3行以下の場合は枠の高さを調整
+    // 三行以下の場合は枠の高さを調整
     if (rowCount <= 3) {
         input.style.overflowY = "hidden";
         input.style.height = "auto";
@@ -28,6 +36,7 @@ function handleInput() {
         input.style.height = "calc(3em + 2px)"; // 3行目までの高さに固定する
     }
 }
+
 
 
 
