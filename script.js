@@ -11,30 +11,17 @@ function handleInput() {
 
     if (rowCount < prevRowCount) {
         input.rows = rowCount > 1 ? rowCount : 1;
-    } else if (rowCount > prevRowCount) {
+    } else if (rowCount > prevRowCount && rowCount <= 3) {
         input.rows = rowCount + 1;
     } else {
-        // 行数が変化しない場合は一行分の文字が削除されたかどうかを確認
-        var prevHeight = input.style.height;
-        input.style.height = "auto";
-        var newHeight = input.scrollHeight;
-        input.style.height = prevHeight;
-
-        if (newHeight < prevHeight) {
-            input.rows -= 1;
-        }
+        // 行数が変化しないか、3行以上の場合は何もしない
     }
 
     prevRowCount = rowCount;
 
-    // 三行以下の場合は枠の高さを調整
-    if (rowCount <= 3) {
-        input.style.overflowY = "hidden";
-        input.style.height = "auto";
-    } else {
-        input.style.overflowY = "scroll";
-        input.style.height = "calc(3em + 2px)"; // 3行目までの高さに固定する
-    }
+    // 枠の高さも調整
+    input.style.height = "auto";
+    input.style.height = (input.scrollHeight) + "px";
 }
 
 
