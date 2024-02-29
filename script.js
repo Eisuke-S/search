@@ -18,8 +18,6 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 
 button.addEventListener("click", function() {
   var query = input.value;
-  var output = document.getElementById("output");
-  output.textContent = query;
   input.value = "";
   var element = document.getElementById('return');
   if (element) {
@@ -31,8 +29,6 @@ button.addEventListener("click", function() {
 
 aiButton.addEventListener("click", function() {
   var query = input.value;
-  var output = document.getElementById("output");
-  output.textContent = query;
   input.value = "";
   var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
   window.open(url, "_blank");
@@ -40,8 +36,6 @@ aiButton.addEventListener("click", function() {
 
 photo.addEventListener("click", function() {
   var query = input.value;
-  var output = document.getElementById("output");
-  output.textContent = query;
   input.value = "";
   var url = "https://www.google.com/search?q=" + query + "&sca_esv=575726020&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiV4Oiu4YuCAxWjgVYBHfmrDZQQ_AUoAXoECAMQAw&biw=1482&bih=750&dpr=1.25";
   window.open(url, "_blank");
@@ -49,8 +43,6 @@ photo.addEventListener("click", function() {
 
 translate.addEventListener("click", function() {
   var query = input.value;
-  var output = document.getElementById("output");
-  output.textContent = query;
   input.value = "";
   var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
   window.open(url, "_blank");
@@ -62,11 +54,6 @@ clear.addEventListener("click", function() {
   input.rows = 1;
 });
 
-document.getElementById("return").addEventListener("click", function() {
-  input.blur();
-  var output = document.getElementById("output");
-  input.value = output.textContent;
-});
 
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
