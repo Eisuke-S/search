@@ -93,3 +93,43 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
+function addParagraph() {
+    // 入力フィールドからテキストを取得
+    var text = document.getElementById("Input").value;
+    
+    // 新しいpタグを作成し、テキストを設定
+    var paragraph = document.createElement("p");
+    paragraph.innerText = text;
+    
+    // pタグにクラスを追加
+    paragraph.classList.add("paragraphClass");
+    
+    // 新しいボタンタグを作成
+    var button = document.createElement("button");
+    button.innerText = "Add to Input";
+    
+    // 新しいダイブタグを作成
+    var div = document.createElement("div");
+    
+    // pタグとボタンタグをダイブタグの中にまとめる
+    div.appendChild(paragraph);
+    div.appendChild(button);
+    
+    // ダイブタグをページに追加
+    document.getElementById("paragraphContainer").appendChild(div);
+    
+    // ボタンがクリックされたときの動作を設定
+    button.onclick = function() {
+        // ボタンが含まれるダイブタグを取得
+        var parentDiv = this.parentElement;
+        
+        // ダイブタグ内のpタグの内容を取得
+        var paragraphContent = parentDiv.querySelector("p").innerText;
+        
+        // インプットタグにpタグの内容を書き加える
+        document.getElementById("Input").value += paragraphContent;
+    };
+    
+    // 入力フィールドをクリア
+    document.getElementById("Input").value = "";
+}
