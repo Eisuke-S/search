@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Paragraph</title>
+</head>
+<body>
+
+<input type="text" id="textInput">
+<button onclick="addParagraph()">Add Paragraph</button>
+
+<div id="paragraphContainer"></div>
+
+<script>
+function addParagraph() {
+    // 入力フィールドからテキストを取得
+    var text = document.getElementById("textInput").value;
+    
+    // 新しいpタグを作成し、テキストを設定
+    var paragraph = document.createElement("p");
+    paragraph.innerText = text;
+    
+    // pタグにクラスを追加
+    paragraph.classList.add("paragraphClass");
+    
+    // pタグをページに追加
+    document.getElementById("paragraphContainer").appendChild(paragraph);
+    
+    // 入力フィールドをクリア
+    document.getElementById("textInput").value = "";
+}
+</script>
+
+</body>
+</html>
