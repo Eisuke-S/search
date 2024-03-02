@@ -36,62 +36,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
     button.click();
   }
 });
-
-button.addEventListener("click", function() {
-  var query = input.value;
-  
-  
-  
-  var url = "https://www.google.com/search?q=" + query;
-  window.open(url, "_blank");
-});
-
-aiButton.addEventListener("click", function() {
-  var query = input.value;
-
-  var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
-  window.open(url, "_blank");
-});
-
-photo.addEventListener("click", function() {
-  var query = input.value;
-  
-  var url = "https://www.google.com/search?q=" + query + "&sca_esv=575726020&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiV4Oiu4YuCAxWjgVYBHfmrDZQQ_AUoAXoECAMQAw&biw=1482&bih=750&dpr=1.25";
-  window.open(url, "_blank");
-});
-
-translate.addEventListener("click", function() {
-  var query = input.value;
-  
-  var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
-  window.open(url, "_blank");
-});
-
-clear.addEventListener("click", function() {
-  input.blur();
-  input.value = "";
-  input.rows = 1;
-});
-
-
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-function addParagraph() {
+button.onclick = function addParagraph() {
     // 入力フィールドからテキストを取得
     var text = document.getElementById("input").value;
     
@@ -128,6 +73,57 @@ function addParagraph() {
         document.getElementById("input").value += paragraphContent;
      };
     
-    // 入力フィールドをクリア
-    document.getElementById("input").value = "";
+    
 }
+button.addEventListener("click", function() {
+  var query = input.value;
+  var url = "https://www.google.com/search?q=" + query;
+  document.getElementById("input").value = "";
+  window.open(url, "_blank");
+});
+
+aiButton.addEventListener("click", function() {
+  var query = input.value;
+  var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
+  document.getElementById("input").value = "";
+  window.open(url, "_blank");
+});
+
+photo.addEventListener("click", function() {
+  var query = input.value;
+  var url = "https://www.google.com/search?q=" + query + "&sca_esv=575726020&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiV4Oiu4YuCAxWjgVYBHfmrDZQQ_AUoAXoECAMQAw&biw=1482&bih=750&dpr=1.25";
+  document.getElementById("input").value = "";
+  window.open(url, "_blank");
+});
+
+translate.addEventListener("click", function() {
+  var query = input.value;
+  var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
+  document.getElementById("input").value = ""; 
+  window.open(url, "_blank");
+});
+
+clear.addEventListener("click", function() {
+  input.blur();
+  input.value = "";
+  input.rows = 1;
+});
+
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+};
+
+span.onclick = function() {
+  modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
