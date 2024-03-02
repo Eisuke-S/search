@@ -126,7 +126,7 @@ function addParagraph() {
         
         // インプットタグにpタグの内容を書き加える
         document.getElementById("input").value += paragraphContent;
-    };
+     };
     
     // 入力フィールドをクリア
     document.getElementById("input").value = "";
