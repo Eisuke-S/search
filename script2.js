@@ -69,7 +69,7 @@ button.onclick = function addParagraph() {
         
         // ダイブタグ内のpタグの内容を取得
         var paragraphContent = parentDiv.querySelector("p").innerText;
-        
+        input.value = "";
         // インプットタグにpタグの内容を書き加える
         document.getElementById("input").value += paragraphContent;
      };
