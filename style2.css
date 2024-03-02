@@ -100,43 +100,43 @@ body {
 @media only screen and (min-width: 600px) and (max-width: 765px) { 
   .biginput {
   position: relative;
-    width: 80%;
+    width: 60%;
   }
   .input {
     font-size: 40px;
   }
   #button {
-    width: 5%
+    width: 10%
   }
   #ai {
-    width: 5%;
+    width: 10%;
   }
   #photo {
-    width: 5%;
+    width: 10%;
   }
   #translate {
-    width: 5%;
+    width: 10%;
   }
 }
 @media only screen and (min-width: 1000px) {
   .biginput {
     position: relative;
-    width: 80%;
+    width: 60%;
   }
   .input {
     font-size: 40px;
   }
   #button {
-    width: 5%
+    width: 10%
   }
   #ai {
-    width: 5%;
+    width: 10%;
   }
   #photo {
-    width: 5%;
+    width: 10%;
   }
   #translate {
-    width: 5%;
+    width: 10%;
   }
     
 }
@@ -154,7 +154,7 @@ body {
   background-color: transparent;
   color: black;
   width: 100%;
-  height: auto;
+  height: 1.2em;
   border: double 5px gray;
   padding: 10px;
   font-size: 60px;
@@ -339,7 +339,7 @@ p.con {
     background-color: black;
     color: #fff;
   }
-  .input {
+  .input-box {
     background-color: black;
     color: #fff;
     border-color: white;
