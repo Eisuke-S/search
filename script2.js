@@ -77,29 +77,29 @@ button.onclick = function addParagraph() {
 }
 button.addEventListener("click", function() {
   var query = input.value;
+  input.value = "";
   var url = "https://www.google.com/search?q=" + query;
-  document.getElementById("input").value = "";
   window.open(url, "_blank");
 });
 
 aiButton.addEventListener("click", function() {
   var query = input.value;
   var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
-  document.getElementById("input").value = "";
+  input.value = "";
   window.open(url, "_blank");
 });
 
 photo.addEventListener("click", function() {
   var query = input.value;
   var url = "https://www.google.com/search?q=" + query + "&sca_esv=575726020&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiV4Oiu4YuCAxWjgVYBHfmrDZQQ_AUoAXoECAMQAw&biw=1482&bih=750&dpr=1.25";
-  document.getElementById("input").value = "";
+  input.value = "";
   window.open(url, "_blank");
 });
 
 translate.addEventListener("click", function() {
   var query = input.value;
   var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
-  document.getElementById("input").value = ""; 
+  input.value = ""; 
   window.open(url, "_blank");
 });
 
