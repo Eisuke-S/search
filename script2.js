@@ -48,7 +48,7 @@ button.onclick = function addParagraph() {
     paragraph.classList.add("paragraphClass");
     
     // 新しいボタンタグを作成
-    var button = document.createElement("button");
+    var history = document.createElement("button");
     button.setAttribute("id", "history");
     button.innerText = "Add to input";
     
@@ -57,7 +57,7 @@ button.onclick = function addParagraph() {
     
     // pタグとボタンタグをダイブタグの中にまとめる
     div.appendChild(paragraph);
-    div.appendChild(button);
+    div.appendChild(history);
     
     // ダイブタグをページに追加
     document.getElementById("paragraphContainer").appendChild(div);
