@@ -49,6 +49,7 @@ button.onclick = function addParagraph() {
     
     // 新しいボタンタグを作成
     var button = document.createElement("button");
+    button.setAttribute("id", "history");
     button.innerText = "Add to input";
     
     // 新しいダイブタグを作成
@@ -62,7 +63,7 @@ button.onclick = function addParagraph() {
     document.getElementById("paragraphContainer").appendChild(div);
     
     // ボタンがクリックされたときの動作を設定
-    button.onclick = function() {
+    history.onclick = function() {
         // ボタンが含まれるダイブタグを取得
         var parentDiv = this.parentElement;
         
