@@ -50,7 +50,7 @@ button.onclick = function addParagraph() {
     // 新しいボタンタグを作成
     var history = document.createElement("button");
     history.setAttribute("id", "history");
-    button.innerText = "Add to input";
+    history.innerText = "Add to input";
     
     // 新しいダイブタグを作成
     var div = document.createElement("div");
