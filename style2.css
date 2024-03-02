@@ -1,3 +1,4 @@
+
 .biz-udmincho-regular {
   font-family: "BIZ UDMincho", serif;
   font-weight: 400;
@@ -10,7 +11,7 @@ body, html {
 }
 
 body {
-  background-image: url("background-image.png");
+  
   background-repeat: no-repeat;
   background-size: cover; /* 画面に合わせて拡大表示 */
   background-position: center;
@@ -78,6 +79,24 @@ body {
   size: contain;
 }
 
+@media (prefers-color-scheme: dark) {
+  /* ダークモード用のスタイル */
+  body {
+    background-color: black;
+    color: #fff;
+  }
+  .input {
+    background-color: black;
+    color: #fff;
+    border-color: white;
+  }
+  .line {
+    background-color: white;
+  }
+  .terms{
+    color: white;
+  }
+}
 
 
 /* 幅が 600px 以下の場合のスタイル */
