@@ -76,6 +76,10 @@ button.onclick = function addParagraph() {
     
     
 }
+document.getElementById('photo').addEventListener('click', addParagraph);
+document.getElementById('aiButton').addEventListener('click', addParagraph);
+document.getElementById('translate').addEventListener('click', addParagraph);
+
 button.addEventListener("click", function() {
   var query = input.value;
   input.value = "";
