@@ -39,7 +39,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 
 button.addEventListener("click", function() {
   var query = input.value;
-  input.value = "";
+  
   var element = document.getElementById('return');
   if (element) {
     element.style.display = 'block';
@@ -50,21 +50,21 @@ button.addEventListener("click", function() {
 
 aiButton.addEventListener("click", function() {
   var query = input.value;
-  input.value = "";
+
   var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
   window.open(url, "_blank");
 });
 
 photo.addEventListener("click", function() {
   var query = input.value;
-  input.value = "";
+  
   var url = "https://www.google.com/search?q=" + query + "&sca_esv=575726020&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiV4Oiu4YuCAxWjgVYBHfmrDZQQ_AUoAXoECAMQAw&biw=1482&bih=750&dpr=1.25";
   window.open(url, "_blank");
 });
 
 translate.addEventListener("click", function() {
   var query = input.value;
-  input.value = "";
+  
   var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
   window.open(url, "_blank");
 });
@@ -95,7 +95,7 @@ window.onclick = function(event) {
 };
 function addParagraph() {
     // 入力フィールドからテキストを取得
-    var text = document.getElementById("Input").value;
+    var text = document.getElementById("input").value;
     
     // 新しいpタグを作成し、テキストを設定
     var paragraph = document.createElement("p");
@@ -106,7 +106,7 @@ function addParagraph() {
     
     // 新しいボタンタグを作成
     var button = document.createElement("button");
-    button.innerText = "Add to Input";
+    button.innerText = "Add to input";
     
     // 新しいダイブタグを作成
     var div = document.createElement("div");
@@ -127,9 +127,9 @@ function addParagraph() {
         var paragraphContent = parentDiv.querySelector("p").innerText;
         
         // インプットタグにpタグの内容を書き加える
-        document.getElementById("Input").value += paragraphContent;
+        document.getElementById("input").value += paragraphContent;
     };
     
     // 入力フィールドをクリア
-    document.getElementById("Input").value = "";
+    document.getElementById("input").value = "";
 }
