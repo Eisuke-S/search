@@ -41,9 +41,7 @@ button.addEventListener("click", function() {
   var query = input.value;
   
   
-  if (element) {
-    element.style.display = 'block';
-  }
+  
   var url = "https://www.google.com/search?q=" + query;
   window.open(url, "_blank");
 });
