@@ -79,30 +79,7 @@ body {
   size: contain;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* ダークモード用のスタイル */
-  body {
-    background-color: black;
-    color: #fff;
-  }
-  .input {
-    background-color: black;
-    color: #fff;
-    border-color: white;
-  }
-  .line {
-    background-color: white;
-  }
-  .terms {
-    color: white;
-  }
-  .clear {
-    background-color: black;
-  }
-  .space {
-    background-color: black;
-  }
-}
+
 
 
 /* 幅が 600px 以下の場合のスタイル */
@@ -354,5 +331,30 @@ p.con {
     background-color: #fff;
     width: 100%;
     height: 900px; 
+  
+}
+@media (prefers-color-scheme: dark) {
+  /* ダークモード用のスタイル */
+  body {
+    background-color: black;
+    color: #fff;
+  }
+  .input {
+    background-color: black;
+    color: #fff;
+    border-color: white;
+  }
+  .line {
+    background-color: white;
+  }
+  .terms {
+    color: white;
+  }
+  .clear {
+    background-color: black;
+  }
+  .space {
+    background-color: black;
+  }
   
 }
