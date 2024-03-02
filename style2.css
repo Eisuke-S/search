@@ -93,8 +93,14 @@ body {
   .line {
     background-color: white;
   }
-  .terms{
+  .terms {
     color: white;
+  }
+  .clear {
+    background-color: black;
+  }
+  .space {
+    background-color: black;
   }
 }
 
