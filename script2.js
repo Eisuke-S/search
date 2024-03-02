@@ -40,7 +40,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 button.addEventListener("click", function() {
   var query = input.value;
   
-  var element = document.getElementById('return');
+  
   if (element) {
     element.style.display = 'block';
   }
