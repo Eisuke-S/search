@@ -41,20 +41,20 @@ button.onclick = function addParagraph() {
     var text = document.getElementById("input").value;
     
     // 新しいpタグを作成し、テキストを設定
-    var paragraph = document.createElement("p");
-    paragraph.innerText = text;
+    var history = document.createElement("p");
+    history.innerText = text;
     
     // pタグにクラスを追加
-    paragraph.classList.add("paragraphClass");
+    history.classList.add("history");
     
     // 新しいボタンタグを作成
-    var history = document.createElement("button");
-    history.setAttribute("id", "history");
-    history.innerText = "Add to input";
+    var history_btn = document.createElement("button");
+    history_btn.setAttribute("id", "history_btn");
+    history_btn.innerText = "Add to input";
     
     // 新しいダイブタグを作成
-    var div = document.createElement("div");
-    
+    var history_box = document.createElement("div");
+    history-box.setAttribute("id", "history_box");
     // pタグとボタンタグをダイブタグの中にまとめる
     div.appendChild(paragraph);
     div.appendChild(history);
@@ -63,7 +63,7 @@ button.onclick = function addParagraph() {
     document.getElementById("paragraphContainer").appendChild(div);
     
     // ボタンがクリックされたときの動作を設定
-    history.onclick = function() {
+    history_btn.onclick = function() {
         // ボタンが含まれるダイブタグを取得
         var parentDiv = this.parentElement;
         
@@ -86,7 +86,7 @@ button.addEventListener("click", function() {
 });
 
 aiButton.addEventListener("click", function() {
-  addParagraph();
+  
   var query = input.value;
   var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
   input.value = "";
@@ -94,7 +94,7 @@ aiButton.addEventListener("click", function() {
 });
 
 photo.addEventListener("click", function() {
-  addParagraph();
+  
   var query = input.value;
   var url = "https://www.google.com/search?q=" + query + "&sca_esv=575726020&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiV4Oiu4YuCAxWjgVYBHfmrDZQQ_AUoAXoECAMQAw&biw=1482&bih=750&dpr=1.25";
   input.value = "";
@@ -102,7 +102,7 @@ photo.addEventListener("click", function() {
 });
 
 translate.addEventListener("click", function() {
-  addParagraph();
+  
   var query = input.value;
   var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
   input.value = ""; 
