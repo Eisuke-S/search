@@ -56,11 +56,11 @@ button.onclick = function addParagraph() {
     var history_box = document.createElement("div");
     history-box.setAttribute("id", "history_box");
     // pタグとボタンタグをダイブタグの中にまとめる
-    div.appendChild(paragraph);
     div.appendChild(history);
+    div.appendChild(history_btn);
     
     // ダイブタグをページに追加
-    document.getElementById("paragraphContainer").appendChild(div);
+    document.getElementById("history_box").appendChild(div);
     
     // ボタンがクリックされたときの動作を設定
     history_btn.onclick = function() {
