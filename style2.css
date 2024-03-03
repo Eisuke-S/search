@@ -358,3 +358,11 @@ p.con {
   }
   
 }
+#history_box {
+  border-bottom: 1px black;
+  display: flex;
+}
+.history {
+  text-align: center;
+}
+
