@@ -5,7 +5,7 @@ var clear = document.getElementById("clear");
 function handleInput() {
     var input = document.getElementById("input");
     var rowCount = input.value.split("\n").length;
-
+    document.getElementById("input").rows = 1;
     if (rowCount < prevRowCount) {
         input.rows = rowCount > 1 ? rowCount : 1;
     } else if (rowCount > 3) {
@@ -38,6 +38,7 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 });
 button.onclick = function addParagraph() {
     // 入力フィールドからテキストを取得
+    var history_place = document.getElementById("history_place");
     var text = document.getElementById("input").value;
     
     // 新しいpタグを作成し、テキストを設定
@@ -56,11 +57,11 @@ button.onclick = function addParagraph() {
     var history_box = document.createElement("div");
     history_box.setAttribute("id", "history_box");
     // pタグとボタンタグをダイブタグの中にまとめる
-    divhistory_place.appendChild(history);
-    history_place.appendChild(history_btn);
+    document.getElementById("history_place").appendChild(history_box);
+    history_box.appendChild(history);
+    history_box.appendChild(history_btn);
     
-    // ダイブタグをページに追加
-    document.getElementById("history_box").appendChild(history_place);
+    
     
     // ボタンがクリックされたときの動作を設定
     history_btn.onclick = function() {
