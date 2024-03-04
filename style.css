@@ -370,7 +370,7 @@ p.con {
 }
 #history_btn {
   height: 20px;
-  width: 20px; 
+  width: 21px; 
   background: transparent;
   cursor: pointer;
   border: none;
@@ -379,12 +379,10 @@ p.con {
 }
 
 .history {
-  text-align: center;
-  margin: 20px;
   font-size: 20px;
 }
 #history_btn_img {
   height: 20px;
-  whidh: 20px;
+  whidh: 21px;
 }
 
