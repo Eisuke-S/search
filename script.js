@@ -62,7 +62,9 @@ button.onclick = function addParagraph() {
     history_box.appendChild(history_btn);
     
     
-    
+    var history_btn_img = document.createElement("img");
+    history_btn_img.setAttribute("src", "history_btn.png");
+    history_btn.appendChild(history_btn_img);
     // ボタンがクリックされたときの動作を設定
     history_btn.onclick = function() {
         // ボタンが含まれるダイブタグを取得
