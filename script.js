@@ -51,7 +51,7 @@ button.onclick = function addParagraph() {
     // 新しいボタンタグを作成
     var history_btn = document.createElement("button");
     history_btn.setAttribute("id", "history_btn");
-    history_btn.innerText = "Add to input";
+    
     
     // 新しいダイブタグを作成
     var history_box = document.createElement("div");
