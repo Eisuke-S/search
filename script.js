@@ -64,6 +64,7 @@ button.onclick = function addParagraph() {
     
     var history_btn_img = document.createElement("img");
     history_btn_img.setAttribute("src", "history_btn.png");
+    history_btn_img.setAttribute("id", "history_btn.png");
     history_btn.appendChild(history_btn_img);
     // ボタンがクリックされたときの動作を設定
     history_btn.onclick = function() {
