@@ -363,14 +363,15 @@ p.con {
   
 }
 #history_box {
+  height: 50px;
   border-bottom: 1px black;
   display: flex;
   justify-content: center;
   
 }
 #history_btn {
-  height: 20px;
-  width: 21px; 
+  height: 50px;
+  width: 53px; 
   background: transparent;
   cursor: pointer;
   border: none;
@@ -379,10 +380,10 @@ p.con {
 }
 
 .history {
-  font-size: 20px;
+  font-size: 50px;
 }
 #history_btn_img {
-  height: 20px;
-  whidh: 21px;
+  height: 50px;
+  whidh: auto;
 }
 
