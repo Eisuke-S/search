@@ -84,72 +84,7 @@ body {
 
 /* 幅が 600px 以下の場合のスタイル */
 
-@media only screen and (max-width: 430px) {
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    width: 100%;
-    size: contain;
-  }
-}
 
-/* 幅が 1200px 以下の場合のスタイル */
-
-@media only screen and (min-width: 600px) and (max-width: 765px) { 
-  .biginput {
-  position: relative;
-    width: 60%;
-  }
-  .input {
-    font-size: 40px;
-  }
-  #button {
-    width: 10%
-  }
-  #ai {
-    width: 10%;
-  }
-  #photo {
-    width: 10%;
-  }
-  #translate {
-    width: 10%;
-  }
-}
-@media only screen and (min-width: 1000px) {
-  .biginput {
-    position: relative;
-    width: 60%;
-  }
-  .input {
-    font-size: 40px;
-  }
-  #button {
-    width: 10%
-  }
-  #ai {
-    width: 10%;
-  }
-  #photo {
-    width: 10%;
-  }
-  #translate {
-    width: 10%;
-  }
-    
-}
-@media only screen and (min-width: 765px) and (max-width: 1000px) {
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    width: 100%;
-    size: contain;
-  }  
-}
 .input-box {
   background-color: transparent;
   color: black;
@@ -333,6 +268,72 @@ p.con {
     height: 900px; 
   
 }
+@media only screen and (max-width: 430px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    size: contain;
+  }
+}
+
+/* 幅が 1200px 以下の場合のスタイル */
+
+@media only screen and (min-width: 600px) and (max-width: 765px) { 
+  .biginput {
+  position: relative;
+    width: 60%;
+  }
+  .input {
+    font-size: 40px;
+  }
+  #button {
+    width: 10%
+  }
+  #ai {
+    width: 10%;
+  }
+  #photo {
+    width: 10%;
+  }
+  #translate {
+    width: 10%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .biginput {
+    position: relative;
+    width: 60%;
+  }
+  .input {
+    font-size: 40px;
+  }
+  #button {
+    width: 10%
+  }
+  #ai {
+    width: 10%;
+  }
+  #photo {
+    width: 10%;
+  }
+  #translate {
+    width: 10%;
+  }
+    
+}
+@media only screen and (min-width: 765px) and (max-width: 1000px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    size: contain;
+  }  
+}
 @media (prefers-color-scheme: dark) {
   /* ダークモード用のスタイル */
   body {
@@ -356,13 +357,23 @@ p.con {
   .space {
     background-color: black;
   }
+  p.con {
+    color: black;
+  }
   
 }
 #history_box {
   border-bottom: 1px black;
   display: flex;
+  justify-content: center;
+  
+}
+#history_btn {
+  background-color: url(history_btn.png)
 }
 .history {
   text-align: center;
+  margin: 20px;
+  text-size: 20px;
 }
 
