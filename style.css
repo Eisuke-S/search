@@ -363,6 +363,7 @@ p.con {
   
 }
 #history_box {
+  align-items: center;
   height: 50px;
   border-bottom: 1px black;
   display: flex;
