@@ -370,13 +370,14 @@ p.con {
 }
 #history_btn {
   height: 20px;
-  width: auto; 
-  background-color: url(history_btn.png)
+  width: 20px; 
+  background: transparent;
   cursor: pointer;
   border: none;
   outline: none;
   text-decoration: none;
 }
+
 .history {
   text-align: center;
   margin: 20px;
