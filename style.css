@@ -383,4 +383,8 @@ p.con {
   margin: 20px;
   text-size: 20px;
 }
+#history_btn_img {
+  height: 100%;
+  whidh: auto;
+}
 
