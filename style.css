@@ -114,7 +114,7 @@ body {
     border: none;
     outline: none;
     text-decoration: none;
-    background-color: transparent;
+    background-color: white;
 }
 }
 
@@ -265,7 +265,7 @@ p.con {
 .space {
     display: block;
     background-color: transparent;
-}
+
     width: 100%;
     height: 900px; 
   
