@@ -11,9 +11,9 @@ body, html {
 }
 
 body {
-  
+  background-image: url(background-image.jpeg);
   background-repeat: no-repeat;
-  background-size: cover; /* 画面に合わせて拡大表示 */
+  background-size: 100%; /* 画面に合わせて拡大表示 */
   background-position: center;
   background-color: white;
   position: relative;
@@ -282,6 +282,9 @@ p.con {
 /* 幅が 1200px 以下の場合のスタイル */
 
 @media only screen and (min-width: 600px) and (max-width: 765px) { 
+  body {
+    background-size: auto 100%;
+  }
   .biginput {
   position: relative;
     width: 60%;
@@ -303,6 +306,9 @@ p.con {
   }
 }
 @media only screen and (min-width: 1000px) {
+  body {
+    background-size: auto 100%;
+  }
   .biginput {
     position: relative;
     width: 60%;
@@ -337,6 +343,7 @@ p.con {
 @media (prefers-color-scheme: dark) {
   /* ダークモード用のスタイル */
   body {
+    background-image: none;
     background-color: black;
     color: #fff;
   }
