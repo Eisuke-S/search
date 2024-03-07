@@ -345,7 +345,7 @@ p.con {
 @media (prefers-color-scheme: dark) {
   /* ダークモード用のスタイル */
   body {
-    background-image: url(background-image_dark);
+    background-image: url(background-image_dark.jpeg);
     background-color: black;
     color: #fff;
   }
@@ -360,12 +360,7 @@ p.con {
   .terms {
     color: white;
   }
-  .clear {
-    background-color: transparent;
-  }
-  .space {
-    background-color: transparent;
-  }
+  
   p.con {
     color: black;
   }
