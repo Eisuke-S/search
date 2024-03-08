@@ -408,9 +408,10 @@ p.con {
 #history_box {
   align-items: center;
   margin: 5px;
-  border-bottom: 1px black;
+  border-bottom: solid;
   display: flex;
   justify-content: center;
+  height: 50px;
   
 }
 #history_btn {
