@@ -95,7 +95,7 @@ body {
   font-size: 60px;
   font-family: "BIZ UDMincho", serif;
 
-  border-radius: 60px;
+  border-radius: 0.6em;
 }
 .biginput {
   position: relative;
@@ -376,7 +376,7 @@ p.con {
 }
 #history_box {
   align-items: center;
-  height: 50px;
+  margin: 20px;
   border-bottom: 1px black;
   display: flex;
   justify-content: center;
