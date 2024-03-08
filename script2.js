@@ -1,3 +1,9 @@
+// ページが読み込まれたら、ローディング画面を非表示にする
+window.addEventListener('load', function() {
+  var loadingScreen = document.getElementById('loading-screen');
+  loadingScreen.style.display = 'none';
+});
+
 var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
