@@ -380,6 +380,7 @@ p.con {
   border-bottom: 1px black;
   display: flex;
   justify-content: center;
+  height: 50px;
   
 }
 #history_btn {
