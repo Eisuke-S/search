@@ -412,7 +412,8 @@ p.con {
   display: flex;
   justify-content: center;
   height: 50px;
-  
+  background-color: rgba(128,128,128,0.3);
+   
 }
 #history_btn {
   height: 50px;
