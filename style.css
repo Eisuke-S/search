@@ -376,7 +376,7 @@ p.con {
 }
 #history_box {
   align-items: center;
-  margin: 20px;
+  margin: 5px;
   border-bottom: 1px black;
   display: flex;
   justify-content: center;
