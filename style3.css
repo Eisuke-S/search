@@ -1,6 +1,6 @@
 /* Loading screen styles */
 #loading-screen {
-  position: fixed;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -10,9 +10,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9997; /* 他の要素よりも前面に表示する */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
 /* Loading animation styles */
@@ -22,14 +20,12 @@
 
 /* 画像を画面の中央に配置するスタイル */
 
-  position: ;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
+  
 }
 @keyframes rotate {
   0% {
@@ -43,13 +39,10 @@
 .loading-circle {
   animation: rotate 5s infinite linear;
   z-index: 9998;
-  width: 30%; /* 画像の幅を調整 */
+  width: 15%; /* 画像の幅を調整 */
   height: auto;
 
 /* 画像を画面の中央に配置するスタイル */
-  position: fixed;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   top: 50%;
   left: 50%;
