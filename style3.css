@@ -41,7 +41,7 @@
 .loading-circle {
   animation: rotate 5s infinite linear;
   z-index: 9998;
-  width: 20%; /* 画像の幅を調整 */
+  width: 30%; /* 画像の幅を調整 */
   height: auto;
 
 /* 画像を画面の中央に配置するスタイル */
