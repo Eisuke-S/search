@@ -421,6 +421,9 @@ p.con {
   .history {
     color: #ff8c00;
   }
+  #loading-screen {
+    background-color: black;
+  }
   
   p.con {
     color: black;
