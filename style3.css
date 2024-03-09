@@ -1,16 +1,19 @@
-/* Loading screen styles */
-#loading-screen {
 
+#loading-screen {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: #ffffff;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9997; /* 他の要素よりも前面に表示する */
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Loading animation styles */
