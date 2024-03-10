@@ -4,9 +4,10 @@ window.addEventListener('load', function() {
   loadingScreen.style.animation = 'fadeIn 1s ease-in-out forwards';
   setTimeout(function() {
       loadingScreen.style.opacity = "1";
+      loadingScreen.style.display = 'none';  
   // 0.5秒後に実行したいコードをここに記述する
-  }, 500); // 0.5秒をミリ秒で指定
-  loadingScreen.style.display = 'none'; 
+  }, 1000); // 1秒をミリ秒で指定
+  
   
 });
 
