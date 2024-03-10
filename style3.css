@@ -38,6 +38,14 @@
     transform: rotate(360deg);
   }
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* 開始時の透明度 */
+    }
+    to {
+        opacity: 1; /* 終了時の透明度 */
+    }
+}
 
 .loading-circle {
   animation: rotate 5s infinite linear;
