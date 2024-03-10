@@ -2,9 +2,8 @@
 window.addEventListener('load', function() {
   var loadingScreen = document.getElementById('loading-screen');
   loadingscreen.style.animation = 'fadeIn 2s ease-in-out forwards';
-  setTimeout(function() {
-      loadingScreen.style.display = 'none';
-  }, 2000); // 2秒待つ  
+  loadingScreen.style.display = 'none';
+  
   
 });
 
