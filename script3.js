@@ -1,7 +1,7 @@
 // ページが読み込まれたら、ローディング画面を非表示にする
 window.addEventListener('load', function() {
   var loadingScreen = document.getElementById('loading-screen');
-  loadingScreen.style.animation = 'fadeIn 0.5s ease-in-out forwards';
+  loadingScreen.style.animation = 'fadeIn 1s ease-in-out forwards';
   setTimeout(function() {
       loadingScreen.style.display = 'none';
   // 0.5秒後に実行したいコードをここに記述する
