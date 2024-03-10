@@ -1,8 +1,10 @@
 // ページが読み込まれたら、ローディング画面を非表示にする
 window.addEventListener('load', function() {
   var loadingScreen = document.getElementById('loading-screen');
-  loadingscreen.style.animation = 'fadeIn 2s ease-in-out forwards';
-  loadingScreen.style.display = 'none';
+  loadingScreen.style.animation = 'fadeIn 0.5s ease-in-out forwards';
+  setTimeout(function() {
+      loadingScreen.style.display = 'none';
+  }, 500); // 0.5秒待つ
   
   
 });
