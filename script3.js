@@ -3,9 +3,9 @@ window.addEventListener('load', function() {
   var loadingScreen = document.getElementById('loading-screen');
   loadingScreen.style.animation = 'fadeIn 0.5s ease-in-out forwards';
   setTimeout(function() {
-      loadingScreen.style.display = 'none';
+      loadingScreen.style.background-color = 'transparent';
   }, 500); // 0.5秒待つ
-  
+  loadingScreen.style.display = 'none';
   
 });
 
