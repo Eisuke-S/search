@@ -1,4 +1,66 @@
 
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9997; /* 他の要素よりも前面に表示する */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Loading animation styles */
+.loading-logo {
+  width: 12.5%; /* 画像の幅を調整 */
+  height: auto;
+
+/* 画像を画面の中央に配置するスタイル */
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 1; /* 開始時の透明度 */
+    }
+    to {
+        opacity: 0; /* 終了時の透明度 */
+    }
+}
+
+.loading-circle {
+  animation: rotate 5s infinite linear;
+  z-index: 9998;
+  width: 15%; /* 画像の幅を調整 */
+  height: auto;
+
+/* 画像を画面の中央に配置するスタイル */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 .biz-udmincho-regular {
   font-family: "BIZ UDMincho", serif;
   font-weight: 400;
@@ -367,6 +429,9 @@ p.con {
   .history {
     color: #ff8c00;
   }
+  #loading-screen {
+    background-color: black;
+  }
   
   p.con {
     color: black;
@@ -377,11 +442,12 @@ p.con {
 #history_box {
   align-items: center;
   margin: 5px;
-  border-bottom: 1px black;
+  border-bottom: solid;
   display: flex;
   justify-content: center;
   height: 50px;
-  
+  background-color: rgba(128,128,128,0.3);
+   
 }
 #history_btn {
   height: 50px;
@@ -398,4 +464,3 @@ p.con {
   height: 50px;
   whidh: auto;
 }
-
