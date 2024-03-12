@@ -14,8 +14,21 @@ var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
+// HTML要素を取得します
+var element = document.getElementById("exampleElement");
 
 
+function image() {
+  // セレクト要素を取得
+  var selectElement = document.getElementById("background-image");
+  
+  // 現在選択されているオプションの値を取得
+  var selectedValue = selectElement.value;
+  // 背景画像を変更します
+  element.style.backgroundImage = "url('" + selectedValue + "')";
+
+  
+}
 document.getElementById('input').addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
