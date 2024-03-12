@@ -341,6 +341,7 @@ p.con {
   color: white;
 }
 #history_box {
+  left: 50%;
   align-items: center;
   margin: 5px;
   border-bottom: solid;
