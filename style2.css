@@ -332,6 +332,10 @@ p.con {
     height: 900px; 
   
 }
+#history_place {
+  display: flex;
+  justify-content: center;
+}
 .history {
   font-size: 50px;
   color: white;
