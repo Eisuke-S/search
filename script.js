@@ -14,32 +14,6 @@ var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
-function handleInput() {
-    var input = document.getElementById("input");
-    var rowCount = input.value.split("\n").length;
-    document.getElementById("input").rows = 1;
-    if (rowCount < prevRowCount) {
-        input.rows = rowCount > 1 ? rowCount : 1;
-    } else if (rowCount > 3) {
-        input.rows = 3;
-    } else {
-        input.rows = rowCount;
-    }
-
-    prevRowCount = rowCount;
-
-    // 枠の高さも調整
-    input.style.height = "auto";
-    input.style.height = (input.scrollHeight) + "px";
-
-    // 最大で3行の高さに制限
-    if (input.rows >= 3) {
-        input.style.overflowY = "scroll";
-        input.style.height = "calc(3em + 2px)";
-    } else {
-        input.style.overflowY = "hidden";
-    }
-}
 
 
 document.getElementById('input').addEventListener('keydown', function(event) {
