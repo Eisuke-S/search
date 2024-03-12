@@ -26,9 +26,7 @@ selectElement.addEventListener('change', () => {
   var selectedValue = selectElement.value;
   // 背景画像を変更します
   body.style.backgroundImage = "url('" + selectedValue + "')";
-
-  
-}
+});
 function handleInput() {
   // ここに入力が変更されたときの処理を追加します
 }
