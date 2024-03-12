@@ -29,6 +29,10 @@ selectElement.addEventListener('change', () => {
 
   
 }
+function handleInput() {
+  // ここに入力が変更されたときの処理を追加します
+}
+                               
 document.getElementById('input').addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
