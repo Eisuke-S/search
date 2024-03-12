@@ -333,8 +333,8 @@ p.con {
   
 }
 #history_place {
-  display: flex;
-  justify-content: center;
+  
+  left: 50%;
 }
 .history {
   font-size: 50px;
