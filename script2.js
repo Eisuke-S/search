@@ -57,8 +57,11 @@ button.onclick = function addParagraph() {
     // 新しいダイブタグを作成
     var history_box = document.createElement("div");
     history_box.setAttribute("id", "history_box");
+    var history_box_2 = document.createElement("div");
+    history_box_2.setAttribute("id", "history_box_2");
     // pタグとボタンタグをダイブタグの中にまとめる
-    document.getElementById("history_place").appendChild(history_box);
+    document.getElementById("history_place").appendChild(history_box_2);
+    history_box_2.appendChild(history_box);
     history_box.appendChild(history);
     history_box.appendChild(history_btn);
     
