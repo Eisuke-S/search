@@ -333,6 +333,10 @@ p.con {
   
 }
 #history_place {
+  width: 100%;
+}
+#history_box_2 {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
