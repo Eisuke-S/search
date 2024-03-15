@@ -44,37 +44,8 @@ document.getElementById('input').addEventListener('keydown', function(event) {
     button.click();
   }
 });
-// いずれかのボタンが押されたときの処理
-document.addEventListener('DOMContentLoaded', function() {
-    var buttons = document.querySelectorAll('button');
-    buttons.forEach(function(button) {
-        button.addEventListener('click', function() {
-         　 if (this.id === 'clear') { // 例えばIDが'Clear'のボタンを除外
-               input.blur();
-               input.value = "";
-               input.rows = 1;
-             　return; // 処理を中断して以降のコードを実行しない
-            } else if (this.id === 'modal') { // 例えばIDが'Clear'のボタンを除外
-             　return; // 処理を中断して以降のコードを実行しない
-            } else if (this.id === 'btn') { // 例えばIDが'Clear'のボタンを除外
-               modal.style.display = "block";
-             　return; // 処理を中断して以降のコードを実行しない
-            } else if (this.id === 'span') { // 例えばIDが'Clear'のボタンを除外
-               modal.style.display = "none";
-             　return; // 処理を中断して以降のコードを実行しない
-            } else {
-            // ここにボタンが押されたときの処理を書く
-               var buttonurl = this.dataset.url;
-               var query = input.value;
-               input.value = "";
-               var url = button + query;
-               window.open(url, "_blank");
-           }
-        });
-    });
-});
 
-button.onclick = function addParagraph() {
+function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
     var text = document.getElementById("input").value;
@@ -121,22 +92,31 @@ button.onclick = function addParagraph() {
     
     
 }
-
-button.addEventListener("click", function() {
-  var query = input.value;
-
-  input.value = "";
-  var url = "https://www.google.com/search?q=" + query;
-  window.open(url, "_blank");
+// いずれかのボタンが押されたときの処理
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            if (this.id === 'clear') {
+                input.blur();
+                input.value = "";
+                input.rows = 1;
+                return;
+            } else {
+                addParagraph()
+                var buttonurl = this.dataset.url;
+                var query = input.value;
+              
+                input.value = "";
+                var url = buttonurl + query; // buttonurlを使用する
+                window.open(url, "_blank");
+            }
+        });
+    });
 });
 
-aiButton.addEventListener("click", function() {
-  
-  var query = input.value;
-  var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
-  input.value = "";
-  window.open(url, "_blank");
-});
+
+
 
 photo.addEventListener("click", function() {
   
@@ -146,19 +126,7 @@ photo.addEventListener("click", function() {
   window.open(url, "_blank");
 });
 
-translate.addEventListener("click", function() {
-  
-  var query = input.value;
-  var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
-  input.value = ""; 
-  window.open(url, "_blank");
-});
 
-clear.addEventListener("click", function() {
-  input.blur();
-  input.value = "";
-  input.rows = 1;
-});
 
 
 
