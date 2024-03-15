@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (this.id === 'myModal') {
               
             } else if (this.id === 'myBtn') {
+              　modal.style.display = "none";
             } else if (this.id === 'close') {
             }else {
                 addParagraph()
