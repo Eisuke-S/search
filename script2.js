@@ -14,7 +14,7 @@ var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
-var photo = document.getElementById("photo")；
+var photo = document.getElementById("photo");
 var body = document.getElementById("body");
 var selectElement = document.getElementById("background-image");
 var modal = document.getElementById("myModal");
@@ -49,6 +49,10 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
+span.onclick = function() {
+    modal.style.display = "none";
+};
+
 function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
@@ -124,15 +128,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
