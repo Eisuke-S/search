@@ -102,7 +102,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.value = "";
                 input.rows = 1;
                 return;
-            } else {
+            } else if (this.id === 'myModal') {
+              
+            } else if (this.id === 'myBtn') {
+            } else if (this.class === 'close') {
+            }else {
                 addParagraph()
                 var buttonurl = this.dataset.url;
                 var query = input.value;
