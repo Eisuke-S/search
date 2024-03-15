@@ -20,8 +20,7 @@ var selectElement = document.getElementById("background-image");
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
-var span_1 = document.getElementById("close");
-  
+
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -45,7 +44,11 @@ document.getElementById('input').addEventListener('keydown', function(event) {
     button.click();
   }
 });
-
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
@@ -103,11 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.value = "";
                 input.rows = 1;
                 return;
-            } else if (this.id === 'myModal') {
+            } else if (this.id === 'close') {
               　modal.style.display = "none";
             } else if (this.id === 'myBtn') {
               　modal.style.display = "block";　
-            } else if (this.id === 'close') {
+            
             }else {
                 addParagraph()
                 var buttonurl = this.dataset.url;
