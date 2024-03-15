@@ -20,6 +20,7 @@ var selectElement = document.getElementById("background-image");
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
+var span_1 = document.getElementById("close");
   
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -105,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (this.id === 'myModal') {
               
             } else if (this.id === 'myBtn') {
-            } else if (this.class === 'close') {
+            } else if (this.id === 'close') {
             }else {
                 addParagraph()
                 var buttonurl = this.dataset.url;
