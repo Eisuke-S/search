@@ -14,8 +14,23 @@ var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
+// HTML要素を取得します
+var body = document.getElementById("body");
+var selectElement = document.getElementById("background-image");
+  
 
-
+selectElement.addEventListener('change', () => {
+  
+  
+  // 現在選択されているオプションの値を取得
+  var selectedValue = selectElement.value;
+  // 背景画像を変更します
+  body.style.backgroundImage = "url('" + selectedValue + "')";
+});
+function handleInput() {
+  // ここに入力が変更されたときの処理を追加します
+}
+                               
 document.getElementById('input').addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
@@ -42,8 +57,11 @@ button.onclick = function addParagraph() {
     // 新しいダイブタグを作成
     var history_box = document.createElement("div");
     history_box.setAttribute("id", "history_box");
+    var history_box_2 = document.createElement("div");
+    history_box_2.setAttribute("id", "history_box_2");
     // pタグとボタンタグをダイブタグの中にまとめる
-    document.getElementById("history_place").appendChild(history_box);
+    document.getElementById("history_place").appendChild(history_box_2);
+    history_box_2.appendChild(history_box);
     history_box.appendChild(history);
     history_box.appendChild(history_btn);
     
