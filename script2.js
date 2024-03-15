@@ -14,6 +14,7 @@ var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
+var photo = document.getElementById("photo");
 // HTML要素を取得します
 var body = document.getElementById("body");
 var selectElement = document.getElementById("background-image");
