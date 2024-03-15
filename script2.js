@@ -17,6 +17,9 @@ var clear = document.getElementById("clear");
 // HTML要素を取得します
 var body = document.getElementById("body");
 var selectElement = document.getElementById("background-image");
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
   
 
 selectElement.addEventListener('change', () => {
@@ -37,6 +40,28 @@ document.getElementById('input').addEventListener('keydown', function(event) {
     button.click();
   }
 });
+// いずれかのボタンが押されたときの処理
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+         　 if (this.id === 'clear') { // 例えばIDが'Clear'のボタンを除外
+             　return; // 処理を中断して以降のコードを実行しない
+            } else if (this.id === 'modal') { // 例えばIDが'Clear'のボタンを除外
+             　return; // 処理を中断して以降のコードを実行しない
+            } else if (this.id === 'btn') { // 例えばIDが'Clear'のボタンを除外
+             　return; // 処理を中断して以降のコードを実行しない
+            } else if (this.id === 'span') { // 例えばIDが'Clear'のボタンを除外
+             　return; // 処理を中断して以降のコードを実行しない
+            }      
+            // ここにボタンが押されたときの処理を書く
+            var buttonValue = this.value;
+            var query = input.value;
+          
+        });
+    });
+});
+
 button.onclick = function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
