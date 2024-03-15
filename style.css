@@ -333,15 +333,18 @@ p.con {
   
 }
 #history_place {
-  
-  left: 50%;
+  width: 100%;
+}
+#history_box_2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .history {
   font-size: 50px;
   color: white;
 }
 #history_box {
-  left: 50%;
   align-items: center;
   margin: 5px;
   border-bottom: solid;
