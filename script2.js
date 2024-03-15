@@ -46,18 +46,25 @@ document.addEventListener('DOMContentLoaded', function() {
     buttons.forEach(function(button) {
         button.addEventListener('click', function() {
          　 if (this.id === 'clear') { // 例えばIDが'Clear'のボタンを除外
+               input.blur();
+               input.value = "";
+               input.rows = 1;
              　return; // 処理を中断して以降のコードを実行しない
             } else if (this.id === 'modal') { // 例えばIDが'Clear'のボタンを除外
              　return; // 処理を中断して以降のコードを実行しない
             } else if (this.id === 'btn') { // 例えばIDが'Clear'のボタンを除外
+               modal.style.display = "block";
              　return; // 処理を中断して以降のコードを実行しない
             } else if (this.id === 'span') { // 例えばIDが'Clear'のボタンを除外
+               modal.style.display = "none";
              　return; // 処理を中断して以降のコードを実行しない
             }      
             // ここにボタンが押されたときの処理を書く
             var buttonValue = this.value;
             var query = input.value;
-          
+            input.value = "";
+            var url = button + query;
+            window.open(url, "_blank");
         });
     });
 });
@@ -149,17 +156,7 @@ clear.addEventListener("click", function() {
 });
 
 
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-
-span.onclick = function() {
-  modal.style.display = "none";
-};
 
 window.onclick = function(event) {
   if (event.target == modal) {
