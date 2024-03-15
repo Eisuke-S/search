@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
              　return; // 処理を中断して以降のコードを実行しない
             } else {
             // ここにボタンが押されたときの処理を書く
-               var buttonValue = this.value;
+               var buttonurl = this.dataset.url;
                var query = input.value;
                input.value = "";
                var url = button + query;
