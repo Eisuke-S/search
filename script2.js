@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.rows = 1;
                 return;
             } else if (this.id === 'myModal') {
-              
-            } else if (this.id === 'myBtn') {
               　modal.style.display = "none";
+            } else if (this.id === 'myBtn') {
+              　modal.style.display = "block";　
             } else if (this.id === 'close') {
             }else {
                 addParagraph()
