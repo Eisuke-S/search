@@ -62,13 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (this.id === 'span') { // 例えばIDが'Clear'のボタンを除外
                modal.style.display = "none";
              　return; // 処理を中断して以降のコードを実行しない
-            }      
+            } else {
             // ここにボタンが押されたときの処理を書く
-            var buttonValue = this.value;
-            var query = input.value;
-            input.value = "";
-            var url = button + query;
-            window.open(url, "_blank");
+               var buttonValue = this.value;
+               var query = input.value;
+               input.value = "";
+               var url = button + query;
+               window.open(url, "_blank");
+           }
         });
     });
 });
