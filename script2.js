@@ -106,11 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.value = "";
                 input.rows = 1;
                 return;
-            } else if (this.id === 'close') {
-              　modal.style.display = "none";
+            } else if (this.classList.contains('close')) {
+                modal.style.display = "none";
+                return;
             } else if (this.id === 'myBtn') {
-              　modal.style.display = "block";　
-            
+                modal.style.display = "block";　
+                return;
             }else {
                 addParagraph()
                 var buttonurl = this.dataset.url;
