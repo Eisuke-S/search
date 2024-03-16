@@ -5,8 +5,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho:wght@700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="style.css">
+  <script src="script2.js" defer></script>
+  <link rel="stylesheet" href="style2.css">
   <title>origo Search</title>
   
 </head>
@@ -53,14 +53,14 @@
   </div>
 
   <div class="container">
-    <button id="button" class="bigsearch"><img src="google.png" id="button2" class="search"></button>
-    <button id="photo" class="bigsearch"><img src="photo.png" class="search"></button>
-    <button id="translate" class="bigsearch"><img src="deepl.png" class="search"></button>
+    <button id="button" class="bigsearch" data-url="https://www.google.com/search?q="><img src="google.png" id="button2" class="search"></button>
+    <button id="photo" class="bigsearch" data-url="" ><img src="photo.png" class="search"></button>
+    <button id="translate" class="bigsearch" data-url="https://www.deepl.com/ja/translator#en/ja/"><img src="deepl.png" class="search"></button>
     <div class="biginput">
       <textarea id="input" class="input-box" rows="1" oninput="handleInput()"></textarea>
       <button id="clear" class="clear"></button>
     </div>  
-    <button id="ai" class="bigsearch"><img src="ai.png" class="search"></button>  
+    <button id="ai" class="bigsearch" data-url="https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q="><img src="ai.png" class="search"></button>  
   </div>
 
 
