@@ -45,8 +45,8 @@ function addParagraph() {
     var history_place = document.getElementById("history_place");
     var text = document.getElementById("input").value;
     // 新しいpタグを作成し、テキストを設定
-    var history = document.createElement("p");
-    history.innerText = text;
+    var historyElement = document.createElement("p");
+    historyElement.innerText = text;
     // pタグにクラスを追加
     history.classList.add("history");
     // 新しいボタンタグを作成
@@ -60,7 +60,7 @@ function addParagraph() {
     // pタグとボタンタグをダイブタグの中にまとめる
     document.getElementById("history_place").appendChild(history_box_2);
     history_box_2.appendChild(history_box);
-    history_box.appendChild(history);
+    history_box.appendChild(historyElement);
     history_box.appendChild(history_btn);
     var history_btn_img = document.createElement("img");
     history_btn_img.setAttribute("src", "history_btn.png");
@@ -111,7 +111,7 @@ selectElement.addEventListener('change', () => {
   // 背景画像を変更します
   body.style.backgroundImage = "url('" + selectedValue + "')";
   var selectedcolor = selectElement.getAttribute('data-color');
-  history.style.color = selectedcolor;
+  historyElement.style.color = selectedcolor;
   var selectedtheme = selectElement.getAttribute('data-theme');
   if (selectedtheme === 'dark') {
     body.style.color = "#fff";
@@ -120,7 +120,7 @@ selectElement.addEventListener('change', () => {
     loadingScreen.style.backgroundColor = "black";
     line.style.backgroundColor = "#fff";
     line_1.style.backgroundColor = "black";
-    line_2.style.backgroundColor = "black" ;
+    line_2.style.backgroundColor = "black";
   } else if (selectedtheme === 'light') {
     body.style.color = "black";
     body.style.backgroundColor = "#fff";
