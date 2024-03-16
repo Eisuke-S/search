@@ -20,6 +20,7 @@ var span = document.getElementsByClassName("close")[0];
 var line = document.getElementById("line");
 var line_1 = document.getElementById("line_1");
 var line_2 = document.getElementById("line_2");
+
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -48,7 +49,7 @@ function addParagraph() {
     var historyElement = document.createElement("p");
     historyElement.innerText = text;
     // pタグにクラスを追加
-    history.classList.add("history");
+    historyElement.classList.add("history");
     // 新しいボタンタグを作成
     var history_btn = document.createElement("button");
     history_btn.setAttribute("id", "history_btn");
@@ -117,7 +118,6 @@ selectElement.addEventListener('change', () => {
     body.style.color = "#fff";
     body.style.backgroundColor = "black";
     input.style.color = "#fff";
-    loadingScreen.style.backgroundColor = "black";
     line.style.backgroundColor = "#fff";
     line_1.style.backgroundColor = "black";
     line_2.style.backgroundColor = "black";
@@ -125,7 +125,6 @@ selectElement.addEventListener('change', () => {
     body.style.color = "black";
     body.style.backgroundColor = "#fff";
     input.style.color = "black";
-    loadingScreen.style.backgroundColor = "#fff";
     line.style.backgroundColor = "black";
     line_1.style.backgroundColor = "black";
     line_2.style.backgroundColor = "black";
