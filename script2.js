@@ -33,6 +33,22 @@ selectElement.addEventListener('change', () => {
   var selectedValue = selectElement.value;
   // 背景画像を変更します
   body.style.backgroundImage = "url('" + selectedValue + "')";
+  var selectedcolor = selectElement.getAttribute('data-color');
+  history.style.color = selectedcolor;
+  var selectedtheme = selectElement.getAttribute('data-theme');
+  if (selectedtheme === 'dark') {
+    body.style.color = "#fff";
+    body.style.backgroundColor = "black";
+    input.style.color = "#fff";
+    loading-screen.style.backgroundColor = "black";
+    line.style.backgroundColor = "#fff"
+  } else if (selectedtheme === 'light') {
+    body.style.color = "black";
+    body.style.backgroundColor = "#fff";
+    input.style.color = "black";
+    loading-screen.style.backgroundColor = "#fff";
+    line.style.backgroundColor = "black"
+  } 
 });
 function handleInput() {
   // ここに入力が変更されたときの処理を追加します
