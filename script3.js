@@ -14,11 +14,18 @@ var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
 var clear = document.getElementById("clear");
-// HTML要素を取得します
+var photo = document.getElementById("photo");
 var body = document.getElementById("body");
 var selectElement = document.getElementById("background-image");
-  
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
 
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
 selectElement.addEventListener('change', () => {
   
   
@@ -37,7 +44,16 @@ document.getElementById('input').addEventListener('keydown', function(event) {
     button.click();
   }
 });
-button.onclick = function addParagraph() {
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+span.onclick = function() {
+    modal.style.display = "none";
+};
+
+function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
     var text = document.getElementById("input").value;
@@ -84,60 +100,31 @@ button.onclick = function addParagraph() {
     
     
 }
-
-button.addEventListener("click", function() {
-  var query = input.value;
-
-  input.value = "";
-  var url = "https://www.google.com/search?q=" + query;
-  window.open(url, "_blank");
+// いずれかのボタンが押されたときの処理
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('button');
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            if (this.id === 'clear') {
+                input.blur();
+                input.value = "";
+                input.rows = 1;
+                return;
+            } else if (this.classList.contains('close')) {
+                modal.style.display = "none";
+                return;
+            } else if (this.id === 'myBtn') {
+                modal.style.display = "block";　
+                return;
+            }else {
+                addParagraph()
+                var buttonurl = this.dataset.url;
+                var query = input.value;
+              
+                input.value = "";
+                var url = buttonurl + query; // buttonurlを使用する
+                window.open(url, "_blank");
+            }
+        });
+    });
 });
-
-aiButton.addEventListener("click", function() {
-  
-  var query = input.value;
-  var url = "https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q=" + query;
-  input.value = "";
-  window.open(url, "_blank");
-});
-
-photo.addEventListener("click", function() {
-  
-  var query = input.value;
-  var url = "https://www.google.com/search?q=" + query + "&sca_esv=575726020&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiV4Oiu4YuCAxWjgVYBHfmrDZQQ_AUoAXoECAMQAw&biw=1482&bih=750&dpr=1.25";
-  input.value = "";
-  window.open(url, "_blank");
-});
-
-translate.addEventListener("click", function() {
-  
-  var query = input.value;
-  var url = "https://www.deepl.com/ja/translator#en/ja/" + query;
-  input.value = ""; 
-  window.open(url, "_blank");
-});
-
-clear.addEventListener("click", function() {
-  input.blur();
-  input.value = "";
-  input.rows = 1;
-});
-
-
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
