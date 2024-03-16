@@ -20,6 +20,7 @@ var span = document.getElementsByClassName("close")[0];
 var line = document.getElementById("line");
 var line_1 = document.getElementById("line_1");
 var line_2 = document.getElementById("line_2");
+var historyElement; // グローバルスコープで定義
 
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -46,7 +47,7 @@ function addParagraph() {
     var history_place = document.getElementById("history_place");
     var text = document.getElementById("input").value;
     // 新しいpタグを作成し、テキストを設定
-    var historyElement = document.createElement("p");
+    historyElement = document.createElement("p");
     historyElement.innerText = text;
     // pタグにクラスを追加
     historyElement.classList.add("history");
