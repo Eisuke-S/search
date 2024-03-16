@@ -20,7 +20,9 @@ var selectElement = document.getElementById("background-image");
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
-
+var line = document.getElementById("line");
+var line_1 = document.getElementById("line_1");
+var line_2 = document.getElementById("line_2");
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -41,13 +43,17 @@ selectElement.addEventListener('change', () => {
     body.style.backgroundColor = "black";
     input.style.color = "#fff";
     loading-screen.style.backgroundColor = "black";
-    line.style.backgroundColor = "#fff"
+    line.style.backgroundColor = "#fff";
+    line_1.style.backgroundColor = "black";
+    line_2.style.backgroundColor = "black" ;
   } else if (selectedtheme === 'light') {
     body.style.color = "black";
     body.style.backgroundColor = "#fff";
     input.style.color = "black";
     loading-screen.style.backgroundColor = "#fff";
-    line.style.backgroundColor = "black"
+    line.style.backgroundColor = "black";
+    line_1.style.backgroundColor = "black";
+    line_2.style.backgroundColor = "black";
   } 
 });
 function handleInput() {
