@@ -6,10 +6,7 @@ window.addEventListener('load', function() {
       loadingScreen.style.display = 'none';  
   // 1秒後に実行したいコードをここに記述する
   }, 1000); // 1秒をミリ秒で指定
-  
-  
 });
-
 var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
@@ -28,38 +25,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
-selectElement.addEventListener('change', () => {
-  
-  
-  // 現在選択されているオプションの値を取得
-  var selectedValue = selectElement.value;
-  // 背景画像を変更します
-  body.style.backgroundImage = "url('" + selectedValue + "')";
-  var selectedcolor = selectElement.getAttribute('data-color');
-  history.style.color = selectedcolor;
-  var selectedtheme = selectElement.getAttribute('data-theme');
-  if (selectedtheme === 'dark') {
-    body.style.color = "#fff";
-    body.style.backgroundColor = "black";
-    input.style.color = "#fff";
-    loading-screen.style.backgroundColor = "black";
-    line.style.backgroundColor = "#fff";
-    line_1.style.backgroundColor = "black";
-    line_2.style.backgroundColor = "black" ;
-  } else if (selectedtheme === 'light') {
-    body.style.color = "black";
-    body.style.backgroundColor = "#fff";
-    input.style.color = "black";
-    loading-screen.style.backgroundColor = "#fff";
-    line.style.backgroundColor = "black";
-    line_1.style.backgroundColor = "black";
-    line_2.style.backgroundColor = "black";
-  } 
-});
-function handleInput() {
-  // ここに入力が変更されたときの処理を追加します
-}
-                               
+
 document.getElementById('input').addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
@@ -74,24 +40,18 @@ window.onclick = function(event) {
 span.onclick = function() {
     modal.style.display = "none";
 };
-
 function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
     var text = document.getElementById("input").value;
-    
     // 新しいpタグを作成し、テキストを設定
     var history = document.createElement("p");
     history.innerText = text;
-    
     // pタグにクラスを追加
     history.classList.add("history");
-    
     // 新しいボタンタグを作成
     var history_btn = document.createElement("button");
     history_btn.setAttribute("id", "history_btn");
-    
-    
     // 新しいダイブタグを作成
     var history_box = document.createElement("div");
     history_box.setAttribute("id", "history_box");
@@ -102,8 +62,6 @@ function addParagraph() {
     history_box_2.appendChild(history_box);
     history_box.appendChild(history);
     history_box.appendChild(history_btn);
-    
-    
     var history_btn_img = document.createElement("img");
     history_btn_img.setAttribute("src", "history_btn.png");
     history_btn_img.setAttribute("id", "history_btn_img");
@@ -112,15 +70,12 @@ function addParagraph() {
     history_btn.onclick = function() {
         // ボタンが含まれるダイブタグを取得
         var parentDiv = this.parentElement;
-        
         // ダイブタグ内のpタグの内容を取得
         var paragraphContent = parentDiv.querySelector("p").innerText;
         input.value = "";
         // インプットタグにpタグの内容を書き加える
         document.getElementById("input").value += paragraphContent;
-     };
-    
-    
+     };  
 }
 // いずれかのボタンが押されたときの処理
 document.addEventListener('DOMContentLoaded', function() {
@@ -149,4 +104,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+selectElement.addEventListener('change', () => {
+  // 現在選択されているオプションの値を取得
+  var selectedValue = selectElement.value;
+  // 背景画像を変更します
+  body.style.backgroundImage = "url('" + selectedValue + "')";
+  var selectedcolor = selectElement.getAttribute('data-color');
+  history.style.color = selectedcolor;
+  var selectedtheme = selectElement.getAttribute('data-theme');
+  if (selectedtheme === 'dark') {
+    body.style.color = "#fff";
+    body.style.backgroundColor = "black";
+    input.style.color = "#fff";
+    loading-screen.style.backgroundColor = "black";
+    line.style.backgroundColor = "#fff";
+    line_1.style.backgroundColor = "black";
+    line_2.style.backgroundColor = "black" ;
+  } else if (selectedtheme === 'light') {
+    body.style.color = "black";
+    body.style.backgroundColor = "#fff";
+    input.style.color = "black";
+    loading-screen.style.backgroundColor = "#fff";
+    line.style.backgroundColor = "black";
+    line_1.style.backgroundColor = "black";
+    line_2.style.backgroundColor = "black";
+  } 
 });
