@@ -48,9 +48,9 @@ function makeresult() {
     var text = document.getElementById("input").value;
     if (text === "えいすけ") {
        result.style.display = "block";
-       resultText.appendChild("イケメン");
-       resultLink.appendChild("サイトはこちら");
-       history_btn_img.setAttribute("href", "https://eisuke-s.github.io/search/");
+       resultText.textContent = "イケメン";
+       resultLink.textContent = "サイトはこちら";
+       resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
     }
 }
 function addParagraph() {
