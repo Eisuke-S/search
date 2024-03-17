@@ -49,7 +49,7 @@ function makeresult() {
     if (text === "えいすけ") {
        result.style.display = "block";
        resultText.innerText = "イケメン";
-       resultLink.textContent = "サイトはこちら";
+       resultLink.innerText = "サイトはこちら";
        resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
     }
 }
