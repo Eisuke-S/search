@@ -112,9 +112,9 @@ selectElement.addEventListener('change', () => {
   var selectedValue = selectElement.value;
   // 背景画像を変更します
   body.style.backgroundImage = "url('" + selectedValue + "')";
-  var selectedcolor = selectElement.getAttribute('color');
+  var selectedcolor = selectElement.dataset.color;
   historyElement.style.color = selectedcolor;
-  var selectedtheme = selectElement.getAttribute('theme');
+  var selectedtheme = selectElement.dataset.theme;
   if (selectedtheme === 'dark') {
     body.style.color = "#fff";
     body.style.backgroundColor = "black";
