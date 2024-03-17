@@ -5,10 +5,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho:wght@700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
-  <script src="script3.js" defer></script>
-  <link rel="stylesheet" href="style3.css">
   <title>origo Search</title>
-  
+  <link rel="stylesheet" href="style2.css">
+  <script src="script2.js" defer></script>
 </head>
 <body id="body">
   <div id="loading-screen">
@@ -18,18 +17,21 @@
   <div class="menu">
     
     <button id="myBtn" class="pop-upbtn">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+        <div class="line"　id="line"></div>
+        <div class="line" id="line_1"></div>
+        <div class="line" id="line_2"></div>
     </button>
   
   　<a class="terms" href="terms.html"> 利用規約</a>
     <select name="background-image" id="background-image">
-      <option>デフォルト</option>
-      <option value="background-image.jpeg" data-color="light">ライト</option>
-      <option value="background-image_dark.jpeg" data-color="dark">ダーク</option>
-      
+      <option data-color="#000">デフォルト</option>
+      <option value="background-image.jpeg" data-color="#fff" data-theme="light">ライト</option>
+      <option value="background-image_dark.jpeg" data-color="orange" data-theme="dark">ダーク</option>
     </select>
+    <div id="result">
+      <p class="result-text" id="result-text">
+      <a class="result-link" id="results-link" target="_blank" rel="noopener noreferrer" href=""></a>
+    </div>
   </div>
   <div id="myModal" class="modal">
     <!-- Modal content -->
