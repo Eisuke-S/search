@@ -21,7 +21,9 @@ var line = document.getElementById("line");
 var line_1 = document.getElementById("line_1");
 var line_2 = document.getElementById("line_2");
 var historyElement; // グローバルスコープで定義
-
+var result = document.getElementById("result");
+var resultText = document.getElementById("result-text");
+var resultLink = document.getElementById("result-link");
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -42,6 +44,15 @@ window.onclick = function(event) {
 span.onclick = function() {
     modal.style.display = "none";
 };
+function makeresult() {
+    var text = document.getElementById("input").value;
+    if (text === "えいすけ") {
+       result.style.display = "block";
+       resultText.appendChild("イケメン");
+       resultLink.appendChild("サイトはこちら");
+       history_btn_img.setAttribute("href", "https://eisuke-s.github.io/search/");
+    }
+}
 function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
@@ -97,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }else {
                 addParagraph()
+                makeresult()
                 var buttonurl = this.dataset.url;
                 var query = input.value;
               
