@@ -48,7 +48,7 @@ function makeresult() {
     var text = document.getElementById("input").value;
     if (text === "えいすけ") {
        result.style.display = "block";
-       resultText.textContent = "イケメン";
+       resultText.innerText = "イケメン";
        resultLink.textContent = "サイトはこちら";
        resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
     }
