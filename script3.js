@@ -26,7 +26,9 @@ var resultText = document.getElementById("result-text");
 var resultLink = document.getElementById("result-link");
 var resultbtn = document.getElementById("resultbtn");
 var resultLinkText = document.getElementById("result-link-text");
+var resultTittle = document.getElementById("result-tittle");
 window.onclick = function(event) {
+
   if (event.target == modal) {
     modal.style.display = "none";
   }
@@ -51,13 +53,38 @@ function makeresult() {
     var text = document.getElementById("input").value;
     if (text === "えいすけ") {
        result.style.display = "block";
-       resultText.innerText = "イケメン：";
+       resultTittle.innerText = text;
+       resultText.innerText = "この人物はかの有名なorigo　searchをつくった人物である。彼は非常に多才な人物であり人類の文学の多くを読破している。また非常にイケメンであり彼の人気は学校じゅうに広まっている。言わば憧れの的である。そして現在、彼女募集中である。";
        resultLinkText.innerText = "サイトはこちら";      
        resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
        return;
        
     }
-    
+    if (text === "すけすけ") {
+       result.style.display = "block";
+       resultTittle.innerText = text;
+       resultText.innerText = "この人物はかの有名なorigo　searchをつくった人物である。彼は非常に多才な人物であり人類の文学の多くを読破している。また非常にイケメンであり彼の人気は学校じゅうに広まっている。言わば憧れの的である。そして現在、彼女募集中である。";
+       resultLinkText.innerText = "サイトはこちら";      
+       resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
+       return;
+       
+    }
+    if (text === "英資") {
+       result.style.display = "block";
+       resultTittle.innerText = text;
+       resultText.innerText = "この人物はかの有名なorigo　searchをつくった人物である。彼は非常に多才な人物であり人類の文学の多くを読破している。また非常にイケメンであり彼の人気は学校じゅうに広まっている。言わば憧れの的である。そして現在、彼女募集中である。";
+       resultLinkText.innerText = "サイトはこちら";      
+       resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
+       return;
+       
+    }    
+    if (text === "こばはる") {
+       result.style.display = "block";
+       resultTittle.innerText = text;
+       resultText.innerText = "　テニブス　この人物はイケメンぶり（ナルシスト？）で有名な鈴木英資の友達にもっとも近い人物である。またこの人物の？？は３７でありこの人物は？？をもちあげられるように筋トレちゅーである。せいぜいがんばってほしい。";
+       return;
+       
+    }
 }
 
 function addParagraph() {
