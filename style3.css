@@ -148,7 +148,7 @@ body {
 
 
 .input-box {
-  background-color: white;
+  background-color: rgba(255,255,255,0.5);
   color: black;
   width: 100%;
   height: 1.2em;
@@ -455,7 +455,7 @@ p.con {
     color: #fff;
   }
   .input-box {
-    background-color: black;
+    background-color: rgba(0,0,0,0.6);
     color: #fff;
     border-color: white;
   }
