@@ -46,9 +46,7 @@ window.onclick = function(event) {
 span.onclick = function() {
     modal.style.display = "none";
 };
-resultbtn.onclick = function() {
-  result.style.display = "none";
-};
+
 function makeresult() {
     var text = document.getElementById("input").value;
     if (text === "えいすけ") {
@@ -58,6 +56,7 @@ function makeresult() {
        resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
     }
 }
+
 function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
@@ -108,6 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
           
             } else if (this.id === 'myBtn') {
                 modal.style.display = "block";　
+                return;
+            } else if (this.id === 'resultbtn') {
+                result.style.display = "none";　
                 return;
             }else {
                 addParagraph()
