@@ -55,6 +55,7 @@ function makeresult() {
        resultLinkText.innerText = "サイトはこちら";
        resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
     }
+    return;
 }
 
 function addParagraph() {
