@@ -54,8 +54,10 @@ function makeresult() {
        resultText.innerText = "イケメン";
        resultLinkText.innerText = "サイトはこちら";
        resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
+       return;
+       
     }
-    return;
+    
 }
 
 function addParagraph() {
