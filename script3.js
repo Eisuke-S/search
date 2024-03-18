@@ -24,6 +24,8 @@ var historyElement; // グローバルスコープで定義
 var result = document.getElementById("result");
 var resultText = document.getElementById("result-text");
 var resultLink = document.getElementById("result-link");
+var resultbtn = document.getElementById("resultbtn");
+var resultLinkText = document.getElementById("result-link-text");
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -44,12 +46,15 @@ window.onclick = function(event) {
 span.onclick = function() {
     modal.style.display = "none";
 };
+resultbtn.onclick = function() {
+  result.style.display = "none";
+};
 function makeresult() {
     var text = document.getElementById("input").value;
     if (text === "えいすけ") {
        result.style.display = "block";
        resultText.innerText = "イケメン";
-       resultLink.innerText = "サイトはこちら";
+       resultLinkText.innerText = "サイトはこちら";
        resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
     }
 }
