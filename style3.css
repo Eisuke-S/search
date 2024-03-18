@@ -305,6 +305,17 @@ body {
   position: fixed;
   display: none;
 }
+.result-tittle {
+  z-index: 4;
+  margin: 25px;
+  font-size: 70px;
+  color: #CC0000;
+  postion: fixed;
+}
+.result-tittle-box{
+  width: 100%;
+  border-bottom: solid;
+}
 .result-text {
   z-index: 3;
   margin: 25px;
@@ -323,6 +334,7 @@ body {
   bottom: 0;
   left: 0; 
 }
+
 /* Add Animation */
 @keyframes animatetop {
   from {
@@ -463,7 +475,9 @@ p.con {
   p.con {
     color: black;
   }
-  
+  #result {
+    background-color: black;
+  }
   
 }
 
