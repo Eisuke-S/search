@@ -172,22 +172,8 @@ selectElement.addEventListener('change', () => {
   var selectedValue = selectElement.value;
   // 背景画像を変更します
   body.style.backgroundImage = "url('" + selectedValue + "')";
-  var selectedcolor = selectElement.dataset.color;
-  historyElement.style.color = selectedcolor;
-  var selectedtheme = selectElement.dataset.theme;
-  if (selectedtheme === 'dark') {
-    body.style.color = "#fff";
-    body.style.backgroundColor = "black";
-    input.style.color = "#fff";
-    line.style.backgroundColor = "#fff";
-    line_1.style.backgroundColor = "black";
-    line_2.style.backgroundColor = "black";
-  } else if (selectedtheme === 'light') {
-    body.style.color = "black";
-    body.style.backgroundColor = "#fff";
-    input.style.color = "black";
-    line.style.backgroundColor = "black";
-    line_1.style.backgroundColor = "black";
-    line_2.style.backgroundColor = "black";
-  } 
+  const color = selectElement.getAttribute('data-color'); 
+  historyElement.style.color = color;
+  
+
 });
