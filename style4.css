@@ -32,6 +32,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 3px solid transparent; /* ボーダーの太さと透明 */
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* 虹色のグラデーション */
+  background-origin: border-box; /* ボーダー内側の背景を指定 */
+  background-clip: padding-box; /* パディング内側のボーダーを指定 */
+  border-radius: 50%; /* 角丸 */
 }
 body, html {
   height: 100%;
