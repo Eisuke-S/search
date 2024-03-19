@@ -26,7 +26,7 @@
 .loading-line {
   animation: swing 4s ease-in-out infinite;
   z-index: 9998;
-  width: 50vw; 
+  width: 25vw; 
   height: 20px;
   top: 60%;
   left: 25%;
@@ -391,13 +391,22 @@ p.con {
 }
 @keyframes swing {
   0% {
-    left: 25%;
+    transform: translateX(0);
   }
-  50% {
-    right: 25%;
+  20% {
+    transform: translateX(200px); /* スイングの最大幅 */
+  }
+  40% {
+    transform: translateX(-200px); /* スイングの最小幅 */
+  }
+  60% {
+    transform: translateX(400px); /* スイングの最大幅 */
+  }
+  80% {
+    transform: translateX(-400px); /* スイングの最小幅 */
   }
   100% {
-    left: 25%;
+    transform: translateX(0);
   }
 }
 /* 横長の画面に対するスタイル */
