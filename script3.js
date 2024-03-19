@@ -1,7 +1,7 @@
 // ページが読み込まれたら、ローディング画面を非表示にする
 window.addEventListener('load', function() {
   var loadingScreen = document.getElementById('loading-screen');
-  loadingScreen.style.animation = 'fadeIn 1s ease-in-out forwards';
+  loadingScreen.style.animation = 'fadeout 1s ease-in-out forwards';
   setTimeout(function() {
       loadingScreen.style.display = 'none';  
   // 1秒後に実行したいコードをここに記述する
@@ -136,7 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
           
             } else if (this.id === 'myBtn') {
-                modal.style.display = "block";　
+                btn.style.animation = 'zoomout 0.3s ease-in-out forwards';
+                modal.style.display = "block";
                 return;
             } else if (this.id === 'resultbtn') {
                 result.style.display = "none";　
