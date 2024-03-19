@@ -30,22 +30,7 @@
   z-index: 9999;
   
 }
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes fadeIn {
-    from {
-        opacity: 1; /* 開始時の透明度 */
-    }
-    to {
-        opacity: 0; /* 終了時の透明度 */
-    }
-}
+
 
 .loading-circle {
   animation: rotate 5s infinite linear;
@@ -338,17 +323,7 @@ body {
   left: 0; 
 }
 
-/* Add Animation */
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
+/
 
 .btn {
   display: flex;
@@ -412,7 +387,49 @@ p.con {
   height: 50px;
   whidh: auto;
 }
+@keyframes zoomout {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes zoomin {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeout {
+    from {
+        opacity: 1; /* 開始時の透明度 */
+    }
+    to {
+        opacity: 0; /* 終了時の透明度 */
+    }
+}
 /* 横長の画面に対するスタイル */
 @media screen and (orientation: landscape) {
   /* 横長の画面に適用するスタイル */
