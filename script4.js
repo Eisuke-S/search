@@ -47,7 +47,7 @@ input.addEventListener('keydown', function(event) {
   input.style.height = "3.2em";
   setTimeout(function() {
     input.style.height = "1.2em";
-  }, 3000); 
+  }, 6000); 
   
 });
 
