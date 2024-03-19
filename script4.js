@@ -27,18 +27,6 @@ var resultLink = document.getElementById("result-link");
 var resultbtn = document.getElementById("resultbtn");
 var resultLinkText = document.getElementById("result-link-text");
 var resultTittle = document.getElementById("result-tittle");
-window.onclick = function(event) {
-  if (event.target == modal) {
-     btn.style.animation = 'zoomin 0.3s ease-in-out forwards'; 
-     modal.style.animation = 'fadeout 0.3s ease-in-out forwards';
-     setTimeout(function() {
-       modal.style.display = "none";
-       return;                  
-       // 1秒後に実行したいコードをここに記述する
-     }, 300);  
-  }
-};
-
 input.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
@@ -48,65 +36,15 @@ input.addEventListener('keydown', function(event) {
   setTimeout(function() {
     input.style.height = "1.2em";
   }, 10000); 
-  
 });
-input.addEventListener('input', function() {
-  input.style.height = "3.2em";
-  setTimeout(function() {
-    input.style.height = "1.2em";
-  }, 10000); 
-  
-});
-
-span.onclick = function() {
-    
+function hidecontent() {
     btn.style.animation = 'zoomin 0.3s ease-in-out forwards'; 
     modal.style.animation = 'fadeout 0.3s ease-in-out forwards';
     setTimeout(function() {
       modal.style.display = "none";
       return;                  
-      // 1秒後に実行したいコードをここに記述する
     }, 300); 
 };
-
-function makeresult() {
-    var text = document.getElementById("input").value;
-    if (text === "えいすけ") {
-       result.style.display = "block";
-       resultTittle.innerText = text;
-       resultText.innerText = "この人物はかの有名なorigo　searchをつくった人物である。彼は非常に多才な人物であり人類の文学の多くを読破している。また非常にイケメンであり彼の人気は学校じゅうに広まっている。言わば憧れの的である。そして現在、彼女募集中である。";
-       resultLinkText.innerText = "サイトはこちら";      
-       resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
-       return;
-       
-    }
-    if (text === "すけすけ") {
-       result.style.display = "block";
-       resultTittle.innerText = text;
-       resultText.innerText = "この人物はかの有名なorigo　searchをつくった人物である。彼は非常に多才な人物であり人類の文学の多くを読破している。また非常にイケメンであり彼の人気は学校じゅうに広まっている。言わば憧れの的である。そして現在、彼女募集中である。";
-       resultLinkText.innerText = "サイトはこちら";      
-       resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
-       return;
-       
-    }
-    if (text === "英資") {
-       result.style.display = "block";
-       resultTittle.innerText = text;
-       resultText.innerText = "この人物はかの有名なorigo　searchをつくった人物である。彼は非常に多才な人物であり人類の文学の多くを読破している。また非常にイケメンであり彼の人気は学校じゅうに広まっている。言わば憧れの的である。そして現在、彼女募集中である。";
-       resultLinkText.innerText = "サイトはこちら";      
-       resultLink.setAttribute("href", "https://eisuke-s.github.io/search/");
-       return;
-       
-    }    
-    if (text === "こばはる") {
-       result.style.display = "block";
-       resultTittle.innerText = text;
-       resultText.innerText = "　テニブス　この人物はイケメンぶり（ナルシスト？）で有名な鈴木英資の友達にもっとも近い人物である。またこの人物の？？は３７でありこの人物は？？をもちあげられるように筋トレちゅーである。せいぜいがんばってほしい。";
-       return;
-       
-    }
-}
-
 function addParagraph() {
     // 入力フィールドからテキストを取得
     var history_place = document.getElementById("history_place");
@@ -144,6 +82,14 @@ function addParagraph() {
         document.getElementById("input").value += paragraphContent;
      };  
 }
+window.onclick = function(event) {
+  if (event.target == modal) {
+     hidecontent() 
+  }
+};
+span.onclick = function() {
+    hidecontent()
+};
 // いずれかのボタンが押されたときの処理
 document.addEventListener('DOMContentLoaded', function() {
     var buttons = document.querySelectorAll('button');
@@ -153,8 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.blur();
                 input.value = "";
                 input.rows = 1;
-              
-          
             } else if (this.id === 'myBtn') {
                 btn.style.animation = 'zoomout 0.3s ease-in-out forwards';
               　setTimeout(function() {
@@ -162,16 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
                   modal.style.animation = 'fadein 0.3s ease-in-out forwards';
                   // 1秒後に実行したいコードをここに記述する
                 }, 300); 
-
             } else if (this.id === 'resultbtn') {
                 result.style.display = "none";　
-                
             }else {
                 addParagraph()
-                makeresult()
                 var buttonurl = this.dataset.url;
                 var query = input.value;
-              
                 input.value = "";
                 var url = buttonurl + query; // buttonurlを使用する
                 window.open(url, "_blank");
@@ -186,6 +126,4 @@ selectElement.addEventListener('change', () => {
   body.style.backgroundImage = "url('" + selectedValue + "')";
   const historycolor = selectElement.getAttribute('data-color'); 
   historyElement.style.color = historycolor;
-  
-
 });
