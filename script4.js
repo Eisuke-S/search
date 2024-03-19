@@ -39,11 +39,16 @@ window.onclick = function(event) {
   }
 };
 
-document.getElementById('input').addEventListener('keydown', function(event) {
+input.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
     button.click();
   }
+  input.style.height = "3.2em";
+  setTimeout(function() {
+    input.style.height = "1.2em";
+  }, 3000); 
+  
 });
 
 span.onclick = function() {
