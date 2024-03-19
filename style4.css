@@ -414,8 +414,9 @@ p.con {
   body {
     background-size: 100%;
   }
-  .loading-circle {
-    width: 60px;
+  .loading-line {
+    width: 20vw;
+    height: 8px;
   }
   .loading-logo {
     width: 5%; /* 画像の幅を調整 */
