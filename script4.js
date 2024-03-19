@@ -47,14 +47,14 @@ input.addEventListener('keydown', function(event) {
   input.style.height = "3.2em";
   setTimeout(function() {
     input.style.height = "1.2em";
-  }, 6000); 
+  }, 10000); 
   
 });
 input.addEventListener('input', function() {
   input.style.height = "3.2em";
   setTimeout(function() {
     input.style.height = "1.2em";
-  }, 6000); 
+  }, 10000); 
   
 });
 
