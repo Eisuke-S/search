@@ -365,7 +365,7 @@ p.con {
   line-height: 130%;
   color: white;
   padding: 0;
-  margin: 0;
+  margin: 10px;
 }
 #history_box {
   align-items: center;
