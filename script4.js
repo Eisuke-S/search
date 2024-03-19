@@ -52,7 +52,11 @@ span.onclick = function() {
     
     btn.style.animation = 'zoomin 0.3s ease-in-out forwards'; 
     setTimeout(function() {
-      modal.style.display = "none";
+       modal.style.animation = 'fadeout 0.2s ease-in-out forwards';
+       setTimeout(function() {
+         modal.style.display = "none";
+         return;     
+       }, 200);
       return;                  
       // 1秒後に実行したいコードをここに記述する
     }, 300); 
