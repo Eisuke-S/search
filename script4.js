@@ -50,7 +50,8 @@ window.onclick = function(event) {
   }
 };
 span.onclick = function() {
-    btn.style.animation = 'zoomin 0.3s ease-in-out forwards';
+    
+    btn.style.animation = 'zoomin 0.3s ease-in-out forwards'; 
     setTimeout(function() {
       modal.style.display = "none";
       return;                  
@@ -148,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.style.animation = 'zoomout 0.3s ease-in-out forwards';
               　setTimeout(function() {
                   modal.style.display = "block";
-                  return;                  
+                  modal.style.animation = "fadein 0.1s ease-in-out forwards";
                   // 1秒後に実行したいコードをここに記述する
                 }, 300); 
 
