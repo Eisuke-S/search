@@ -31,8 +31,11 @@ window.onclick = function(event) {
   if (event.target == modal) {
      btn.style.animation = 'zoomin 0.3s ease-in-out forwards'; 
      setTimeout(function() {
-       modal.style.display = "none";
-       return;                  
+       modal.style.animation = 'fadeout 0.2s ease-in-out forwards';
+       setTimeout(function() {
+         modal.style.display = "none";
+         return;     
+       }, 200);
       // 1秒後に実行したいコードをここに記述する
      }, 300); 
   }
@@ -145,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.style.animation = 'zoomout 0.3s ease-in-out forwards';
               　setTimeout(function() {
                   modal.style.display = "block";
-                  modal.style.animation = "fadein 0.3s ease-in-out forwards";
+                  modal.style.animation = 'fadein 0.3s ease-in-out forwards';
                   // 1秒後に実行したいコードをここに記述する
                 }, 300); 
 
