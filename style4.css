@@ -28,7 +28,7 @@
   z-index: 9998;
   width: 25vw; 
   height: 20px;
-  top: 60%;
+  top: 80vh;
   left: 25%;
   border: 3px solid transparent; /* ボーダーの太さと透明 */
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* 虹色のグラデーション */
