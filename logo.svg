@@ -1,5 +1,5 @@
 <svg width="300" height="300" viewBox="-150 -150 300 300" xmlns="http://www.w3.org/2000/svg">
     <!-- SVG要素の定義 -->
     <path d="M142 -47 L88 121 L-89 121 L-143 -47 L-1 -150 z" style="fill:#1814ff;"></path>
-    <polygon points="-29,27 142,47 88,121" fill="yellow" />
+    <polygon points="-29,27 142,-47 88,121" fill="yellow" />
  </svg>
