@@ -1,3 +1,36 @@
-<svg width="300" height="300" viewBox="-150 -150 300 300">
-	<path d="M142 -47 L88 121 L-89 121 L-143 -47 L-1 -150 z" style="fill:#1814ff;"></path>
+<svg width="300" height="300" viewBox="-150 -150 300 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- SVG要素の定義 -->
+    <path d="M142 -47 L88 121 L-89 121 L-143 -47 L-1 -150 z" style="fill:#1814ff;"></path>
+
+    <!-- JavaScriptの埋め込み -->
+    <script type="text/ecmascript">
+        <![CDATA[
+            // JavaScriptのコードをここに記述する
+            var points = [
+                { x: 142, y: -47 },
+                { x: 88, y: 121 },
+                { x: -89, y: 121 },
+                { x: -143, y: -47 },
+                { x: -1, y: -150 }
+            ];
+
+            var minX = points[0].x;
+            var maxX = points[0].x;
+            points.forEach(function(point) {
+                minX = Math.min(minX, point.x);
+                maxX = Math.max(maxX, point.x);
+            });
+            var centerX = (minX + maxX) / 2;
+
+            var minY = points[0].y;
+            var maxY = points[0].y;
+            points.forEach(function(point) {
+                minY = Math.min(minY, point.y);
+                maxY = Math.max(maxY, point.y);
+            });
+            var centerY = (minY + maxY) / 2;
+
+            console.log("中心の座標: (" + centerX + ", " + centerY + ")");
+        ]]>
+    </script>
 </svg>
