@@ -23,20 +23,19 @@
   transform: translate(-50%, -50%);
   z-index: 9999;
 }
-.loading-circle {
-  animation: rotate 5s infinite linear;
+.loading-line {
+  animation: ;
   z-index: 9998;
-  width: 90px; 
-  height: 90px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 25%; 
+  height: 5px;
+  top: 60%;
+  left: 25%;
+  transform: translate(-60%, -50%);
   border: 3px solid transparent; /* ボーダーの太さと透明 */
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* 虹色のグラデーション */
   background-origin: border-box; /* ボーダー内側の背景を指定 */
-  background-clip: padding-box; /* パディング内側のボーダーを指定 */
-  border-radius: 50%; /* 角丸 */
+  background-clip: padding-box;
+  border-radius: ; /* 角丸 */
 }
 body, html {
   height: 100%;
@@ -389,6 +388,17 @@ p.con {
     to {
         opacity: 1; /* 終了時の透明度 */
     }
+}
+@keyframes swing {
+  0% {
+    left: 25%;
+  }
+  50% {
+    right: 25%;
+  }
+  100% {
+    left: 25%;
+  }
 }
 /* 横長の画面に対するスタイル */
 @media screen and (orientation: landscape) {
