@@ -26,8 +26,8 @@
 .loading-line {
   animation: swing 4s ease-in-out infinite;
   z-index: 9998;
-  width: 25%; 
-  height: 5px;
+  width: 50vw; 
+  height: 20px;
   top: 60%;
   left: 25%;
   transform: translate(-60%, -50%);
@@ -35,7 +35,7 @@
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* 虹色のグラデーション */
   background-origin: border-box; /* ボーダー内側の背景を指定 */
   background-clip: padding-box;
-  border-radius: ; /* 角丸 */
+  border-radius: 10px; /* 角丸 */
 }
 body, html {
   height: 100%;
