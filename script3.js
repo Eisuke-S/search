@@ -137,8 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
           
             } else if (this.id === 'myBtn') {
                 btn.style.animation = 'zoomout 0.3s ease-in-out forwards';
-                modal.style.display = "block";
-                return;
+              　setTimeout(function() {
+                  modal.style.display = "block";
+                  return;                  
+                  // 1秒後に実行したいコードをここに記述する
+                }, 300); 
+
             } else if (this.id === 'resultbtn') {
                 result.style.display = "none";　
                 return;
