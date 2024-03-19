@@ -24,7 +24,7 @@
   z-index: 9999;
 }
 .loading-line {
-  animation: ;
+  animation: swing 4s ease-in-out infinite;
   z-index: 9998;
   width: 25%; 
   height: 5px;
