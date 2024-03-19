@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.style.animation = 'zoomout 0.3s ease-in-out forwards';
               　setTimeout(function() {
                   modal.style.display = "block";
-                  modal.style.animation = "fadein 0.1s ease-in-out forwards";
+                  modal.style.animation = "fadein 0.3s ease-in-out forwards";
                   // 1秒後に実行したいコードをここに記述する
                 }, 300); 
 
