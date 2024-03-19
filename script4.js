@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.blur();
                 input.value = "";
                 input.rows = 1;
-                return;
+              
           
             } else if (this.id === 'myBtn') {
                 btn.style.animation = 'zoomout 0.3s ease-in-out forwards';
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             } else if (this.id === 'resultbtn') {
                 result.style.display = "none";　
-                return;
+                
             }else {
                 addParagraph()
                 makeresult()
@@ -172,8 +172,8 @@ selectElement.addEventListener('change', () => {
   var selectedValue = selectElement.value;
   // 背景画像を変更します
   body.style.backgroundImage = "url('" + selectedValue + "')";
-  const color = selectElement.getAttribute('data-color'); 
-  historyElement.style.color = color;
+  const historycolor = selectElement.getAttribute('data-color'); 
+  historyElement.style.color = historycolor;
   
 
 });
