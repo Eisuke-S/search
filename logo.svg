@@ -1,0 +1,7 @@
+<svg width="150" height="150">
+  <!-- 正五角形 -->
+  <polygon points="75,15 127.5,57.5 111.25,127.5 38.75,127.5 22.5,57.5" style="fill:rgb(24, 20, 255);stroke:purple;stroke-width:1" />
+
+  <!-- 透明な三角形 -->
+  <polygon points="50,127.5 75,100 100,127.5" style="fill:none;stroke:none;stroke-width:0" />
+</svg>
