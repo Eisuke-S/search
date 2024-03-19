@@ -50,6 +50,13 @@ input.addEventListener('keydown', function(event) {
   }, 6000); 
   
 });
+input.addEventListener('input', function() {
+  input.style.height = "3.2em";
+  setTimeout(function() {
+    input.style.height = "1.2em";
+  }, 6000); 
+  
+});
 
 span.onclick = function() {
     
