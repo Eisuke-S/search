@@ -30,14 +30,12 @@ var resultTittle = document.getElementById("result-tittle");
 window.onclick = function(event) {
   if (event.target == modal) {
      btn.style.animation = 'zoomin 0.3s ease-in-out forwards'; 
+     modal.style.animation = 'fadeout 0.3s ease-in-out forwards';
      setTimeout(function() {
-       modal.style.animation = 'fadeout 0.2s ease-in-out forwards';
-       setTimeout(function() {
-         modal.style.display = "none";
-         return;     
-       }, 200);
-      // 1秒後に実行したいコードをここに記述する
-     }, 300); 
+       modal.style.display = "none";
+       return;                  
+       // 1秒後に実行したいコードをここに記述する
+     }, 300);  
   }
 };
 
@@ -51,12 +49,9 @@ document.getElementById('input').addEventListener('keydown', function(event) {
 span.onclick = function() {
     
     btn.style.animation = 'zoomin 0.3s ease-in-out forwards'; 
+    modal.style.animation = 'fadeout 0.3s ease-in-out forwards';
     setTimeout(function() {
-       modal.style.animation = 'fadeout 0.2s ease-in-out forwards';
-       setTimeout(function() {
-         modal.style.display = "none";
-         return;     
-       }, 200);
+      modal.style.display = "none";
       return;                  
       // 1秒後に実行したいコードをここに記述する
     }, 300); 
