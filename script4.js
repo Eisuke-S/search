@@ -28,9 +28,13 @@ var resultbtn = document.getElementById("resultbtn");
 var resultLinkText = document.getElementById("result-link-text");
 var resultTittle = document.getElementById("result-tittle");
 window.onclick = function(event) {
-
   if (event.target == modal) {
-    modal.style.display = "none";
+    btn.style.animation = 'zoomin 0.3s ease-in-out forwards';
+    setTimeout(function() {
+      modal.style.display = "none";
+      return;                  
+      // 1秒後に実行したいコードをここに記述する
+    }, 300); 
   }
 };
 
@@ -46,7 +50,12 @@ window.onclick = function(event) {
   }
 };
 span.onclick = function() {
-    modal.style.display = "none";
+    btn.style.animation = 'zoomin 0.3s ease-in-out forwards';
+    setTimeout(function() {
+      modal.style.display = "none";
+      return;                  
+      // 1秒後に実行したいコードをここに記述する
+    }, 300); 
 };
 
 function makeresult() {
