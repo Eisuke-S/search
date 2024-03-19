@@ -386,16 +386,13 @@ p.con {
   border: none;
   outline: none;
   text-decoration: none;
-  padding: 0;
-  margin: 0;
+  margin: 10px;
 }
 
 
 #history_btn_img {
   height: 50px;
   whidh: auto;
-  padding: 0;
-  margin: 0;
 }
 @keyframes zoomout {
   0% {
