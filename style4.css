@@ -272,8 +272,6 @@ p.con {
   color: white;
   padding: 0;
   margin: 10px;
-  display: inline-block;
-  width: 75vw;
 }
 #history_box {
   align-items: center;
@@ -282,7 +280,7 @@ p.con {
   display: flex;
   justify-content: center;
   height: auto;
-  width: 90vw;
+  width: 90%;
   background-color: rgba(128,128,128,0.3);
   padding: 0;
 }
@@ -295,6 +293,7 @@ p.con {
   outline: none;
   text-decoration: none;
   margin: 10px;
+  display: inline-block;
 }
 #history_btn_img {
   height: 50px;
