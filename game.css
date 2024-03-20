@@ -45,6 +45,9 @@
   width: 100%;
   height: 100%;
 }
+.content {
+  display: none;
+}
 .icon {
   border-raidious: 1;
   height: 20%;
