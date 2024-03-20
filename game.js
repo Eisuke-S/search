@@ -12,13 +12,15 @@ var TermsOfUse = document.getElementById("terms-of-use");
 var wordsfrvrBtn = document.getElementById("wordsfrvr-btn");
 var wordsfrvr = document.getElementById("wordsfrvr");
 var game = document.getElementById("game");
+var content = document.getElementById("content");
 selectElement.addEventListener('change', () => {
   // 現在選択されているオプションの値を取得
   var selectedValue = selectElement.value;
   if (selectedValue === "yes") { 
     TermsOfUse.style.animation = 'fadeout 2s ease-in-out forwards';
     setTimeout(function() {
-        TermsOfUse.style.display = 'none';  
+        TermsOfUse.style.display = 'none'; 
+        content.style.display = 'block';
     // 1秒後に実行したいコードをここに記述する
     }, 3000); // 1秒をミリ秒で指定
   } else if (selectedValue === "no") { 
@@ -29,6 +31,6 @@ selectElement.addEventListener('change', () => {
   }
 });
 wordsfrvrBtn.onclick = function() {
-  game.style.display = "block";
-  wordsfrvr.style.display = "block"
+  game.style.display = 'block';
+  wordsfrvr.style.display = 'block';
 };
