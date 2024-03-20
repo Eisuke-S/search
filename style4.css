@@ -383,13 +383,6 @@ p.con {
   body {
     background-size: 100%;
   }
-  .loading-line {
-    width: 20vw;
-    height: 8px;
-  }
-  .loading-logo {
-    width: 5%; /* 画像の幅を調整 */
-  }
   .biginput {
     position: relative;
     width: 60%;
@@ -427,9 +420,6 @@ p.con {
   }
   .history {
     color: #ff8c00;
-  }
-  #loading-screen {
-    background-color: black;
   }
   p.con {
     color: black;
