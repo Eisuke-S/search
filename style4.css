@@ -450,15 +450,6 @@ p.con {
   #history_box {
     width: 60%;
   }
-  .imagemenu {
-    font-size: 25px;
-  }
-  #background-image{
-    font-size: 25px;
-  }
-  .terms {
-    font-size: 25px;
-  }
 }
 @media (prefers-color-scheme: dark) {
   /* ダークモード用のスタイル */
