@@ -256,12 +256,6 @@ btn a img {
 p.con {
   color: black;
 }
-.space {
-    display: block;
-    background-color: transparent;
-    width: 100%;
-    height: 900px; 
-}
 #history_place {
   width: 100%;
 }
