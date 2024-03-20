@@ -64,3 +64,20 @@
     transform: translateX(0);
   }
 }
+@media screen and (orientation: landscape) {
+  /* 横長の画面に適用するスタイル *
+  .loading-line {
+    width: 20vw;
+    height: 8px;
+  }
+  .loading-logo {
+    width: 5%; /* 画像の幅を調整 */
+  }
+}
+@media (prefers-color-scheme: dark) {
+  /* ダークモード用のスタイル */
+  #loading-screen {
+    background-color: black;
+  }
+}
+
