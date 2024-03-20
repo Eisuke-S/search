@@ -8,6 +8,7 @@ body {
   background-size: auto 100%; /* 画面に合わせて拡大表示 */
   background-position: center;
   background-color: white;
+  background-attachment: fixed;
   position: relative;
 }
 .menu {
