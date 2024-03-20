@@ -49,7 +49,7 @@
   display: none;
 }
 .icon {
-  border-raidius: 2;
+  border-radius: 2;
   height: 20%;
   margin: 30%; 
 }
@@ -73,6 +73,8 @@
   margin-bottom: 10vh; /* 下側のマージン */
   margin-left: 10vw;   /* 左側のマージン */
   display: none;
+  position: fixed;
+  top: 10vh;
 }
 @keyframes fadeout {
     from {
