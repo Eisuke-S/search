@@ -36,6 +36,15 @@
   background-clip: padding-box;
   border-radius: 10px; /* 角丸 */
 }
+.terms-of-use {
+  z-index: 9996;
+  postion: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100vh;
+  height: 100vh;
+}
 @keyframes fadeout {
     from {
         opacity: 1; /* 開始時の透明度 */
