@@ -48,6 +48,21 @@
 #home {
   
 }
+#game {
+  background-color: white;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+#game-content {
+  height: 80vh;
+  width: 80vw;
+  margin-top: 10vh;    /* 上側のマージン */
+  margin-right: 10vw;  /* 右側のマージン */
+  margin-bottom: 10vh; /* 下側のマージン */
+  margin-left: 10vw;   /* 左側のマージン */
+}
 @keyframes fadeout {
     from {
         opacity: 1; /* 開始時の透明度 */
