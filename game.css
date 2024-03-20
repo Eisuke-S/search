@@ -45,8 +45,12 @@
   width: 100vh;
   height: 100vh;
 }
-#home {
-  
+.icon {
+  border-raidious: 1;
+}
+.game-botton {
+  background: none;
+  border: none;
 }
 #game {
   background-color: white;
@@ -63,6 +67,7 @@
   margin-right: 10vw;  /* 右側のマージン */
   margin-bottom: 10vh; /* 下側のマージン */
   margin-left: 10vw;   /* 左側のマージン */
+  display: none;
 }
 @keyframes fadeout {
     from {
