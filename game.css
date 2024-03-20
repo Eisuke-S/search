@@ -50,8 +50,8 @@
 }
 .icon {
   border-radius: 20%;
-  height: 20%;
-  margin: 30%; 
+  height: 20vmin;
+  margin: 50px; 
 }
 .game-botton {
   background-color: transparent;
