@@ -11,6 +11,7 @@ var selectElement = document.getElementById("consent");
 var TermsOfUse = document.getElementById("terms-of-use");
 var vattleshipBtn = document.getElementById("battleship-btn");
 var vattleship = document.getElementById("battleship");
+var game = document.getElementById("game");
 selectElement.addEventListener('change', () => {
   // 現在選択されているオプションの値を取得
   var selectedValue = selectElement.value;
@@ -28,5 +29,6 @@ selectElement.addEventListener('change', () => {
   }
 });
 vattleshipBtn.onclick = function() {
-  
+  game.style.display = "block";
+  vattleship.style.display = "block"
 };
