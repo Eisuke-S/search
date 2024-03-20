@@ -41,7 +41,7 @@ body, html {
   margin: 0; 
 }
 body {
-  background-image: url(background-image.jpeg);
+  background-image: url(background-image.webp);
   background-repeat: no-repeat;
   background-size: auto 100%; /* 画面に合わせて拡大表示 */
   background-position: center;
@@ -447,7 +447,7 @@ p.con {
 @media (prefers-color-scheme: dark) {
   /* ダークモード用のスタイル */
   body {
-    background-image: url(background-image_dark.jpeg);
+    background-image: url(background-image_dark.webp);
     background-color: black;
     color: #fff;
   }
