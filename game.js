@@ -9,8 +9,8 @@ window.addEventListener('load', function() {
 });
 var selectElement = document.getElementById("consent");
 var TermsOfUse = document.getElementById("terms-of-use");
-var vattleshipBtn = document.getElementById("battleship-btn");
-var vattleship = document.getElementById("battleship");
+var wordsfrvrBtn = document.getElementById("wordsfrvr-btn");
+var wordsfrvr = document.getElementById("wordsfrvr");
 var game = document.getElementById("game");
 selectElement.addEventListener('change', () => {
   // 現在選択されているオプションの値を取得
@@ -28,7 +28,7 @@ selectElement.addEventListener('change', () => {
     }, 5000);
   }
 });
-vattleshipBtn.onclick = function() {
+wordsfrvrBtn.onclick = function() {
   game.style.display = "block";
-  vattleship.style.display = "block"
+  wordsfrvr.style.display = "block"
 };
