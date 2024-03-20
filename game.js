@@ -18,9 +18,9 @@ selectElement.addEventListener('change', () => {
   var selectedValue = selectElement.value;
   if (selectedValue === "yes") { 
     TermsOfUse.style.animation = 'fadeout 2s ease-in-out forwards';
+    content.style.display = 'block';
     setTimeout(function() {
         TermsOfUse.style.display = 'none'; 
-        content.style.display = 'block';
     // 1秒後に実行したいコードをここに記述する
     }, 3000); // 1秒をミリ秒で指定
   } else if (selectedValue === "no") { 
