@@ -94,8 +94,7 @@ body {
 }
 .imagemenu {
   font-size: 50px;
-  margin-left: 40px;
-  top: 40px;
+  margin: 40px;
   color: white;
   font-family: "BIZ UDMincho", serif;
 }
@@ -455,9 +454,6 @@ p.con {
   }
   #background-image{
     font-size: 25px;
-  }
-  .pop-upbtn {
-    height: 40px;
   }
 }
 @media (prefers-color-scheme: dark) {
