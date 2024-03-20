@@ -33,4 +33,5 @@ selectElement.addEventListener('change', () => {
 wordsfrvrBtn.onclick = function() {
   game.style.display = 'block';
   wordsfrvr.style.display = 'block';
+  wordsfrvrBtn.style.display = 'none';
 };
