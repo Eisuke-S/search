@@ -7,3 +7,14 @@ window.addEventListener('load', function() {
   // 1秒後に実行したいコードをここに記述する
   }, 1000); // 1秒をミリ秒で指定
 });
+var selectElement = document.getElementById("consent");
+var TermsOfUse = document.getElementById("terms-of-use");
+selectElement.addEventListener('change', () => {
+  // 現在選択されているオプションの値を取得
+  var selectedValue = selectElement.value;
+  if (selectedValue ==="yes") { 
+    TermsOfUse.style.display = "none";
+  } else if (selectedValue === "no") { 
+    window.open.
+  }
+});
