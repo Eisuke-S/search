@@ -1,3 +1,4 @@
+
 // ページが読み込まれたら、ローディング画面を非表示にする
 window.addEventListener('load', function() {
   var loadingScreen = document.getElementById('loading-screen');
@@ -7,6 +8,20 @@ window.addEventListener('load', function() {
   // 1秒後に実行したいコードをここに記述する
   }, 1000); // 1秒をミリ秒で指定
 });
+// CSSファイルのURL
+var cssUrl = 'style4.css';
+// link要素の作成
+var linkElement = document.createElement('link');
+linkElement.rel = 'stylesheet';
+linkElement.href = cssUrl;
+// link要素をhead要素に追加する関数
+function appendCss() {
+    document.head.appendChild(linkElement);
+}
+// 任意のタイミングでCSSを追加する
+// ページの読み込みが完了した後に実行する
+window.addEventListener('load', appendCss);
+
 var input = document.getElementById("input");
 var button = document.getElementById("button");
 var aiButton = document.getElementById("ai");
