@@ -1,7 +1,7 @@
 // ページが読み込まれたら、ローディング画面を非表示にする
 window.addEventListener('load', function() {
   var loadingScreen = document.getElementById('loading-screen');
-  loadingScreen.style.animation = 'fadeIn 1s ease-in-out forwards';
+  loadingScreen.style.animation = 'fadeout 1s ease-in-out forwards';
   setTimeout(function() {
       loadingScreen.style.display = 'none';  
   // 1秒後に実行したいコードをここに記述する
@@ -21,26 +21,29 @@ var line = document.getElementById("line");
 var line_1 = document.getElementById("line_1");
 var line_2 = document.getElementById("line_2");
 var historyElement; // グローバルスコープで定義
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-document.getElementById('input').addEventListener('keydown', function(event) {
+var result = document.getElementById("result");
+var resultText = document.getElementById("result-text");
+var resultLink = document.getElementById("result-link");
+var resultbtn = document.getElementById("resultbtn");
+var resultLinkText = document.getElementById("result-link-text");
+var resultTittle = document.getElementById("result-tittle");
+input.addEventListener('keydown', function(event) {
   if (event.key === 'Enter') {
     event.preventDefault(); // デフォルトのEnterキーの挙動を無効化
     button.click();
   }
+  input.style.height = "3.2em";
+  setTimeout(function() {
+    input.style.height = "1.2em";
+  }, 10000); 
 });
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-span.onclick = function() {
-    modal.style.display = "none";
+function hidecontent() {
+    btn.style.animation = 'zoomin 0.3s ease-in-out forwards'; 
+    modal.style.animation = 'fadeout 0.3s ease-in-out forwards';
+    setTimeout(function() {
+      modal.style.display = "none";
+      return;                  
+    }, 300); 
 };
 function addParagraph() {
     // 入力フィールドからテキストを取得
@@ -79,6 +82,14 @@ function addParagraph() {
         document.getElementById("input").value += paragraphContent;
      };  
 }
+window.onclick = function(event) {
+  if (event.target == modal) {
+     hidecontent() 
+  }
+};
+span.onclick = function() {
+    hidecontent()
+};
 // いずれかのボタンが押されたときの処理
 document.addEventListener('DOMContentLoaded', function() {
     var buttons = document.querySelectorAll('button');
@@ -88,18 +99,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 input.blur();
                 input.value = "";
                 input.rows = 1;
-                return;
-            } else if (this.classList.contains('close')) {
-                modal.style.display = "none";
-                return;
             } else if (this.id === 'myBtn') {
-                modal.style.display = "block";　
-                return;
+                btn.style.animation = 'zoomout 0.3s ease-in-out forwards';
+              　setTimeout(function() {
+                  modal.style.display = "block";
+                  modal.style.animation = 'fadein 0.3s ease-in-out forwards';
+                  // 1秒後に実行したいコードをここに記述する
+                }, 300); 
+            } else if (this.id === 'resultbtn') {
+                result.style.display = "none";　
             }else {
                 addParagraph()
                 var buttonurl = this.dataset.url;
                 var query = input.value;
-              
                 input.value = "";
                 var url = buttonurl + query; // buttonurlを使用する
                 window.open(url, "_blank");
@@ -112,22 +124,6 @@ selectElement.addEventListener('change', () => {
   var selectedValue = selectElement.value;
   // 背景画像を変更します
   body.style.backgroundImage = "url('" + selectedValue + "')";
-  var selectedcolor = selectElement.dataset.color;
-  historyElement.style.color = selectedcolor;
-  var selectedtheme = selectElement.dataset.theme;
-  if (selectedtheme === 'dark') {
-    body.style.color = "#fff";
-    body.style.backgroundColor = "black";
-    input.style.color = "#fff";
-    line.style.backgroundColor = "#fff";
-    line_1.style.backgroundColor = "black";
-    line_2.style.backgroundColor = "black";
-  } else if (selectedtheme === 'light') {
-    body.style.color = "black";
-    body.style.backgroundColor = "#fff";
-    input.style.color = "black";
-    line.style.backgroundColor = "black";
-    line_1.style.backgroundColor = "black";
-    line_2.style.backgroundColor = "black";
-  } 
+  const historycolor = selectElement.getAttribute('data-color'); 
+  historyElement.style.color = historycolor;
 });
