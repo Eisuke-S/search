@@ -54,7 +54,7 @@
   margin: 30%; 
 }
 .game-botton {
-  background: none;
+  background-color: transparent;
   border: none;
 }
 #game {
@@ -64,7 +64,7 @@
   height: 100vh;
   display: none;
 }
-#game-content {
+.game-content {
   z-index: 2;
   height: 80vh;
   width: 80vw;
