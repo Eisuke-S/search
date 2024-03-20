@@ -47,6 +47,8 @@
 }
 .icon {
   border-raidious: 1;
+  height: 20%;
+  margin: 30%; 
 }
 .game-botton {
   background: none;
