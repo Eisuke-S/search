@@ -19,6 +19,9 @@ selectElement.addEventListener('change', () => {
     // 1秒後に実行したいコードをここに記述する
     }, 3000); // 1秒をミリ秒で指定
   } else if (selectedValue === "no") { 
-    window.location.href = "https://eisuke-s.github.io/search";
+    window.alert("ゲームをプレイできません。はいを選択しなければ15秒後にリダイレクトします。");
+    setTimeout(function() {
+      window.location.href = "https://eisuke-s.github.io/search";
+    }, 15000);
   }
 });
