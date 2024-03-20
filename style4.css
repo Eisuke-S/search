@@ -94,9 +94,10 @@ body {
 }
 .imagemenu {
   font-size: 50px;
-  margin: 40px;
-  color: white;
   font-family: "BIZ UDMincho", serif;
+  color: white;
+  text-decoration: none;
+  margin: 40px;
 }
 #background-image {
   background-color: transparent;
