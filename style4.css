@@ -257,32 +257,26 @@ p.con {
   color: black;
 }
 #history_place {
-  width: 100vw;
+  width: 100%;
 }
 #history_box_2 {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0;
-  margin: 0;
 }
 .history {
   font-size: 50px;
-  line-height: 130%;
   color: white;
-  padding: 0;
-  margin: 10px;
 }
 #history_box {
   align-items: center;
-  margin: 10px;
+  margin: 5px;
   border-bottom: solid;
   display: flex;
   justify-content: center;
-  height: auto;
-  width: 90%;
+  height: 50px;
+  width: 100%; 
   background-color: rgba(128,128,128,0.3);
-  padding: 0;
 }
 #history_btn {
   height: 50px;
@@ -292,8 +286,6 @@ p.con {
   border: none;
   outline: none;
   text-decoration: none;
-  margin: 10px;
-  display: inline-block;
 }
 #history_btn_img {
   height: 50px;
