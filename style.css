@@ -1,83 +1,14 @@
-
-#loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ffffff;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9997; /* 他の要素よりも前面に表示する */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Loading animation styles */
-.loading-logo {
-  width: 12.5%; /* 画像の幅を調整 */
-  height: auto;
-
-/* 画像を画面の中央に配置するスタイル */
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes fadeIn {
-    from {
-        opacity: 1; /* 開始時の透明度 */
-    }
-    to {
-        opacity: 0; /* 終了時の透明度 */
-    }
-}
-
-.loading-circle {
-  animation: rotate 5s infinite linear;
-  z-index: 9998;
-  width: 15%; /* 画像の幅を調整 */
-  height: auto;
-
-/* 画像を画面の中央に配置するスタイル */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
-.biz-udmincho-regular {
-  font-family: "BIZ UDMincho", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 body, html {
   height: 100%;
-  margin: 0; /* マージンをゼロに設定して余白を取り除く */
+  margin: 0; 
 }
-
 body {
-  background-image: url(background-image.jpeg);
+  background-image: url(background-image.webp);
   background-repeat: no-repeat;
   background-size: auto 100%; /* 画面に合わせて拡大表示 */
   background-position: center;
   background-color: white;
+  background-attachment: fixed;
   position: relative;
 }
 .menu {
@@ -96,15 +27,13 @@ body {
   cursor: pointer;
   margin: 20px;
 }
-
 .line {
   width: 60px;
   height: 5px;
   border-radius: 2.5px;
-  background-color: #333;
+  background-color: #fff;
   margin: 10px 10px;
 }
-
 .pop-upa {
   width: 48px;
   height: auto;
@@ -113,25 +42,36 @@ body {
   width: 100%;
   height: 100%;
 }
-
-
 .con {
   font-size: 60px;
 }
-
 .close {
   font-size: 90px;
 }
-
 .terms {
   font-size: 50px;
   font-family: "BIZ UDMincho", serif;
-  color: black;
+  color: white;
   text-decoration: none;
   margin: 40px;
-  
 }
-
+.imagemenu {
+  font-size: 50px;
+  font-family: "BIZ UDMincho", serif;
+  color: white;
+  text-decoration: none;
+  margin: 40px;
+}
+#background-image {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  font-size: 50px;
+  margin-left: 40px;
+  top: 40px;
+  color: white;
+  font-family: "BIZ UDMincho", serif; 
+}
 .container {
   display: flex;
   justify-content: center;
@@ -140,15 +80,8 @@ body {
   width: 100%;
   size: contain;
 }
-
-
-
-
-/* 幅が 600px 以下の場合のスタイル */
-
-
 .input-box {
-  background-color: white;
+  background-color: rgba(255,255,255,0.5);
   color: black;
   width: 100%;
   height: 1.2em;
@@ -156,7 +89,6 @@ body {
   padding: 10px;
   font-size: 60px;
   font-family: "BIZ UDMincho", serif;
-
   border-radius: 0.6em;
 }
 .biginput {
@@ -177,9 +109,7 @@ body {
     outline: none;
     text-decoration: none;
     background-color: transparent;
-
 }
-
 .clear::before,
 .clear::after {
     content: '';
@@ -190,24 +120,19 @@ body {
     top: 24px; /* 棒の位置を中央に調整 */
     left: 0;
 }
-
 .clear::before {
     transform: rotate(45deg);
 }
-
 .clear::after {
     transform: rotate(-45deg);
 }
-
 .search {
   width: 100%;
   height: auto;
 }
 .bigsearch {
   width: 12%;
-  
 }
-
 #button {
   margin-left: 0px;
   border-radius: 50px;
@@ -217,8 +142,6 @@ body {
   text-decoration: none;
   cursor: pointer; 
 }
-
-
 #ai {
   background-image: url("ai.png");
   border: none;
@@ -228,9 +151,7 @@ body {
   outline: none;
   background: transparent;
   text-decoration: none;
-  
 }
-
 #photo {
   color: white;
   margin-left: 10px;
@@ -240,7 +161,6 @@ body {
   text-decoration: none;
   cursor: pointer; 
 }
-
 #translate {
   color: white;
   margin-left: 10px;
@@ -252,12 +172,6 @@ body {
   cursor: pointer; 
   padding-left: 10px;
 }
-
-
-
-
-
-
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -271,7 +185,6 @@ body {
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
-
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
@@ -280,34 +193,57 @@ body {
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
-
-/* The Close Button */
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
-
-/* Add Animation */
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
+#result {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  position: fixed;
+  display: none;
 }
-
+.result-tittle {
+  z-index: 4;
+  margin: 25px;
+  font-size: 70px;
+  color: #CC0000;
+  postion: fixed;
+}
+.result-tittle-box{
+  width: 100%;
+  border-bottom: solid;
+}
+.result-text {
+  z-index: 3;
+  margin: 25px;
+  font-size: 50px
+}
+#result-link {
+  z-index: 3;
+  margin: 25px;
+  font-size: 50px;
+}
+.resultbtn {
+  z-index: 4;
+  margin: 0.6em;
+  font-size: 90px;
+  position: fixed;
+  bottom: 0;
+  left: 0; 
+}
 .btn {
   display: flex;
   justify-content: center;
@@ -320,18 +256,6 @@ btn a img {
 p.con {
   color: black;
 }
-.form {
-  height: 600px;
-  width: 100%;
-}
-.space {
-    display: block;
-    background-color: transparent;
-
-    width: 100%;
-    height: 900px; 
-  
-}
 #history_place {
   width: 100%;
 }
@@ -339,10 +263,15 @@ p.con {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 .history {
   font-size: 50px;
+  line-height: 130%;
   color: white;
+  padding: 0;
+  margin: 10px;
 }
 #history_box {
   align-items: center;
@@ -350,10 +279,10 @@ p.con {
   border-bottom: solid;
   display: flex;
   justify-content: center;
-  height: 50px;
+  height: auto;
   width: 100%; 
   background-color: rgba(128,128,128,0.3);
-   
+  padding: 0;
 }
 #history_btn {
   height: 50px;
@@ -363,25 +292,87 @@ p.con {
   border: none;
   outline: none;
   text-decoration: none;
+  margin: 10px;
 }
-
-
 #history_btn_img {
   height: 50px;
   whidh: auto;
 }
-
+@keyframes zoomout {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes zoomin {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeout {
+    from {
+        opacity: 1; /* 開始時の透明度 */
+    }
+    to {
+        opacity: 0; /* 終了時の透明度 */
+    }
+}
+@keyframes fadein {
+    from {
+        opacity: 0; /* 開始時の透明度 */
+    }
+    to {
+        opacity: 1; /* 終了時の透明度 */
+    }
+}
+@keyframes swing {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(200px); /* スイングの最大幅 */
+  }
+  40% {
+    transform: translateX(-200px); /* スイングの最小幅 */
+  }
+  60% {
+    transform: translateX(400px); /* スイングの最大幅 */
+  }
+  80% {
+    transform: translateX(-400px); /* スイングの最小幅 */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 /* 横長の画面に対するスタイル */
 @media screen and (orientation: landscape) {
   /* 横長の画面に適用するスタイル */
   body {
     background-size: 100%;
-  }
-  .loading-circle {
-    width: 4%;
-  }
-  .loading-logo {
-    width: 5%; /* 画像の幅を調整 */
   }
   .biginput {
     position: relative;
@@ -405,37 +396,26 @@ p.con {
   #history_box {
     width: 60%;
   }
-    
 }
-
 @media (prefers-color-scheme: dark) {
   /* ダークモード用のスタイル */
   body {
-    background-image: url(background-image_dark.jpeg);
+    background-image: url(background-image_dark.webp);
     background-color: black;
     color: #fff;
   }
   .input-box {
-    background-color: black;
+    background-color: rgba(0,0,0,0.5);
     color: #fff;
     border-color: white;
-  }
-  .line {
-    background-color: white;
-  }
-  .terms {
-    color: white;
   }
   .history {
     color: #ff8c00;
   }
-  #loading-screen {
-    background-color: black;
-  }
-  
   p.con {
     color: black;
   }
-  
-  
+  #result {
+    background-color: black;
+  }
 }
