@@ -456,6 +456,9 @@ p.con {
   #background-image{
     font-size: 25px;
   }
+  #terms {
+    font-size: 25px;
+  }
 }
 @media (prefers-color-scheme: dark) {
   /* ダークモード用のスタイル */
