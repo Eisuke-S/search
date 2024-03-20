@@ -45,6 +45,9 @@
   width: 100vh;
   height: 100vh;
 }
+#home {
+  
+}
 @keyframes fadeout {
     from {
         opacity: 1; /* 開始時の透明度 */
