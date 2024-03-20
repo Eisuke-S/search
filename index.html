@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho:wght@700&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico">
-  <script src="script.js" defer></script>
-  <link rel="stylesheet" href="style.css">
   <title>origo Search</title>
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="roading-view.css">
+  <meta name="description" content="This page can searching webpage. And we can translat eentens by deepl.">
+  <link rel="icon" href="favicon.ico" loading="lazy">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin defer>
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho:wght@700&display=swap" rel="stylesheet">
 </head>
 <body id="body">
   <div id="loading-screen">
-    <img src="logo.png" class="loading-logo"alt="Loading Animation">
-    <img src="loading-circle.png" class="loading-circle">
+    <img src="logo.svg" class="loading-logo" alt="Loading Animation">
+    <div class="loading-line"></div>
   </div>
   <div class="menu">
-    
-    <button id="myBtn" class="pop-upbtn">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+    <button id="myBtn" class="pop-upbtn" aria-label="コンテンツボタン">
+        <div class="line"　id="line"></div>
+        <div class="line" id="line_1"></div>
+        <div class="line" id="line_2"></div>
     </button>
-  
-  　<a class="terms" href="terms.html"> 利用規約</a>
+    <a class="terms" href="terms.html"> 利用規約</a>
+    <label for="background-image" class="imagemenu">背景:</label>
     <select name="background-image" id="background-image">
-      <option>デフォルト</option>
-      <option value="background-image.jpeg" data-color="light">ライト</option>
-      <option value="background-image_dark.jpeg" data-color="dark">ダーク</option>
-      
+      <option data-color="#000">選択</option>
+      <option value="background-image.webp" data-color="#fff">ライト</option>
+      <option value="background-image_dark.webp" data-color="orange" >ダーク</option>
+      <option value="https://th.bing.com/th/id/OIG3.YawfoFxLkxLyU8ZkOl5g?w=1024&h=1024&rs=1&pid=ImgDetMain&PC=EMMX01" data-color="#fff">きつね</option>
+      <option value="https://th.bing.com/th/id/OIG1.k6olZuiK.4bHEfa813ud?w=1024&h=1024&rs=1&pid=ImgDetMain&PC=EMMX01" data-color="#fff">チーズの城</option> 
+      <option value="https://th.bing.com/th/id/OIG4.j043fb_A.rcKWoOFPIKc?w=1024&h=1024&rs=1&pid=ImgDetMain&PC=EMMX01" data-color="#fff">エーゲ海</option>      
     </select>
+    <div id="result">
+      <div class="result-tittle-box">
+      <p class="result-tittle" id="result-tittle"></p>
+      </div>
+      <br>
+      <p class="result-text" id="result-text"></p>
+      <a class="result-link" id="result-link" target="_blank" rel="noopener noreferrer" href=""><p class="result-text" id="result-link-text"></p></a>
+      <button class="resultbtn" id="resultbtn"　aria-label="コンテンツを非表示">×</button>
+    </div>
   </div>
   <div id="myModal" class="modal">
     <!-- Modal content -->
@@ -37,42 +48,30 @@
       <span class="close" id="close">×</span>
       <p id="con">コンテンツ</p>
       <div id="btn" class="btn">
-        <a class="mysite" target="_blank" rel="noopener noreferrer" id="mysiteBtn" href="https://eisuke-s.github.io/search/app.html"><img class="pop-upa" src="logo.png" alt="読み込めません"></a>
-        <a id="news" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://sway.cloud.microsoft/iYTHayc4THkB3aG8?ref=Link"><img class="pop-upa" src="news.png" alt="読み込めません"></a>
-        <a id="outlook" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=22&ct=1710336228&rver=7.0.6738.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26cobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26culture%3dja-jp%26country%3djp%26RpsCsrfState%3d269790db-82c0-5494-86c5-02541055a3cc&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c"><img class="pop-upa" src="https://play-lh.googleusercontent.com/Zk9elS0eGXDr0L4W6-Ey7YwHbRNjkyezHC8iCc8rWp64lNIjlByS8TDF9qDSZbiEWY4=w480-h960-rw"></a>
-        <a id="onedlive" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638382266891854464.OGNlNWExYWItMWY3Mi00MzNiLTg4OWQtMWE0ZTkxNDkxY2QxOGM1NDVmYTItNTQwYy00ZmNiLTk5YTEtYzQ3NTE4ODUzNDNk&ui_locales=ja-JP&mkt=ja-JP&prompt=select_account&client-request-id=2fba9080-b8d5-49fb-a0f2-eb42a4989747&state=EtmEhfyX0adDOmaGlo8OZfNr82mzM0vqYWfZ_a2I-l-mUbCf9YnEAhDlGGGixqSZflKpUzyNgWwxFTK_fhdFqMAOd-A7wc1iwLs5LflyHNSSYcaeba-4PF5kRnVjjdQ1KjGsoDmWUuO0G_WyUY6G5G2bDkbEoDyomAcRRPCKXer2Y09ku6NbrL_8z1bCeOOMIFEgNY4qiRPKT9gCcEs6UCXNkzIN1-gVwj-rLbISIzW1OQOe_tqWGwfFp_G4OVV-tB-wVIgXTd6Gnjt2XF8uugeZKJcxdn3I4VZGiKEr2t_VWp5E-72iy_3z_7t430jufZ6pfOT58ru20RoxaxUv0Q&x-client-SKU=ID_NET6_0&x-client-ver=6.34.0.0"><img class=pop-upa src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Blade002_AllYourStuff_247x139_2x?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=494&hei=278&qlt=100&fit=constrain"></a>
-        <a id="zkai" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://www505.zkai.co.jp/mypage/"><img class="pop-upa" src="https://www.zkai.co.jp/wp-content/themes/zkai/images/logo.svg"></a>
-        <a id="Tver" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://tver.jp/"><img class="pop-upa" alt="読み込めません" src="https://tver.jp/images/PC_item_logo_2x.png"></a>
-        <a id="github" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://github.co.jp/"><img class="pop-upa" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4"></a>
-        <a id="canva" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://www.canva.com/ja_jp/"><img class="pop-upa" src="https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg"></a>
-        <a id="openai" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://chat.openai.com/"><img class="pop-upa" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAAAAABWESUoAAABQElEQVR4Ac3PIYyDMBiG4VefPDtxEj0xM39qZl40mcPhMzONOjWNrqxA4UgmqklweBQKVfFdGhbSZZvfY5qmb35++DAbO4XQF7xjpN42s1oyXtlr2gN4SRpynnTaANtesy1tkOOR8aoAJ12J6ngmGkknCqn5gv0y8Jv03eYy+PEAu07jCQ66sDqqpohBCVb2PMtvSbeoxRJcLlIFVFKVBuOwBDdNxkzjEbKbVDwHvgZw8j+Qq2fVhhjkxB2g7JwqKJMRhUqo5Lol8OTxMbSsehXw45e9ao+J92EkGaFbBscxLqnbPRhYOVXr/53L+wTVaUDmNZ+tLNyDWgdWl3gxo7otHMYY5DYdwLc6gB18tVLBSVJD6qr6fsoBVt7wyCm4PxfiRyBTx5N8kCQP8DtrzysZrebG9ZLhnaILYbIbPss/4c/row+G/FAAAAAASUVORK5CYII="></a>
-        <a id="ms365" target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://www.office.com/?auth=1"><img class="pop-upa" src="https://th.bing.com/th?id=ODLS.059c91de-52ad-4d4f-8f10-6ffe4bdf470a&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a>
-      
+        <a class="mysite" target="_blank" rel="noopener noreferrer" id="mysiteBtn" href="app.html"><img loading="lazy" class="pop-upa" src="logo.svg" alt="読み込めません"></a>
+        <a id="news" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://sway.cloud.microsoft/iYTHayc4THkB3aG8?ref=Link"><img loading="lazy" class="pop-upa" src="news.webp" alt="読み込めません" loading="lazy"></a>
+        <a id="outlook" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=22&ct=1710336228&rver=7.0.6738.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26cobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26culture%3dja-jp%26country%3djp%26RpsCsrfState%3d269790db-82c0-5494-86c5-02541055a3cc&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c"><img loading="lazy" class="pop-upa" src="https://play-lh.googleusercontent.com/Zk9elS0eGXDr0L4W6-Ey7YwHbRNjkyezHC8iCc8rWp64lNIjlByS8TDF9qDSZbiEWY4=w480-h960-rw"></a>
+        <a id="onedlive" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile%20https%3A%2F%2Fwww.office.com%2Fv2%2FOfficeHome.All&response_mode=form_post&nonce=638382266891854464.OGNlNWExYWItMWY3Mi00MzNiLTg4OWQtMWE0ZTkxNDkxY2QxOGM1NDVmYTItNTQwYy00ZmNiLTk5YTEtYzQ3NTE4ODUzNDNk&ui_locales=ja-JP&mkt=ja-JP&prompt=select_account&client-request-id=2fba9080-b8d5-49fb-a0f2-eb42a4989747&state=EtmEhfyX0adDOmaGlo8OZfNr82mzM0vqYWfZ_a2I-l-mUbCf9YnEAhDlGGGixqSZflKpUzyNgWwxFTK_fhdFqMAOd-A7wc1iwLs5LflyHNSSYcaeba-4PF5kRnVjjdQ1KjGsoDmWUuO0G_WyUY6G5G2bDkbEoDyomAcRRPCKXer2Y09ku6NbrL_8z1bCeOOMIFEgNY4qiRPKT9gCcEs6UCXNkzIN1-gVwj-rLbISIzW1OQOe_tqWGwfFp_G4OVV-tB-wVIgXTd6Gnjt2XF8uugeZKJcxdn3I4VZGiKEr2t_VWp5E-72iy_3z_7t430jufZ6pfOT58ru20RoxaxUv0Q&x-client-SKU=ID_NET6_0&x-client-ver=6.34.0.0"><img loading="lazy" class=pop-upa src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Blade002_AllYourStuff_247x139_2x?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=494&hei=278&qlt=100&fit=constrain"></a>
+        <a id="zkai" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://www505.zkai.co.jp/mypage/"><img class="pop-upa" loading="lazy" src="https://www.zkai.co.jp/wp-content/themes/zkai/images/logo.svg"></a>
+        <a id="Tver" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://tver.jp/"><img class="pop-upa" alt="読み込めません" loading="lazy" src="tver.webp"></a>
+        <a id="github" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://github.co.jp/"><img class="pop-upa" loading="lazy" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4"></a>
+        <a id="canva" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://www.canva.com/ja_jp/"><img class="pop-upa" loading="lazy" src="https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg"></a>
+        <a id="openai" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://chat.openai.com/"><img class="pop-upa" loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAAAAABWESUoAAABQElEQVR4Ac3PIYyDMBiG4VefPDtxEj0xM39qZl40mcPhMzONOjWNrqxA4UgmqklweBQKVfFdGhbSZZvfY5qmb35++DAbO4XQF7xjpN42s1oyXtlr2gN4SRpynnTaANtesy1tkOOR8aoAJ12J6ngmGkknCqn5gv0y8Jv03eYy+PEAu07jCQ66sDqqpohBCVb2PMtvSbeoxRJcLlIFVFKVBuOwBDdNxkzjEbKbVDwHvgZw8j+Qq2fVhhjkxB2g7JwqKJMRhUqo5Lol8OTxMbSsehXw45e9ao+J92EkGaFbBscxLqnbPRhYOVXr/53L+wTVaUDmNZ+tLNyDWgdWl3gxo7otHMYY5DYdwLc6gB18tVLBSVJD6qr6fsoBVt7wyCm4PxfiRyBTx5N8kCQP8DtrzysZrebG9ZLhnaILYbIbPss/4c/row+G/FAAAAAASUVORK5CYII="></a>
+        <a id="ms365" defer target="_blank" rel="noopener noreferrer" class="pop-upcon" href="https://www.office.com/?auth=1"><img class="pop-upa" loading="lazy" src="https://th.bing.com/th?id=ODLS.059c91de-52ad-4d4f-8f10-6ffe4bdf470a&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2"></a>
       </div>
     </div>
   </div>
-
   <div class="container">
-    <button id="button" class="bigsearch" data-url="https://www.google.com/search?q="><img src="google.png" id="button2" class="search"></button>
-    <button id="photo" class="bigsearch" data-url="" ><img src="photo.png" class="search"></button>
-    <button id="translate" class="bigsearch" data-url="https://www.deepl.com/ja/translator#en/ja/"><img src="deepl.png" class="search"></button>
+    <button id="button" class="bigsearch" data-url="https://www.google.com/search?q="><img loading="lazy" alt="Google search" src="google.webp" id="button2" class="search"></button>
+    <button id="photo" class="bigsearch" data-url="" ><img loading="lazy"  alt="image search" src="photo.webp" class="search"></button>
+    <button id="translate" class="bigsearch" data-url="https://www.deepl.com/ja/translator#en/ja/"><img loading="lazy" alt="translate button" src="deepl.webp" class="search"></button>
     <div class="biginput">
       <textarea id="input" class="input-box" rows="1" oninput="handleInput()"></textarea>
-      <button id="clear" class="clear"></button>
+      <button id="clear" class="clear" aria-label="入力欄をクリア"></button>
     </div>  
-    <button id="ai" class="bigsearch" data-url="https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q="><img src="ai.png" class="search"></button>  
+    <button id="ai" class="bigsearch" data-url="https://www.bing.com/search?form=NTPCHT&showconv=1&sendquery=1&q="><img loading="lazy" alt="talking with copilot" src="ai.webp" class="search" loading="lazy"></button>  
   </div>
-
-
-
-
   <div id="history_place"></div>
-
-  <footer >
-    <div class="space">
-    </div>
-    <iframe class="form" width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__nCAvzpUMDdMQUpYWkZXUlVTSEUzVTA3MjlLWTI1RS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-  </footer>
-
+  <script src="script.js" defer></script>
 </body>
 </html>
