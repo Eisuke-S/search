@@ -267,6 +267,7 @@ p.con {
 .history {
   font-size: 50px;
   color: white;
+  line-height: 130px;
 }
 #history_box {
   align-items: center;
@@ -274,7 +275,7 @@ p.con {
   border-bottom: solid;
   display: flex;
   justify-content: center;
-  height: 50px;
+  height: auto;
   width: 100%; 
   background-color: rgba(128,128,128,0.3);
 }
