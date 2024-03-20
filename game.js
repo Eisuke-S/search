@@ -15,6 +15,6 @@ selectElement.addEventListener('change', () => {
   if (selectedValue ==="yes") { 
     TermsOfUse.style.display = "none";
   } else if (selectedValue === "no") { 
-    window.open.
+    window.location.href = "https://eisuke-s.github.io/search";
   }
 });
