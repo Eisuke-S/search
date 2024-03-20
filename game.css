@@ -36,7 +36,7 @@
   background-clip: padding-box;
   border-radius: 10px; /* 角丸 */
 }
-.terms-of-use {
+#terms-of-use {
   z-index: 9996;
   postion: fixed;
   top: 0;
