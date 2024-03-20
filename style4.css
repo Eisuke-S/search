@@ -92,6 +92,13 @@ body {
   text-decoration: none;
   margin: 40px;
 }
+.imagemenu {
+  font-size: 50px;
+  margin-left: 40px;
+  top: 40px;
+  color: white;
+  font-family: "BIZ UDMincho", serif;
+}
 #background-image {
   background-color: transparent;
   border: none;
@@ -442,6 +449,15 @@ p.con {
   }
   #history_box {
     width: 60%;
+  }
+  .imagemenu {
+    font-size: 25px;
+  }
+  #background-image{
+    font-size: 25px;
+  }
+  .pop-upbtn {
+    height: 40px;
   }
 }
 @media (prefers-color-scheme: dark) {
