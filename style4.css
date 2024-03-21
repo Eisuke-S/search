@@ -77,6 +77,8 @@ body {
   font-family: "BIZ UDMincho", serif; 
 }
 .container {
+  top: 35vh;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
