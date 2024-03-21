@@ -83,10 +83,12 @@
   width: 7vmin;
   justify-content: space-between;
   display: flex;
+  postion: fixed;
   flex-direction: column;
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 9995;
 }
 .line {
   width: 100%;
