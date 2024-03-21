@@ -3,6 +3,8 @@ body, html {
   margin: 0; 
 }
 body {
+  top: 0;
+  left: 0;
   background-image: url(background-image.webp);
   background-repeat: no-repeat;
   background-size: auto 100%; /* 画面に合わせて拡大表示 */
