@@ -13,6 +13,8 @@ var wordsfrvrBtn = document.getElementById("wordsfrvr-btn");
 var wordsfrvr = document.getElementById("wordsfrvr");
 var game = document.getElementById("game");
 var content = document.getElementById("content");
+var menu = document.getElementById("menu");
+var home = document.getElementById("home");
 selectElement.addEventListener('change', () => {
   // 現在選択されているオプションの値を取得
   var selectedValue = selectElement.value;
@@ -35,3 +37,14 @@ wordsfrvrBtn.onclick = function() {
   wordsfrvr.style.display = 'block';
   wordsfrvrBtn.style.display = 'none';
 };
+menu.onclick = function() {
+  if (menu.value === '0') {
+    home.style.zIndex = '9990';
+    menu.value = "1";
+  }
+  if (menu.value === '1') {
+    home.style.zIndex = '1';
+    menu.value = "0";
+  }
+}
+  
