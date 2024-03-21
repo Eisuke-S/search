@@ -97,6 +97,12 @@
   background-color: black;
   margin: 10px 10px;
 }
+#home {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: white;
+}
 @keyframes fadeout {
     from {
         opacity: 1; /* 開始時の透明度 */
