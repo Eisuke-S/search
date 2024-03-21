@@ -15,6 +15,7 @@ var game = document.getElementById("game");
 var content = document.getElementById("content");
 var menu = document.getElementById("menu");
 var home = document.getElementById("home");
+var iframebox = document.getElementById("iframebox");
 selectElement.addEventListener('change', () => {
   // 現在選択されているオプションの値を取得
   var selectedValue = selectElement.value;
@@ -34,18 +35,21 @@ selectElement.addEventListener('change', () => {
 });
 wordsfrvrBtn.onclick = function() {
   game.style.display = 'block';
+  iframebox.style.display = 'block';
   wordsfrvr.style.display = 'block';
   home.style.display = 'none';
 };
 menu.onclick = function() {
   if (menu.value === '0') {
     home.style.zIndex = '9990';
+    iframebox.style.display = 'none';
     menu.value = "1";
   }
   if (menu.value === '1') {
     home.style.display = 'block';
     home.style.zIndex = '1';
     menu.value = "0";
+    iframebox.style.display = 'block';
   }
 }
   
