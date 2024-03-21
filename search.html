@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excelファイル内のA列文字列検索</title>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="検索文字列を入力">
+    <button onclick="searchInExcel()">検索</button>
+    <div id="searchResults"></div>
+
+    <script>
+        function searchInExcel() {
+            var searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
+            var searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = '';
+
+            if (searchInput !== '') {
+                var xhr = new XMLHttpRequest();
+                var url = 'data.xlsx'; // ExcelファイルのURL
+
+                xhr.open('GET', url, true);
+                xhr.responseType = 'arraybuffer';
+
+                xhr.onload = function(event) {
+                    var data = new Uint8Array(xhr.response);
+                    var workbook = XLSX.read(data, {type: 'array'});
+
+                    var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+                    for (var cellAddress in worksheet) {
+                        if (!worksheet.hasOwnProperty(cellAddress) || cellAddress === '!ref') continue;
+
+                        if (cellAddress.startsWith('A')) { // A列のセルのみ検索
+                            var cell = worksheet[cellAddress];
+                            if (cell.t === 's') {
+                                var cellValue = cell.v.toLowerCase();
+                                if (cellValue.includes(searchInput)) {
+                                    searchResults.innerHTML += 'Cell: ' + cellAddress + '<br>';
+                                }
+                            }
+                        }
+                    }
+                };
+
+                xhr.send();
+            } else {
+                searchResults.innerHTML = '検索文字列を入力してください。';
+            }
+        }
+    </script>
+</body>
+</html>
