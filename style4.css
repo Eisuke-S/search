@@ -90,11 +90,11 @@ body {
   background-color: rgba(255,255,255,0.5);
   color: black;
   width: 100%;
-  height: 1.2em;
+  height: 1em;
   border: double 5px gray;
   padding: 10px;
-  font-size: 60px;
-  font-family: "BIZ UDMincho", serif;
+  font-size: 40px;
+  font-family: serif;
   border-radius: 0.6em;
 }
 .biginput {
@@ -278,6 +278,7 @@ p.con {
   color: white;
   padding: 0;
   margin: 10px;
+  font-family: serif;
 }
 #history_box {
   align-items: center;
@@ -403,6 +404,11 @@ p.con {
   .terms{
     display: block;
   }
+  .input-box {
+    font-size: 60px;
+    height: 1.2em;
+    font-family: "BIZ UDMincho", serif;
+  }
 }
 @media screen and (orientation: landscape) {
   /* 横長の画面に適用するスタイル */
@@ -436,5 +442,10 @@ p.con {
   }
  .terms{
     display: block;
+  }
+  .input-box {
+    font-size: 60px;
+    height: 1.2em;
+    font-family: "BIZ UDMincho", serif;
   }
 }
