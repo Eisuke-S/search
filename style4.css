@@ -54,6 +54,7 @@ body {
   color: white;
   text-decoration: none;
   margin: 40px;
+  display: none;
 }
 .imagemenu {
   font-size: 50px;
@@ -395,6 +396,9 @@ p.con {
   .imagemenu {
     display: block;
   }
+  .terms{
+    display: block;
+  }
 }
 @media screen and (orientation: landscape) {
   /* 横長の画面に適用するスタイル */
@@ -424,6 +428,9 @@ p.con {
     width: 60%;
   }
   .imagemenu {
+    display: block;
+  }
+ .terms{
     display: block;
   }
 }
