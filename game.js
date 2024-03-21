@@ -35,7 +35,7 @@ selectElement.addEventListener('change', () => {
 wordsfrvrBtn.onclick = function() {
   game.style.display = 'block';
   wordsfrvr.style.display = 'block';
-  wordsfrvrBtn.style.display = 'none';
+  home.style.display = 'none';
 };
 menu.onclick = function() {
   if (menu.value === '0') {
@@ -43,6 +43,7 @@ menu.onclick = function() {
     menu.value = "1";
   }
   if (menu.value === '1') {
+    home.style.display = 'block';
     home.style.zIndex = '1';
     menu.value = "0";
   }
