@@ -103,8 +103,8 @@ body {
   padding-right: 10px;
 }
 .clear {
-    width: 50px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -121,7 +121,7 @@ body {
     content: '';
     position: absolute;
     height: 2px; /* 棒の太さ */
-    width: 50px; /* 棒の長さ */
+    width: 100%; /* 棒の長さ */
     background-color: red; /* ばつ印の色を設定 */
     top: 24px; /* 棒の位置を中央に調整 */
     left: 0;
@@ -409,6 +409,10 @@ p.con {
     height: 1.2em;
     font-family: "BIZ UDMincho", serif;
   }
+  .clear {
+    width: 50px;
+    height: 50px;
+  }
 }
 @media screen and (orientation: landscape) {
   /* 横長の画面に適用するスタイル */
@@ -447,5 +451,9 @@ p.con {
     font-size: 60px;
     height: 1.2em;
     font-family: "BIZ UDMincho", serif;
+  }
+  .clear {
+    width: 50px;
+    height: 50px;
   }
 }
