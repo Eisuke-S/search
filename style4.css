@@ -61,6 +61,7 @@ body {
   color: white;
   text-decoration: none;
   margin: 40px;
+  display: none;
 }
 #background-image {
   background-color: transparent;
@@ -368,7 +369,33 @@ p.con {
     transform: translateX(0);
   }
 }
-/* 横長の画面に対するスタイル */
+@media (prefers-color-scheme: dark) {
+  /* ダークモード用のスタイル */
+  body {
+    background-image: url(background-image_dark.webp);
+    background-color: black;
+    color: #fff;
+  }
+  .input-box {
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border-color: white;
+  }
+  .history {
+    color: #ff8c00;
+  }
+  p.con {
+    color: black;
+  }
+  #result {
+    background-color: black;
+  }
+}
+@media (min-width: 768px) {
+  .imagemenu {
+    display: block;
+  }
+}
 @media screen and (orientation: landscape) {
   /* 横長の画面に適用するスタイル */
   body {
@@ -396,26 +423,7 @@ p.con {
   #history_box {
     width: 60%;
   }
-}
-@media (prefers-color-scheme: dark) {
-  /* ダークモード用のスタイル */
-  body {
-    background-image: url(background-image_dark.webp);
-    background-color: black;
-    color: #fff;
-  }
-  .input-box {
-    background-color: rgba(0,0,0,0.5);
-    color: #fff;
-    border-color: white;
-  }
-  .history {
-    color: #ff8c00;
-  }
-  p.con {
-    color: black;
-  }
-  #result {
-    background-color: black;
+  .imagemenu {
+    display: block;
   }
 }
