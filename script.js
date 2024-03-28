@@ -111,9 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }else {
                 addParagraph()
                 var buttonurl = this.dataset.url;
+                var buttonafterurl = this.dataset.afterUrl;
                 var query = input.value;
                 input.value = "";
-                var url = buttonurl + query; // buttonurlを使用する
+                var url = buttonurl + query + buttonafterurl;
                 window.open(url, "_blank");
             }
         });
