@@ -14,7 +14,7 @@ var allowedCountries = ["US", "CA", "GB"]; // 例: アメリカ、カナダ、�
 var ipLookupApi = "https://api.ipgeolocation.io/ipgeo?apiKey=YOUR_API_KEY&ip=";
 
 // ページ読み込み時に実行
-window.onload = function() {
+window.addEventListener('load', function() {
     // IPアドレスを取得し、国コードを確認する
     fetch(ipLookupApi)
     .then(response => response.json())
@@ -28,7 +28,7 @@ window.onload = function() {
     .catch(error => console.error('Error:', error));
 };
 // 相手のデバイスのローカル時間が日本の標準時間の前後15分以内かどうかを判別する関数
-window.onload = function isWithinFifteenMinutesOfJapanTime() {
+window.addEventListener('load', function isWithinFifteenMinutesOfJapanTime() {
     var japanTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Tokyo"});
     japanTime = new Date(japanTime);
 
