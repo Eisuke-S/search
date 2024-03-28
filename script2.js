@@ -3,13 +3,12 @@ window.addEventListener('load', function() {
   var loadingScreen = document.getElementById('loading-screen');
   loadingScreen.style.animation = 'fadeout 1s ease-in-out forwards';
   setTimeout(function() {
-      loadingScreen.style.display = 'none';  
-  // 1秒後に実行したいコードをここに記述する
-  }, 1000); // 1秒をミリ秒で指定
+    loadingScreen.style.display = 'none';  
+  }, 1000); // 1秒後にローディング画面を非表示にする
 });
+
 // 許可する国のコード
 var allowedCountries = ["US", "CA", "GB"]; // 例: アメリカ、カナダ、イギリス
-
 // IPアドレスから国コードを取得するAPI
 var ipLookupApi = "https://api.ipgeolocation.io/ipgeo?apiKey=YOUR_API_KEY&ip=";
 
@@ -26,24 +25,27 @@ window.addEventListener('load', function() {
         }
     })
     .catch(error => console.error('Error:', error));
-};
+
+    // 相手のデバイスのローカル時間が日本の標準時間の前後15分以内かどうかを判別する
+    var isWithinFifteenMinutes = isWithinFifteenMinutesOfJapanTime();
+    if (isWithinFifteenMinutes) {
+        console.log("相手のデバイスの時間は日本の標準時間の前後15分以内です。");
+    } else {
+        console.log("相手のデバイスの時間は日本の標準時間の前後15分以外です。");
+    }
+});
+
 // 相手のデバイスのローカル時間が日本の標準時間の前後15分以内かどうかを判別する関数
-window.addEventListener('load', function isWithinFifteenMinutesOfJapanTime() {
+function isWithinFifteenMinutesOfJapanTime() {
     var japanTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Tokyo"});
     japanTime = new Date(japanTime);
 
     var opponentTime = new Date(); // 相手のデバイスの時間を取得
     var differenceInMinutes = (opponentTime.getTime() - japanTime.getTime()) / (1000 * 60); // 分単位で時差を計算
 
-    return Math.abs(differenceInMinutes) <= 15; // 時差が15分以内かどうかを判別
+    return Math.abs(differenceInMinutes) <= 15; // 時差が15分以内かどうかを判別し、結果を返す
 }
 
-// テスト
-if (isWithinFifteenMinutesOfJapanTime()) {
-    console.log("相手のデバイスの時間は日本の標準時間の前後15分以外です。");
-} else {
-    console.log("相手のデバイスの時間は日本の標準時間の前後15分以外です。");
-}
 
 var input = document.getElementById("input");
 var button = document.getElementById("button");
