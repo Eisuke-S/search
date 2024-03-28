@@ -1,19 +1,18 @@
-// ページが読み込まれたら、ローディング画面を非表示にする
-window.addEventListener('load', function() {
-  var loadingScreen = document.getElementById('loading-screen');
-  loadingScreen.style.animation = 'fadeout 1s ease-in-out forwards';
-  setTimeout(function() {
-    loadingScreen.style.display = 'none';  
-  }, 1000); // 1秒後にローディング画面を非表示にする
-});
+// ページが読み込まれたら処理を開始する
+document.addEventListener('DOMContentLoaded', function() {
+    // ローディング画面を非表示にする
+    var loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.animation = 'fadeout 1s ease-in-out forwards';
+    setTimeout(function() {
+        loadingScreen.style.display = 'none';  
+    }, 1000); // 1秒後にローディング画面を非表示にする
+    
+    // 許可する国のコード
+    var allowedCountries = ["JP"]; 
 
-// 許可する国のコード
-var allowedCountries = ["JP"]; 
-// IPアドレスから国コードを取得するAPI
-var ipLookupApi = "https://api.ipgeolocation.io/ipgeo?apiKey=YOUR_API_KEY&ip=";
+    // IPアドレスから国コードを取得するAPI
+    var ipLookupApi = "https://api.ipgeolocation.io/ipgeo?apiKey=YOUR_API_KEY&ip=";
 
-// ページ読み込み時に実行
-window.addEventListener('load', function() {
     // IPアドレスを取得し、国コードを確認する
     fetch(ipLookupApi)
     .then(response => response.json())
@@ -28,8 +27,7 @@ window.addEventListener('load', function() {
 
     // 相手のデバイスのローカル時間が日本の標準時間の前後15分以内かどうかを判別する
     var isWithinFifteenMinutes = isWithinFifteenMinutesOfJapanTime();
-    if (isWithinFifteenMinutes) {
-    } else {
+    if (!isWithinFifteenMinutes) {
         window.location.href = "index.html"; // リダイレクト先のページ
     }
 });
