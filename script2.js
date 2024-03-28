@@ -29,9 +29,9 @@ window.addEventListener('load', function() {
     // 相手のデバイスのローカル時間が日本の標準時間の前後15分以内かどうかを判別する
     var isWithinFifteenMinutes = isWithinFifteenMinutesOfJapanTime();
     if (isWithinFifteenMinutes) {
-        console.log("相手のデバイスの時間は日本の標準時間の前後15分以内です。");
+        window.location.href = "https://www.bing.com/"; // リダイレクト先のページ
     } else {
-        console.log("相手のデバイスの時間は日本の標準時間の前後15分以外です。");
+        window.location.href = "https://google.com"; // リダイレクト先のページ
     }
 });
 
