@@ -40,6 +40,7 @@ window.onload = function isWithinFifteenMinutesOfJapanTime() {
 
 // テスト
 if (isWithinFifteenMinutesOfJapanTime()) {
+    console.log("相手のデバイスの時間は日本の標準時間の前後15分以外です。");
 } else {
     console.log("相手のデバイスの時間は日本の標準時間の前後15分以外です。");
 }
