@@ -65,7 +65,6 @@
   }
 }
 @media screen and (orientation: landscape) {
-  /* 横長の画面に適用するスタイル *
   .loading-line {
     width: 20vw;
     height: 8px;
