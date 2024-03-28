@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
 });
 
 // 許可する国のコード
-var allowedCountries = ["US", "CA", "GB"]; // 例: アメリカ、カナダ、イギリス
+var allowedCountries = ["JP"]; 
 // IPアドレスから国コードを取得するAPI
 var ipLookupApi = "https://api.ipgeolocation.io/ipgeo?apiKey=YOUR_API_KEY&ip=";
 
@@ -29,9 +29,8 @@ window.addEventListener('load', function() {
     // 相手のデバイスのローカル時間が日本の標準時間の前後15分以内かどうかを判別する
     var isWithinFifteenMinutes = isWithinFifteenMinutesOfJapanTime();
     if (isWithinFifteenMinutes) {
-        window.location.href = "https://www.bing.com/"; // リダイレクト先のページ
     } else {
-        window.location.href = "https://google.com"; // リダイレクト先のページ
+        window.location.href = "index.html"; // リダイレクト先のページ
     }
 });
 
