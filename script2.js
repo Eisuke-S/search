@@ -27,6 +27,22 @@ window.onload = function() {
     })
     .catch(error => console.error('Error:', error));
 };
+// 相手のデバイスのローカル時間が日本の標準時間の前後15分以内かどうかを判別する関数
+window.onload = function isWithinFifteenMinutesOfJapanTime() {
+    var japanTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Tokyo"});
+    japanTime = new Date(japanTime);
+
+    var opponentTime = new Date(); // 相手のデバイスの時間を取得
+    var differenceInMinutes = (opponentTime.getTime() - japanTime.getTime()) / (1000 * 60); // 分単位で時差を計算
+
+    return Math.abs(differenceInMinutes) <= 15; // 時差が15分以内かどうかを判別
+}
+
+// テスト
+if (isWithinFifteenMinutesOfJapanTime()) {
+} else {
+    console.log("相手のデバイスの時間は日本の標準時間の前後15分以外です。");
+}
 
 var input = document.getElementById("input");
 var button = document.getElementById("button");
