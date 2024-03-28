@@ -5,18 +5,18 @@
   <!-- 目盛り -->
   <g fill="black">
     <!-- 目盛りを配置 -->
-    <text x="100" y="18" text-anchor="middle">12</text>
-    <text x="171" y="48" text-anchor="middle">1</text>
-    <text x="190" y="100" text-anchor="middle">2</text>
-    <text x="171" y="152" text-anchor="middle">3</text>
-    <text x="100" y="182" text-anchor="middle">4</text>
-    <text x="29" y="152" text-anchor="middle">5</text>
-    <text x="10" y="100" text-anchor="middle">6</text>
-    <text x="29" y="48" text-anchor="middle">7</text>
-    <text x="100" y="20" text-anchor="middle">8</text>
-    <text x="171" y="48" text-anchor="middle">9</text>
-    <text x="190" y="100" text-anchor="middle">10</text>
-    <text x="171" y="152" text-anchor="middle">11</text>
+    <text x="100" y="22" text-anchor="middle">12</text>
+    <text x="158" y="36" text-anchor="middle">1</text>
+    <text x="183" y="78" text-anchor="middle">2</text>
+    <text x="190" y="100" text-anchor="middle">3</text>
+    <text x="183" y="122" text-anchor="middle">4</text>
+    <text x="158" y="164" text-anchor="middle">5</text>
+    <text x="100" y="178" text-anchor="middle">6</text>
+    <text x="42" y="164" text-anchor="middle">7</text>
+    <text x="17" y="122" text-anchor="middle">8</text>
+    <text x="10" y="100" text-anchor="middle">9</text>
+    <text x="17" y="78" text-anchor="middle">10</text>
+    <text x="42" y="36" text-anchor="middle">11</text>
   </g>
   
   <!-- 時針 -->
